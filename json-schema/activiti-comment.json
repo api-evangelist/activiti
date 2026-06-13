@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/activiti/json-schema/activiti-commentrepresentation.json",
+  "title": "CommentRepresentation",
+  "description": "Activiti CommentRepresentation schema",
+  "properties": {
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "createdBy": {
+      "$ref": "#/components/schemas/LightUserRepresentation"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "message": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

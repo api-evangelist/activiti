@@ -1,0 +1,11 @@
+{
+  "id": 101,
+  "name": "Expense Submission Form",
+  "description": "Form for submitting an expense report",
+  "version": 2,
+  "lastUpdatedBy": "jane.doe@example.com",
+  "lastUpdatedByFullName": "Jane Doe",
+  "lastUpdated": "2024-01-05T10:00:00.000+0000",
+  "stencilSetId": 0,
+  "referenceId": null
+}

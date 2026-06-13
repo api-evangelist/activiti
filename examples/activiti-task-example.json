@@ -1,0 +1,26 @@
+{
+  "id": "task-5001",
+  "name": "Review Expense Report",
+  "description": "Please review and approve or reject the expense report",
+  "category": "finance",
+  "assignee": {
+    "id": 15,
+    "firstName": "Bob",
+    "lastName": "Manager",
+    "email": "bob.manager@example.com"
+  },
+  "created": "2024-01-15T09:05:00.000+0000",
+  "dueDate": "2024-01-17T17:00:00.000+0000",
+  "endDate": null,
+  "duration": null,
+  "priority": 50,
+  "parentTaskId": null,
+  "parentTaskName": null,
+  "processDefinitionId": "expense-approval:3:1234",
+  "processDefinitionName": "Expense Approval",
+  "processInstanceId": "proc-inst-1001",
+  "processInstanceName": "Expense Approval Process",
+  "taskDefinitionKey": "reviewTask",
+  "formKey": "expense-review-form",
+  "adhocTaskCanBeReassigned": false
+}

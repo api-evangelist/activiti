@@ -1,0 +1,27 @@
+{
+  "id": 42,
+  "firstName": "Jane",
+  "lastName": "Doe",
+  "email": "jane.doe@example.com",
+  "company": "ACME Corp",
+  "pictureId": null,
+  "fullName": "Jane Doe",
+  "password": null,
+  "type": "enterprise",
+  "status": "active",
+  "created": "2023-06-01T00:00:00.000+0000",
+  "lastUpdate": "2024-01-10T00:00:00.000+0000",
+  "tenantId": 1,
+  "tenantName": "Default",
+  "groups": [
+    {
+      "id": 3,
+      "name": "Finance Team",
+      "type": "functional-group"
+    }
+  ],
+  "capabilities": [
+    "access-editor",
+    "access-reports"
+  ]
+}

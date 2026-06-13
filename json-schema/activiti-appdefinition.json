@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/activiti/json-schema/activiti-appdefinitionrepresentation.json",
+  "title": "AppDefinitionRepresentation",
+  "description": "Activiti AppDefinitionRepresentation schema",
+  "properties": {
+    "defaultAppId": {
+      "type": "string"
+    },
+    "deploymentId": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "modelId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "name": {
+      "type": "string"
+    },
+    "tenantId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "theme": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

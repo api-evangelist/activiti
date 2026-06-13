@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/activiti/json-schema/activiti-grouprepresentation.json",
+  "title": "GroupRepresentation",
+  "description": "Activiti GroupRepresentation schema",
+  "properties": {
+    "capabilities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/GroupCapabilityRepresentation"
+      }
+    },
+    "externalId": {
+      "type": "string"
+    },
+    "groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/GroupRepresentation"
+      }
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "lastSyncTimeStamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "name": {
+      "type": "string"
+    },
+    "parentGroupId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "status": {
+      "type": "string"
+    },
+    "tenantId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "type": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "userCount": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "users": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/UserRepresentation"
+      }
+    }
+  },
+  "type": "object"
+}

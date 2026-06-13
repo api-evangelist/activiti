@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/activiti/json-schema/activiti-formrepresentation.json",
+  "title": "FormRepresentation",
+  "description": "Activiti FormRepresentation schema",
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "formDefinition": {
+      "$ref": "#/components/schemas/FormDefinitionRepresentation"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastUpdatedBy": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "lastUpdatedByFullName": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "referenceId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "stencilSetId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "version": {
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "type": "object"
+}

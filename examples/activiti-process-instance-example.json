@@ -1,0 +1,34 @@
+{
+  "id": "proc-inst-1001",
+  "name": "Expense Approval Process",
+  "processDefinitionId": "expense-approval:3:1234",
+  "processDefinitionKey": "expense-approval",
+  "processDefinitionName": "Expense Approval",
+  "processDefinitionDescription": "Handles expense report approvals",
+  "processDefinitionVersion": 3,
+  "processDefinitionCategory": "finance",
+  "businessKey": "EXP-2024-001",
+  "started": "2024-01-15T09:00:00.000+0000",
+  "ended": null,
+  "duration": null,
+  "startedBy": {
+    "id": 42,
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "email": "jane.doe@example.com"
+  },
+  "graphicalNotationDefined": true,
+  "suspended": false,
+  "variables": [
+    {
+      "name": "amount",
+      "value": 1500.0,
+      "type": "double"
+    },
+    {
+      "name": "currency",
+      "value": "USD",
+      "type": "string"
+    }
+  ]
+}

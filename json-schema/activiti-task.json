@@ -1,0 +1,102 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/activiti/json-schema/activiti-taskrepresentation.json",
+  "title": "TaskRepresentation",
+  "description": "Activiti TaskRepresentation schema",
+  "properties": {
+    "adhocTaskCanBeReassigned": {
+      "type": "boolean"
+    },
+    "assignee": {
+      "$ref": "#/components/schemas/LightUserRepresentation"
+    },
+    "category": {
+      "type": "string"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "description": {
+      "type": "string"
+    },
+    "dueDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duration": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "endDate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "formKey": {
+      "type": "string"
+    },
+    "id": {
+      "type": "string"
+    },
+    "initiatorCanCompleteTask": {
+      "type": "boolean"
+    },
+    "involvedPeople": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/LightUserRepresentation"
+      }
+    },
+    "memberOfCandidateGroup": {
+      "type": "boolean"
+    },
+    "memberOfCandidateUsers": {
+      "type": "boolean"
+    },
+    "name": {
+      "type": "string"
+    },
+    "parentTaskId": {
+      "type": "string"
+    },
+    "parentTaskName": {
+      "type": "string"
+    },
+    "priority": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "processDefinitionCategory": {
+      "type": "string"
+    },
+    "processDefinitionDeploymentId": {
+      "type": "string"
+    },
+    "processDefinitionDescription": {
+      "type": "string"
+    },
+    "processDefinitionId": {
+      "type": "string"
+    },
+    "processDefinitionKey": {
+      "type": "string"
+    },
+    "processDefinitionName": {
+      "type": "string"
+    },
+    "processDefinitionVersion": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "processInstanceId": {
+      "type": "string"
+    },
+    "processInstanceName": {
+      "type": "string"
+    },
+    "processInstanceStartUserId": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

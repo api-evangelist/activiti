@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/activiti/json-schema/activiti-restvariable.json",
+  "title": "RestVariable",
+  "description": "Activiti RestVariable schema",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "scope": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string"
+    },
+    "value": {
+      "type": "object"
+    },
+    "valueUrl": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

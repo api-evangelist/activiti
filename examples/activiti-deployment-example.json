@@ -1,0 +1,8 @@
+{
+  "id": "deploy-9001",
+  "name": "expense-approval-v3.bar",
+  "deploymentTime": "2024-01-01T08:00:00.000+0000",
+  "category": "finance",
+  "url": "http://localhost:8080/activiti-app/api/enterprise/deployments/deploy-9001",
+  "tenantId": "tenant_1"
+}

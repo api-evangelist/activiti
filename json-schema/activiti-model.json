@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/activiti/json-schema/activiti-modelrepresentation.json",
+  "title": "ModelRepresentation",
+  "description": "Activiti ModelRepresentation schema",
+  "properties": {
+    "comment": {
+      "type": "string"
+    },
+    "createdBy": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "createdByFullName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "favorite": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastUpdatedBy": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "lastUpdatedByFullName": {
+      "type": "string"
+    },
+    "latestVersion": {
+      "type": "boolean"
+    },
+    "modelType": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "name": {
+      "type": "string"
+    },
+    "permission": {
+      "type": "string"
+    },
+    "referenceId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "stencilSet": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "version": {
+      "type": "integer",
+      "format": "int32"
+    }
+  },
+  "type": "object"
+}

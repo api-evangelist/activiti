@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/activiti/json-schema/activiti-tenantrepresentation.json",
+  "title": "TenantRepresentation",
+  "description": "Activiti TenantRepresentation schema",
+  "properties": {
+    "active": {
+      "type": "boolean"
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "id": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "lastUpdate": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "logoId": {
+      "type": "integer",
+      "format": "int64"
+    },
+    "maxUsers": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "name": {
+      "type": "string"
+    }
+  },
+  "type": "object"
+}

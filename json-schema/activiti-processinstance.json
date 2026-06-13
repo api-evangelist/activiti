@@ -1,0 +1,66 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api-evangelist.github.io/activiti/json-schema/activiti-processinstancerepresentation.json",
+  "title": "ProcessInstanceRepresentation",
+  "description": "Activiti ProcessInstanceRepresentation schema",
+  "properties": {
+    "businessKey": {
+      "type": "string"
+    },
+    "ended": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "graphicalNotationDefined": {
+      "type": "boolean"
+    },
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "processDefinitionCategory": {
+      "type": "string"
+    },
+    "processDefinitionDeploymentId": {
+      "type": "string"
+    },
+    "processDefinitionDescription": {
+      "type": "string"
+    },
+    "processDefinitionId": {
+      "type": "string"
+    },
+    "processDefinitionKey": {
+      "type": "string"
+    },
+    "processDefinitionName": {
+      "type": "string"
+    },
+    "processDefinitionVersion": {
+      "type": "integer",
+      "format": "int32"
+    },
+    "startFormDefined": {
+      "type": "boolean"
+    },
+    "started": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "startedBy": {
+      "$ref": "#/components/schemas/LightUserRepresentation"
+    },
+    "tenantId": {
+      "type": "string"
+    },
+    "variables": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/RestVariable"
+      }
+    }
+  },
+  "type": "object"
+}

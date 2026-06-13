@@ -1,0 +1,146 @@
+name: Activiti API Vocabulary
+description: >-
+  Domain vocabulary for the Activiti BPM REST API, covering business process
+  management concepts including process definitions, process instances, tasks,
+  deployments, forms, variables, identity management, and workflow automation.
+version: "1.0"
+created: 2026-06-13
+source: https://www.activiti.org/userguide/
+
+terms:
+  - term: ProcessDefinition
+    label: Process Definition
+    definition: >-
+      A blueprint for a business process, defined using BPMN 2.0. It describes
+      the sequence of steps, decision points, and participants required to
+      complete a business goal.
+    tags: [bpmn, process, definition]
+
+  - term: ProcessInstance
+    label: Process Instance
+    definition: >-
+      A single running execution of a process definition. Each instance tracks
+      its own state, variables, tasks, and history independently.
+    tags: [bpmn, process, runtime]
+
+  - term: Task
+    label: Task
+    definition: >-
+      A unit of work within a process instance that is assigned to a user or
+      user group for completion. Tasks may include form data, attachments, and
+      deadlines.
+    tags: [workflow, task, human-task]
+
+  - term: Deployment
+    label: Deployment
+    definition: >-
+      The act of publishing one or more process definitions (BAR/ZIP files) to
+      the Activiti engine, making them available for instantiation.
+    tags: [deployment, bpmn, lifecycle]
+
+  - term: Execution
+    label: Execution
+    definition: >-
+      A pointer representing the current position in a running process. A single
+      process instance may have multiple parallel executions in case of parallel
+      gateways.
+    tags: [execution, concurrency, bpmn]
+
+  - term: Variable
+    label: Variable
+    definition: >-
+      A named value associated with a process instance or task, used to store
+      and pass data between activities in a process.
+    tags: [variable, data, process]
+
+  - term: Form
+    label: Form
+    definition: >-
+      A structured UI definition linked to a task or start event, used to
+      collect structured input from users participating in a process.
+    tags: [form, ui, task]
+
+  - term: UserTask
+    label: User Task
+    definition: >-
+      A BPMN task type that requires human interaction. The Activiti engine
+      assigns it to a specific user or candidate group and waits for completion.
+    tags: [bpmn, task, human]
+
+  - term: ServiceTask
+    label: Service Task
+    definition: >-
+      A BPMN task type executed automatically by a Java class or expression
+      without human intervention, used for system integrations or automated logic.
+    tags: [bpmn, task, automation]
+
+  - term: Group
+    label: Group
+    definition: >-
+      A collection of users in the Activiti identity management system. Groups
+      are used for task candidate assignment and access control.
+    tags: [identity, group, authorization]
+
+  - term: User
+    label: User
+    definition: >-
+      An individual authenticated identity in Activiti, capable of starting
+      processes, claiming and completing tasks, and managing identity resources.
+    tags: [identity, user, authentication]
+
+  - term: HistoricProcessInstance
+    label: Historic Process Instance
+    definition: >-
+      An immutable record of a completed or terminated process instance, stored
+      in the Activiti history tables for audit and reporting purposes.
+    tags: [history, audit, process]
+
+  - term: HistoricTaskInstance
+    label: Historic Task Instance
+    definition: >-
+      An immutable record of a completed task within a historic process instance,
+      including assignee, timing, and outcome data.
+    tags: [history, audit, task]
+
+  - term: Job
+    label: Job
+    definition: >-
+      A scheduled or asynchronous unit of work managed by the Activiti job
+      executor, including timer events, async continuations, and message events.
+    tags: [async, timer, job]
+
+  - term: BpmnModel
+    label: BPMN Model
+    definition: >-
+      The in-memory Java representation of a BPMN 2.0 XML file, containing
+      all flow elements, connections, events, and gateway definitions for
+      a process.
+    tags: [bpmn, model, xml]
+
+  - term: Tenant
+    label: Tenant
+    definition: >-
+      A logical isolation unit in a multi-tenant Activiti deployment. Tenants
+      partition process definitions, instances, and identity data.
+    tags: [multi-tenant, isolation, admin]
+
+  - term: AppDefinition
+    label: App Definition
+    definition: >-
+      A packaged collection of process definitions, forms, and configuration
+      published as a deployable application unit in Activiti BPM Suite.
+    tags: [app, deployment, package]
+
+  - term: RuntimeBundle
+    label: Runtime Bundle
+    definition: >-
+      A cloud-native Activiti Cloud component responsible for executing BPMN
+      process instances and emitting events to the query and audit services.
+    tags: [cloud, microservice, runtime]
+
+  - term: CloudConnector
+    label: Cloud Connector
+    definition: >-
+      An Activiti Cloud integration microservice that handles ServiceTask
+      execution in a cloud-native environment via messaging.
+    tags: [cloud, integration, connector]

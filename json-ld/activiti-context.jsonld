@@ -1,0 +1,120 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "schema": "https://schema.org/",
+    "activiti": "https://www.activiti.org/vocab#",
+    "bpmn": "http://www.omg.org/spec/BPMN/20100524/MODEL#",
+
+    "ProcessDefinition": "activiti:ProcessDefinition",
+    "ProcessInstance": "activiti:ProcessInstance",
+    "Task": "activiti:Task",
+    "Deployment": "activiti:Deployment",
+    "Execution": "activiti:Execution",
+    "Variable": "activiti:Variable",
+    "Form": "activiti:Form",
+    "Group": "activiti:Group",
+    "User": "activiti:User",
+    "Tenant": "activiti:Tenant",
+    "Job": "activiti:Job",
+    "AppDefinition": "activiti:AppDefinition",
+    "HistoricProcessInstance": "activiti:HistoricProcessInstance",
+    "HistoricTaskInstance": "activiti:HistoricTaskInstance",
+    "RuntimeBundle": "activiti:RuntimeBundle",
+    "CloudConnector": "activiti:CloudConnector",
+
+    "id": "@id",
+    "type": "@type",
+    "name": "schema:name",
+    "description": "schema:description",
+    "version": "schema:version",
+    "created": {
+      "@id": "schema:dateCreated",
+      "@type": "xsd:dateTime"
+    },
+    "started": {
+      "@id": "activiti:started",
+      "@type": "xsd:dateTime"
+    },
+    "ended": {
+      "@id": "activiti:ended",
+      "@type": "xsd:dateTime"
+    },
+    "dueDate": {
+      "@id": "activiti:dueDate",
+      "@type": "xsd:dateTime"
+    },
+    "duration": {
+      "@id": "activiti:duration",
+      "@type": "xsd:integer"
+    },
+    "suspended": {
+      "@id": "activiti:suspended",
+      "@type": "xsd:boolean"
+    },
+    "priority": {
+      "@id": "activiti:priority",
+      "@type": "xsd:integer"
+    },
+    "businessKey": "activiti:businessKey",
+    "category": "activiti:category",
+    "tenantId": "activiti:tenantId",
+    "formKey": "activiti:formKey",
+    "assignee": {
+      "@id": "activiti:assignee",
+      "@type": "activiti:User"
+    },
+    "startedBy": {
+      "@id": "activiti:startedBy",
+      "@type": "activiti:User"
+    },
+    "owner": {
+      "@id": "activiti:owner",
+      "@type": "activiti:User"
+    },
+    "processDefinitionId": "activiti:processDefinitionId",
+    "processDefinitionKey": "activiti:processDefinitionKey",
+    "processDefinitionName": "activiti:processDefinitionName",
+    "processDefinitionVersion": {
+      "@id": "activiti:processDefinitionVersion",
+      "@type": "xsd:integer"
+    },
+    "processInstanceId": "activiti:processInstanceId",
+    "taskDefinitionKey": "activiti:taskDefinitionKey",
+    "variables": {
+      "@id": "activiti:variables",
+      "@type": "activiti:Variable",
+      "@container": "@set"
+    },
+    "groups": {
+      "@id": "activiti:groups",
+      "@type": "activiti:Group",
+      "@container": "@set"
+    },
+    "members": {
+      "@id": "activiti:members",
+      "@type": "activiti:User",
+      "@container": "@set"
+    },
+    "email": "schema:email",
+    "firstName": "schema:givenName",
+    "lastName": "schema:familyName",
+    "fullName": "schema:name",
+    "company": "schema:worksFor",
+    "deploymentTime": {
+      "@id": "activiti:deploymentTime",
+      "@type": "xsd:dateTime"
+    },
+    "url": "schema:url",
+    "value": "schema:value",
+    "stencilSetId": "activiti:stencilSetId",
+    "graphicalNotationDefined": {
+      "@id": "activiti:graphicalNotationDefined",
+      "@type": "xsd:boolean"
+    },
+    "adhocTaskCanBeReassigned": {
+      "@id": "activiti:adhocTaskCanBeReassigned",
+      "@type": "xsd:boolean"
+    }
+  }
+}
