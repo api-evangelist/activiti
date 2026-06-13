@@ -1,0 +1,51 @@
+name: Activiti Plans and Pricing
+description: >-
+  Activiti is open-source software distributed under the Apache License 2.0.
+  The core platform is free and community-supported. Enterprise-grade support,
+  certified builds, and additional enterprise features are available through
+  Alfresco Process Services (now part of Hyland).
+url: https://www.activiti.org/get-started
+created: 2026-06-13
+modified: 2026-06-13
+plans:
+  - name: Community (Open Source)
+    description: >-
+      Free, self-hosted Activiti Core and Activiti Cloud. Full access to
+      the BPMN 2.0 engine and REST API. Supported via community channels
+      including GitHub Issues, Stack Overflow, Gitter, and community forums.
+    url: https://github.com/Activiti/Activiti
+    price: Free
+    license: Apache License 2.0
+    features:
+      - Full BPMN 2.0 process engine
+      - REST API for process definitions, instances, tasks, variables
+      - Activiti Cloud (cloud-native runtime)
+      - Spring Boot integration
+      - Docker and Kubernetes support
+      - Community support via GitHub, Stack Overflow, Gitter
+      - Source code access
+    rateLimits: None specified
+  - name: Alfresco Process Services (Enterprise)
+    description: >-
+      Enterprise-grade edition of Activiti powered by Alfresco (now Hyland).
+      Includes commercial support, certified platform builds, upgrades,
+      access control and security, analytics, multi-language support,
+      and integration with the Alfresco Digital Business Platform.
+    url: https://www.alfresco.com/abn/activiti-enterprise/docs/introduction/
+    price: Contact for pricing
+    features:
+      - All Community features
+      - Commercial support and SLAs
+      - Certified platform builds and upgrades
+      - Access control and security enhancements
+      - Analytics and reporting
+      - Multi-language support
+      - Integration with Alfresco Digital Business Platform
+      - Enterprise identity management
+      - Advanced admin tooling
+    rateLimits: Varies by deployment
+notes: >-
+  Activiti began as an open-source project and remains free for community use.
+  The project originated at Alfresco and the enterprise offering (Alfresco
+  Process Services) is now maintained under Hyland. Pricing for enterprise
+  subscriptions requires direct contact with Hyland/Alfresco sales.

@@ -1,0 +1,107 @@
+aid: activiti
+name: Activiti
+description: >-
+  Activiti is a lightweight, Java-centric open-source Business Process
+  Management (BPM) and workflow automation engine. It provides a BPMN 2.0
+  compliant process engine and a REST API for managing process definitions,
+  process instances, tasks, variables, user management, deployments, and
+  historical data. Activiti Cloud extends the platform to cloud-native
+  environments using Spring Boot, Docker, and Kubernetes.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/activiti/refs/heads/main/apis.yml
+created: 2026-06-13
+modified: 2026-06-13
+specificationVersion: "0.19"
+tags:
+  - BPM
+  - Business Process Management
+  - Workflow
+  - BPMN
+  - Open Source
+  - Process Automation
+  - Java
+  - REST API
+apis:
+  - name: Activiti REST API
+    description: >-
+      The Activiti REST API enables integration with the Activiti BPM engine,
+      providing endpoints for managing deployments, process definitions, process
+      instances, tasks, executions, historical data, user and group identity
+      management, jobs, form data, and engine properties. Authentication uses
+      HTTP Basic Auth against valid Activiti user credentials.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://www.activiti.org/userguide/
+    baseURL: https://your-activiti-host/activiti-rest/service
+    tags:
+      - Process Definitions
+      - Process Instances
+      - Tasks
+      - Variables
+      - Deployments
+      - User Management
+      - Workflow
+    properties:
+      - type: Documentation
+        url: https://www.activiti.org/userguide/
+      - type: OpenAPI
+        url: https://github.com/Alfresco/activiti-client-sdk/blob/master/docs/swagger/ActivitiSwagger-1.4.json
+    contact:
+      - FN: Activiti Community
+        email: activiti-community@alfresco.com
+  - name: Activiti Cloud Runtime Bundle API
+    description: >-
+      The Activiti Cloud Runtime Bundle provides a cloud-native REST API for
+      executing BPMN 2.0 processes in a distributed, scalable environment.
+      It exposes endpoints for process instances, tasks, variables, and
+      integration with cloud connectors. Requires the ACTIVITI_USER role for
+      interaction via the TaskRuntime API.
+    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    humanURL: https://activiti.gitbook.io/activiti-7-developers-guide/components/activiti-cloud-application/runtime-bundle
+    baseURL: https://your-activiti-cloud-host/rb
+    tags:
+      - Cloud
+      - Runtime Bundle
+      - Process Instances
+      - Tasks
+      - Variables
+      - Spring Boot
+      - Kubernetes
+    properties:
+      - type: Documentation
+        url: https://activiti.gitbook.io/activiti-7-developers-guide/components/activiti-cloud-application/runtime-bundle
+    contact:
+      - FN: Activiti Community
+        email: activiti-community@alfresco.com
+common:
+  - type: Website
+    url: https://www.activiti.org/
+  - type: Documentation
+    url: https://www.activiti.org/documentation
+  - type: Documentation
+    url: https://activiti.gitbook.io/activiti-7-developers-guide
+  - type: GitHubOrg
+    url: https://github.com/Activiti
+  - type: GitHubRepository
+    url: https://github.com/Activiti/Activiti
+  - type: Blog
+    url: https://github.com/Activiti/Activiti/wiki/Articles-and-Blogs-on-Activiti
+  - type: Pricing
+    url: https://www.activiti.org/get-started
+  - type: X
+    url: https://x.com/activiti
+  - type: StackOverflow
+    url: https://stackoverflow.com/questions/tagged/activiti
+  - type: Forum
+    url: https://community.alfresco.com/community/bpm
+  - type: RoadMap
+    url: https://github.com/Activiti/Activiti/wiki/Activiti-7-Roadmap
+  - type: Plans
+    url: plans/activiti-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/activiti-rate-limits.yml
+  - type: FinOps
+    url: finops/activiti-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

@@ -1,0 +1,63 @@
+name: Activiti FinOps
+description: >-
+  Financial operations considerations for Activiti BPM deployments. As an
+  open-source, self-hosted platform, Activiti's costs are driven by
+  infrastructure, operations, and optionally enterprise support contracts
+  rather than per-API-call or SaaS subscription fees.
+url: https://www.activiti.org/get-started
+created: 2026-06-13
+modified: 2026-06-13
+costModel:
+  type: Self-Hosted / Open Source
+  directAPICosts: None
+  description: >-
+    The Activiti engine and REST API are free and open-source (Apache License 2.0).
+    Organizations incur costs through infrastructure provisioning, engineering
+    time for deployment and maintenance, and optionally through enterprise
+    support contracts with Hyland/Alfresco.
+costDrivers:
+  - name: Infrastructure (Server / Cloud Compute)
+    description: >-
+      Activiti requires a Java servlet container (e.g., Apache Tomcat) or
+      Spring Boot application server. Cloud deployments using Activiti Cloud
+      require Kubernetes cluster resources. Costs vary by provider and scale.
+    examples:
+      - AWS EC2, EKS, or ECS cluster costs
+      - Azure AKS or VM costs
+      - GCP GKE or Compute Engine costs
+      - On-premises server hardware and colocation
+  - name: Database
+    description: >-
+      Activiti requires a relational database (H2 for dev, MySQL, PostgreSQL,
+      Oracle, SQL Server for production). Database licensing, hosting, or
+      managed service costs apply.
+    examples:
+      - Amazon RDS for MySQL/PostgreSQL
+      - Azure Database for PostgreSQL
+      - Google Cloud SQL
+      - Self-managed PostgreSQL/MySQL
+  - name: Enterprise Support (Optional)
+    description: >-
+      Alfresco Process Services (enterprise edition via Hyland) provides
+      commercial support, certified builds, and SLAs. Pricing requires
+      direct negotiation with Hyland/Alfresco sales.
+    url: https://www.alfresco.com/abn/activiti-enterprise/docs/introduction/
+    price: Contact Hyland/Alfresco for pricing
+  - name: Engineering / Operations
+    description: >-
+      Internal engineering costs for deploying, maintaining, upgrading, and
+      operating the Activiti engine and associated infrastructure.
+optimizationTips:
+  - Use H2 in-memory database for development and testing to eliminate DB costs
+  - Right-size Kubernetes pods for Activiti Cloud based on workload profiling
+  - Use Activiti's process history cleanup features to manage database growth
+  - Leverage community support channels (GitHub, Stack Overflow) before
+    investing in enterprise support contracts for non-critical deployments
+  - Consider Activiti Cloud's horizontal scaling capabilities to optimize
+    compute spend during peak process execution periods
+notes: >-
+  Since Activiti is fully open source and self-hosted, there are no per-request
+  or per-user API fees. Total cost of ownership (TCO) analysis should focus on
+  infrastructure, database, and operational engineering costs. The enterprise
+  edition (Alfresco Process Services / Hyland) adds subscription costs but
+  reduces operational risk through commercial SLAs.

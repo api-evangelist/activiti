@@ -1,0 +1,37 @@
+name: Activiti Rate Limits
+description: >-
+  Activiti is a self-hosted, open-source BPM engine. As such, rate limiting
+  is not enforced by a SaaS platform but is instead determined by the
+  deploying organization's infrastructure configuration. There are no
+  published default rate limits for the Activiti REST API.
+url: https://www.activiti.org/userguide/
+created: 2026-06-13
+modified: 2026-06-13
+rateLimits:
+  - name: REST API Rate Limits
+    description: >-
+      The Activiti REST API does not impose built-in rate limits. Rate limiting
+      is the responsibility of the deploying organization and can be configured
+      via the servlet container (e.g., Apache Tomcat), a reverse proxy
+      (e.g., Nginx, Apache HTTPD), or an API gateway placed in front of the
+      Activiti REST application.
+    type: None (self-hosted)
+    defaultLimits: Not applicable
+    configurable: true
+    notes: >-
+      Organizations deploying Activiti should implement their own rate limiting
+      strategies based on infrastructure capacity and security requirements.
+      Common approaches include reverse proxy rate limiting, API gateway
+      policies, and servlet filter configurations.
+  - name: Activiti Cloud Rate Limits
+    description: >-
+      Activiti Cloud deployments on Kubernetes can leverage Kubernetes Ingress
+      controllers with rate limiting annotations (e.g., Nginx Ingress) or
+      service mesh policies (e.g., Istio) to enforce request throttling.
+    type: Infrastructure-defined
+    defaultLimits: Not applicable
+    configurable: true
+    notes: >-
+      When using Alfresco Process Services (enterprise edition), rate limiting
+      may be configured at the application server or load balancer level
+      as part of enterprise deployment best practices.
