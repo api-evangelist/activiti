@@ -8,7 +8,7 @@ description: >-
   historical data. Activiti Cloud extends the platform to cloud-native
   environments using Spring Boot, Docker, and Kubernetes.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/activiti/refs/heads/main/apis.yml
 created: 2026-06-13
 modified: 2026-06-13
@@ -30,7 +30,7 @@ apis:
       instances, tasks, executions, historical data, user and group identity
       management, jobs, form data, and engine properties. Authentication uses
       HTTP Basic Auth against valid Activiti user credentials.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://www.activiti.org/userguide/
     baseURL: https://your-activiti-host/activiti-rest/service
     tags:
@@ -56,7 +56,7 @@ apis:
       It exposes endpoints for process instances, tasks, variables, and
       integration with cloud connectors. Requires the ACTIVITI_USER role for
       interaction via the TaskRuntime API.
-    image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     humanURL: https://activiti.gitbook.io/activiti-7-developers-guide/components/activiti-cloud-application/runtime-bundle
     baseURL: https://your-activiti-cloud-host/rb
     tags:
