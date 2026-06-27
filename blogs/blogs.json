@@ -3,13 +3,12 @@
   "feeds": [
     {
       "source": "https://github.com/Activiti/Activiti/wiki/Articles-and-Blogs-on-Activiti",
-      "feed_url": "https://github.com/Activiti/Activiti/wiki/Articles-and-Blogs-on-Activiti",
-      "title": "Articles and Blogs on Activiti",
+      "feed_url": "",
       "saved": 0,
-      "method": "html",
-      "note": "No RSS/Atom feed; HTML wiki page is a curated list of third-party articles (2010-2018), all older than the prior fetched cutoff. No new posts."
+      "method": "agent-scrape"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-21T17:00:00Z"
+  "fetched": "2026-06-27T12:21:46Z",
+  "agent_pulled": "2026-06-27"
 }

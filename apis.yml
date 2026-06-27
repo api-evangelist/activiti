@@ -92,7 +92,7 @@ common:
     url: https://x.com/activiti
   - type: StackOverflow
     url: https://stackoverflow.com/questions/tagged/activiti
-  - type: Forum
+  - type: Forums
     url: https://community.alfresco.com/community/bpm
   - type: RoadMap
     url: https://github.com/Activiti/Activiti/wiki/Activiti-7-Roadmap
