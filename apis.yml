@@ -74,6 +74,10 @@ apis:
       - FN: Activiti Community
         email: activiti-community@alfresco.com
 common:
+  - type: DomainSecurity
+    url: security/activiti-domain-security.yml
+  - type: Authentication
+    url: authentication/activiti-authentication.yml
   - type: Website
     url: https://www.activiti.org/
   - type: Documentation

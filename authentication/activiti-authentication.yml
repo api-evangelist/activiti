@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/activiti-rest-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: basicAuth
+  type: http
+  scheme: basic
+  description: HTTP Basic Authentication using valid Activiti user credentials
+  sources:
+  - openapi/activiti-rest-openapi.yml
