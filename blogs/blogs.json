@@ -2,13 +2,14 @@
   "repo": "activiti",
   "feeds": [
     {
-      "source": "https://github.com/Activiti/Activiti/wiki/Articles-and-Blogs-on-Activiti",
-      "feed_url": "",
+      "source": "https://github.com/Activiti/Activiti",
+      "feed_url": "https://github.com/Activiti/Activiti",
+      "title": "",
       "saved": 0,
-      "method": "agent-scrape"
+      "method": "none"
     }
   ],
   "post_count": 0,
-  "fetched": "2026-06-27T12:21:46Z",
+  "fetched": "2026-07-11T11:50:51Z",
   "agent_pulled": "2026-06-27"
 }
