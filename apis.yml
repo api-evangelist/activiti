@@ -74,6 +74,8 @@ apis:
       - FN: Activiti Community
         email: activiti-community@alfresco.com
 common:
+  - type: AgenticAccess
+    url: agentic-access/activiti-agentic-access.yml
   - type: DomainSecurity
     url: security/activiti-domain-security.yml
   - type: Authentication
