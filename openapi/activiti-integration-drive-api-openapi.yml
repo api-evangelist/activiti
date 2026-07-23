@@ -1,0 +1,109 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About Integration Drive API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: Integration Drive
+  description: Manage Google Drive Integration
+paths:
+  /api/enterprise/integration/google-drive/confirm-auth-request:
+    get:
+      tags:
+      - Integration Drive
+      summary: Drive Authorization
+      description: Returns Drive Oauth HTML Page
+      operationId: confirmAuthorisationUsingGET_2
+      parameters:
+      - name: code
+        in: query
+        description: code
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/integration/google-drive/files:
+    get:
+      tags:
+      - Integration Drive
+      summary: List file & folders
+      operationId: getFilesUsingGET_1
+      parameters:
+      - name: filter
+        in: query
+        description: filter
+        required: false
+        schema:
+          type: string
+      - name: parent
+        in: query
+        description: parent
+        required: false
+        schema:
+          type: string
+      - name: currentFolderOnly
+        in: query
+        description: currentFolderOnly
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    AbstractRepresentation: {}
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials

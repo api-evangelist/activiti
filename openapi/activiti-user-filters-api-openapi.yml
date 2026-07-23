@@ -1,0 +1,454 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About User Filters API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: User Filters
+  description: Manage Task & Process Filters
+paths:
+  /api/enterprise/filters/processes:
+    get:
+      tags:
+      - User Filters
+      summary: Retrieve list of taks filters
+      operationId: getUserProcessInstanceFiltersUsingGET
+      parameters:
+      - name: appId
+        in: query
+        description: appId
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - User Filters
+      summary: Create a user process instance task filter
+      operationId: createUserProcessInstanceFilterUsingPOST
+      requestBody:
+        description: userProcessInstanceFilterRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserProcessInstanceFilterRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProcessInstanceFilterRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - User Filters
+      summary: To order the list of user process instance filters
+      operationId: orderUserProcessInstanceFiltersUsingPUT
+      requestBody:
+        description: filterOrderRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserFilterOrderRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/filters/processes/{userFilterId}:
+    get:
+      tags:
+      - User Filters
+      summary: Get a specific user process instance task filter
+      operationId: getUserProcessInstanceFilterUsingGET
+      parameters:
+      - name: userFilterId
+        in: path
+        description: userFilterId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProcessInstanceFilterRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - User Filters
+      summary: Update a user process instance task filter
+      operationId: updateUserProcessInstanceFilterUsingPUT
+      parameters:
+      - name: userFilterId
+        in: path
+        description: userFilterId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: userProcessInstanceFilterRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserProcessInstanceFilterRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserProcessInstanceFilterRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+      - User Filters
+      summary: Delete a user process instance task filter
+      operationId: deleteUserProcessInstanceFilterUsingDELETE
+      parameters:
+      - name: userFilterId
+        in: path
+        description: userFilterId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /api/enterprise/filters/tasks:
+    get:
+      tags:
+      - User Filters
+      summary: Retrieve list of task filters
+      operationId: getUserTaskFiltersUsingGET
+      parameters:
+      - name: appId
+        in: query
+        description: appId
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - User Filters
+      summary: Create a new task filter
+      operationId: createUserTaskFilterUsingPOST
+      requestBody:
+        description: userTaskFilterRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserTaskFilterRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserTaskFilterRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - User Filters
+      summary: To order the list of user task filters
+      operationId: orderUserTaskFiltersUsingPUT
+      requestBody:
+        description: filterOrderRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserFilterOrderRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/filters/tasks/{userFilterId}:
+    get:
+      tags:
+      - User Filters
+      summary: Get a specific task filter
+      operationId: getUserTaskFilterUsingGET
+      parameters:
+      - name: userFilterId
+        in: path
+        description: userFilterId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserTaskFilterRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - User Filters
+      summary: Update a specific task filter
+      operationId: updateUserTaskFilterUsingPUT
+      parameters:
+      - name: userFilterId
+        in: path
+        description: userFilterId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: userTaskFilterRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserTaskFilterRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserTaskFilterRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+      - User Filters
+      summary: Delete a task filter
+      operationId: deleteUserTaskFilterUsingDELETE
+      parameters:
+      - name: userFilterId
+        in: path
+        description: userFilterId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+components:
+  schemas:
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    AbstractRepresentation: {}
+    UserTaskFilterRepresentation:
+      properties:
+        appId:
+          type: integer
+          format: int64
+        filter:
+          $ref: '#/components/schemas/TaskFilterRepresentation'
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        index:
+          type: integer
+          format: int32
+        name:
+          type: string
+        recent:
+          type: boolean
+    UserFilterOrderRepresentation:
+      properties:
+        appId:
+          type: integer
+          format: int64
+        order:
+          type: array
+          items:
+            type: integer
+            format: int64
+    ProcessInstanceFilterRepresentation:
+      properties:
+        asc:
+          type: boolean
+        name:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        sort:
+          type: string
+        state:
+          type: string
+    TaskFilterRepresentation:
+      properties:
+        asc:
+          type: boolean
+        assignment:
+          type: string
+        dueAfter:
+          type: string
+          format: date-time
+        dueBefore:
+          type: string
+          format: date-time
+        name:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        sort:
+          type: string
+        state:
+          type: string
+    UserProcessInstanceFilterRepresentation:
+      properties:
+        appId:
+          type: integer
+          format: int64
+        filter:
+          $ref: '#/components/schemas/ProcessInstanceFilterRepresentation'
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        index:
+          type: integer
+          format: int32
+        name:
+          type: string
+        recent:
+          type: boolean
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials

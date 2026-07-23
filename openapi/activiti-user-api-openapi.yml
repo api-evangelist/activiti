@@ -1,0 +1,385 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About User API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: User
+  description: Retrieve Users
+paths:
+  /api/enterprise/idm/passwords:
+    post:
+      tags:
+      - User
+      summary: 'Request password reset '
+      operationId: requestPasswordResetUsingPOST
+      requestBody:
+        description: resetPassword
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResetPasswordRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/users:
+    get:
+      tags:
+      - User
+      summary: List users
+      description: A common use case is that a user wants to select another user (eg. when assigning a task) or group.
+      operationId: getUsersUsingGET_2
+      parameters:
+      - name: filter
+        in: query
+        description: filter
+        required: false
+        schema:
+          type: string
+      - name: email
+        in: query
+        description: email
+        required: false
+        schema:
+          type: string
+      - name: externalId
+        in: query
+        description: externalId
+        required: false
+        schema:
+          type: string
+      - name: externalIdCaseInsensitive
+        in: query
+        description: externalIdCaseInsensitive
+        required: false
+        schema:
+          type: string
+      - name: excludeTaskId
+        in: query
+        description: excludeTaskId
+        required: false
+        schema:
+          type: string
+      - name: excludeProcessId
+        in: query
+        description: excludeProcessId
+        required: false
+        schema:
+          type: string
+      - name: groupId
+        in: query
+        description: groupId
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: tenantId
+        in: query
+        description: tenantId
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/users/{userId}:
+    get:
+      tags:
+      - User
+      summary: Retrieve user information
+      operationId: getUserUsingGET_2
+      parameters:
+      - name: userId
+        in: path
+        description: userId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - User
+      summary: Execute an action for a specific user
+      description: Typical action is updating/reset password
+      operationId: executeActionUsingPOST
+      parameters:
+      - name: userId
+        in: path
+        description: userId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: actionRequest
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserActionRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - User
+      summary: Update user information
+      operationId: updateUserUsingPUT
+      parameters:
+      - name: userId
+        in: path
+        description: userId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: userRequest
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/users/{userId}/picture:
+    get:
+      tags:
+      - User
+      summary: Retrieve user profile picture
+      operationId: getProfilePictureUsingGET_1
+      parameters:
+      - name: userId
+        in: path
+        description: userId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    UserRepresentation:
+      properties:
+        apps:
+          type: array
+          items:
+            $ref: '#/components/schemas/LightAppRepresentation'
+        capabilities:
+          type: array
+          items:
+            type: string
+        company:
+          type: string
+        created:
+          type: string
+          format: date-time
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        fullname:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupRepresentation'
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        lastUpdate:
+          type: string
+          format: date-time
+        latestSyncTimeStamp:
+          type: string
+          format: date-time
+        password:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+        status:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        tenantName:
+          type: string
+        tenantPictureId:
+          type: integer
+          format: int64
+        type:
+          type: string
+    UserActionRepresentation:
+      properties:
+        action:
+          type: string
+        newPassword:
+          type: string
+        oldPassword:
+          type: string
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    AbstractRepresentation: {}
+    GroupRepresentation:
+      properties:
+        capabilities:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupCapabilityRepresentation'
+        externalId:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupRepresentation'
+        id:
+          type: integer
+          format: int64
+        lastSyncTimeStamp:
+          type: string
+          format: date-time
+        name:
+          type: string
+        parentGroupId:
+          type: integer
+          format: int64
+        status:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        type:
+          type: integer
+          format: int32
+        userCount:
+          type: integer
+          format: int64
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserRepresentation'
+    GroupCapabilityRepresentation:
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    ResetPasswordRepresentation:
+      properties:
+        email:
+          type: string
+    LightAppRepresentation:
+      properties:
+        description:
+          type: string
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        theme:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials

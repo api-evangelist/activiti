@@ -1,0 +1,340 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About Task Actions API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: Task Actions
+  description: Manage Task Actions
+paths:
+  /api/enterprise/tasks/{taskId}/action/assign:
+    put:
+      tags:
+      - Task Actions
+      summary: Assign a task to a user
+      operationId: assignTaskUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: requestNode
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjectNode'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/action/attach-form:
+    put:
+      tags:
+      - Task Actions
+      summary: Attach a form to a task
+      operationId: attachFormUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: requestNode
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjectNode'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/action/claim:
+    put:
+      tags:
+      - Task Actions
+      summary: Claim a task
+      description: To claim a task (in case the task is assigned to a group)
+      operationId: claimTaskUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/action/complete:
+    put:
+      tags:
+      - Task Actions
+      summary: Complete Task
+      description: To complete a task (standalone or without a task form)
+      operationId: completeTaskUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/action/involve:
+    put:
+      tags:
+      - Task Actions
+      summary: To involve a user with a task
+      operationId: involveUserUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: requestNode
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjectNode'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/action/remove-form:
+    delete:
+      tags:
+      - Task Actions
+      summary: Remove a form to a task
+      operationId: removeFormUsingDELETE
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /api/enterprise/tasks/{taskId}/action/remove-involved:
+    put:
+      tags:
+      - Task Actions
+      summary: Remove an involved user from a task
+      operationId: removeInvolvedUserUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: requestNode
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjectNode'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/action/unclaim:
+    put:
+      tags:
+      - Task Actions
+      summary: Unclaim a task
+      description: To unclaim a task (in case the task was assigned to a group)
+      operationId: unclaimTaskUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    TaskRepresentation:
+      properties:
+        adhocTaskCanBeReassigned:
+          type: boolean
+        assignee:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        category:
+          type: string
+        created:
+          type: string
+          format: date-time
+        description:
+          type: string
+        dueDate:
+          type: string
+          format: date-time
+        duration:
+          type: integer
+          format: int64
+        endDate:
+          type: string
+          format: date-time
+        formKey:
+          type: string
+        id:
+          type: string
+        initiatorCanCompleteTask:
+          type: boolean
+        involvedPeople:
+          type: array
+          items:
+            $ref: '#/components/schemas/LightUserRepresentation'
+        memberOfCandidateGroup:
+          type: boolean
+        memberOfCandidateUsers:
+          type: boolean
+        name:
+          type: string
+        parentTaskId:
+          type: string
+        parentTaskName:
+          type: string
+        priority:
+          type: integer
+          format: int32
+        processDefinitionCategory:
+          type: string
+        processDefinitionDeploymentId:
+          type: string
+        processDefinitionDescription:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        processDefinitionVersion:
+          type: integer
+          format: int32
+        processInstanceId:
+          type: string
+        processInstanceName:
+          type: string
+        processInstanceStartUserId:
+          type: string
+    ObjectNode: {}
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials

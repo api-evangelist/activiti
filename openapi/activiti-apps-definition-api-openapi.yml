@@ -1,0 +1,204 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About Apps Definition API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: Apps Definition
+  description: Manage App Definition
+paths:
+  /api/enterprise/app-definitions/import:
+    post:
+      tags:
+      - Apps Definition
+      summary: Import App Definition
+      description: This is useful to bootstrap an environment (for users or continous integration).
+      operationId: importAppDefinitionUsingPOST
+      parameters:
+      - name: file
+        in: formData
+        description: file
+        required: true
+        schema:
+          type: file
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppDefinitionRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/app-definitions/{modelId}/export:
+    get:
+      tags:
+      - Apps Definition
+      summary: Export App Definition
+      description: This will return a zip file containing the app definition model and all related models (process definitions and forms).
+      operationId: exportAppDefinitionUsingGET
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId from a runtime app or the id of an app definition model
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/app-definitions/{modelId}/import:
+    post:
+      tags:
+      - Apps Definition
+      summary: Import App
+      description: To import an app to an existing app definition to create a new version instead of importing a new app definition.
+      operationId: importAppDefinitionUsingPOST_1
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: file
+        in: formData
+        description: file
+        required: true
+        schema:
+          type: file
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppDefinitionRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/app-definitions/{modelId}/publish:
+    post:
+      tags:
+      - Apps Definition
+      summary: Publish App
+      description: Before an app model can be used, it need to be published
+      operationId: publishAppDefinitionUsingPOST
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: publishModel
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AppDefinitionPublishRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AppDefinitionUpdateResultRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    AppDefinitionRepresentation:
+      properties:
+        defaultAppId:
+          type: string
+        deploymentId:
+          type: string
+        description:
+          type: string
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        modelId:
+          type: integer
+          format: int64
+        name:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        theme:
+          type: string
+    AppDefinitionUpdateResultRepresentation:
+      properties:
+        appDefinition:
+          $ref: '#/components/schemas/AppDefinitionRepresentation'
+        customData:
+          type: object
+        error:
+          type: boolean
+        errorDescription:
+          type: string
+        errorType:
+          type: integer
+          format: int32
+        message:
+          type: string
+        messageKey:
+          type: string
+    AppDefinitionPublishRepresentation:
+      properties:
+        comment:
+          type: string
+        force:
+          type: boolean
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials

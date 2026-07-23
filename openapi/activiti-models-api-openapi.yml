@@ -1,0 +1,534 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About Models API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: Models
+  description: Api Model Resource
+paths:
+  /api/enterprise/models:
+    get:
+      tags:
+      - Models
+      summary: List models (process, form, decision rule or app)
+      operationId: getModelsUsingGET
+      parameters:
+      - name: filter
+        in: query
+        description: filter
+        required: false
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: sort
+        required: false
+        schema:
+          type: string
+      - name: modelType
+        in: query
+        description: modelType
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: referenceId
+        in: query
+        description: referenceId
+        required: false
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - Models
+      summary: To create a new model
+      operationId: createModelUsingPOST
+      requestBody:
+        description: modelRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/models-for-app-definition:
+    get:
+      tags:
+      - Models
+      summary: TODO
+      operationId: getModelsToIncludeInAppDefinitionUsingGET
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/models/{modelId}:
+    get:
+      tags:
+      - Models
+      summary: To retrieve details about a particular model (process, form, decision rule or app)
+      operationId: getModelUsingGET
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: includePermissions
+        in: query
+        description: includePermissions
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - Models
+      summary: Edit a specific model
+      operationId: updateModelUsingPUT
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: updatedModel
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+      - Models
+      summary: Delete a model
+      operationId: deleteModelUsingDELETE
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: cascade
+        in: query
+        description: cascade
+        required: false
+        schema:
+          type: boolean
+      - name: deleteRuntimeApp
+        in: query
+        description: deleteRuntimeApp
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /api/enterprise/models/{modelId}/clone:
+    post:
+      tags:
+      - Models
+      summary: To duplicate an existing model
+      operationId: duplicateModelUsingPOST
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: modelRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ModelRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/models/{modelId}/editor/json:
+    get:
+      tags:
+      - Models
+      summary: Get the JSON model
+      operationId: getModelJSONUsingGET
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ObjectNode'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - Models
+      summary: Save the JSON model
+      operationId: saveModelUsingPOST
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                $ref: '#/components/schemas/List'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/models/{modelId}/editor/validate:
+    post:
+      tags:
+      - Models
+      summary: Validate the JSON model
+      operationId: validateModelUsingPOST
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: values
+        content:
+          application/json:
+            schema:
+              type: object
+              additionalProperties:
+                $ref: '#/components/schemas/List'
+        required: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ValidationErrorRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/models/{modelId}/newversion:
+    post:
+      tags:
+      - Models
+      summary: Create a new model version
+      operationId: importNewVersionUsingPOST
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: file
+        in: formData
+        description: file
+        required: true
+        schema:
+          type: file
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/models/{modelId}/thumbnail:
+    get:
+      tags:
+      - Models
+      summary: Get Model thumbnail
+      operationId: getModelThumbnailUsingGET
+      parameters:
+      - name: modelId
+        in: path
+        description: modelId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                  format: byte
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/process-models/import:
+    post:
+      tags:
+      - Models
+      summary: To import a BPMN 2.0 xml file
+      operationId: importProcessModelUsingPOST
+      parameters:
+      - name: file
+        in: formData
+        description: file
+        required: true
+        schema:
+          type: file
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ModelRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    ModelRepresentation:
+      properties:
+        comment:
+          type: string
+        createdBy:
+          type: integer
+          format: int64
+        createdByFullName:
+          type: string
+        description:
+          type: string
+        favorite:
+          type: boolean
+        id:
+          type: integer
+          format: int64
+        lastUpdated:
+          type: string
+          format: date-time
+        lastUpdatedBy:
+          type: integer
+          format: int64
+        lastUpdatedByFullName:
+          type: string
+        latestVersion:
+          type: boolean
+        modelType:
+          type: integer
+          format: int32
+        name:
+          type: string
+        permission:
+          type: string
+        referenceId:
+          type: integer
+          format: int64
+        stencilSet:
+          type: integer
+          format: int64
+        version:
+          type: integer
+          format: int32
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    AbstractRepresentation: {}
+    ValidationErrorRepresentation:
+      properties:
+        defaultDescription:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        problem:
+          type: string
+        problemReference:
+          type: string
+        validatorSetName:
+          type: string
+        warning:
+          type: boolean
+    ObjectNode: {}
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials

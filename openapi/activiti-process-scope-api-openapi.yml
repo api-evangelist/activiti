@@ -1,0 +1,266 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About Process Scope API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: Process Scope
+  description: Api Process Scope Resource
+paths:
+  /api/enterprise/process-scopes:
+    post:
+      tags:
+      - Process Scope
+      summary: getRuntimeProcessScopes
+      operationId: getRuntimeProcessScopesUsingPOST
+      requestBody:
+        description: processScopesRequest
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProcessScopesRequestRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/ProcessScopeRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    ProcessScopeRepresentation:
+      properties:
+        activityIds:
+          type: array
+          items:
+            type: string
+        activityIdsByCollapsedSubProcessIdMap:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        activityIdsByDecisionTableIdMap:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        activityIdsByFormIdMap:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        activityIdsWithExcludedSubProcess:
+          type: array
+          items:
+            type: string
+        customStencilVariables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        entityVariables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        executionVariables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        fieldToVariableMappings:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        forms:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormScopeRepresentation'
+        metadataVariables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        modelId:
+          type: integer
+          format: int64
+        processModelType:
+          type: integer
+          format: int32
+        responseVariables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    ConditionRepresentation:
+      properties:
+        leftFormFieldId:
+          type: string
+        leftRestResponseId:
+          type: string
+        nextConditionOperator:
+          type: string
+        operator:
+          type: string
+        rightFormFieldId:
+          type: string
+        rightRestResponseId:
+          type: string
+        rightType:
+          type: string
+        rightValue:
+          type: object
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    FormScopeRepresentation:
+      properties:
+        description:
+          type: string
+        fieldVariables:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormFieldRepresentation'
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormFieldRepresentation'
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        outcomes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormOutcomeRepresentation'
+    LayoutRepresentation:
+      properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    ProcessScopesRequestRepresentation:
+      properties:
+        identifiers:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessScopeIdentifierRepresentation'
+        overriddenModel:
+          type: string
+    ProcessScopeIdentifierRepresentation:
+      properties:
+        processActivityId:
+          type: string
+        processModelId:
+          type: integer
+          format: int64
+    FormFieldRepresentation:
+      properties:
+        className:
+          type: string
+        col:
+          type: integer
+          format: int32
+        colspan:
+          type: integer
+          format: int32
+        hasEmptyValue:
+          type: boolean
+        id:
+          type: string
+        layout:
+          $ref: '#/components/schemas/LayoutRepresentation'
+        maxLength:
+          type: integer
+          format: int32
+        maxValue:
+          type: string
+        minLength:
+          type: integer
+          format: int32
+        minValue:
+          type: string
+        name:
+          type: string
+        optionType:
+          type: string
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/OptionRepresentation'
+        overrideId:
+          type: boolean
+        params:
+          type: object
+        placeholder:
+          type: string
+        readOnly:
+          type: boolean
+        regexPattern:
+          type: string
+        required:
+          type: boolean
+        restIdProperty:
+          type: string
+        restLabelProperty:
+          type: string
+        restResponsePath:
+          type: string
+        restUrl:
+          type: string
+        row:
+          type: integer
+          format: int32
+        sizeX:
+          type: integer
+          format: int32
+        sizeY:
+          type: integer
+          format: int32
+        tab:
+          type: string
+        type:
+          type: string
+        value:
+          type: object
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials

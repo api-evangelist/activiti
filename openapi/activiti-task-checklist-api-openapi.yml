@@ -1,0 +1,226 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About Task CheckList API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: Task CheckList
+  description: Manage CheckList
+paths:
+  /api/enterprise/tasks/{taskId}/checklist:
+    get:
+      tags:
+      - Task CheckList
+      summary: Retrieve Checklist added to a task
+      operationId: getChecklistUsingGET
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - Task CheckList
+      summary: Create a task checklist
+      operationId: addSubtaskUsingPOST
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: taskRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - Task CheckList
+      summary: Change the order of items on a checklist
+      operationId: orderChecklistUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: orderRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChecklistOrderRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    TaskRepresentation:
+      properties:
+        adhocTaskCanBeReassigned:
+          type: boolean
+        assignee:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        category:
+          type: string
+        created:
+          type: string
+          format: date-time
+        description:
+          type: string
+        dueDate:
+          type: string
+          format: date-time
+        duration:
+          type: integer
+          format: int64
+        endDate:
+          type: string
+          format: date-time
+        formKey:
+          type: string
+        id:
+          type: string
+        initiatorCanCompleteTask:
+          type: boolean
+        involvedPeople:
+          type: array
+          items:
+            $ref: '#/components/schemas/LightUserRepresentation'
+        memberOfCandidateGroup:
+          type: boolean
+        memberOfCandidateUsers:
+          type: boolean
+        name:
+          type: string
+        parentTaskId:
+          type: string
+        parentTaskName:
+          type: string
+        priority:
+          type: integer
+          format: int32
+        processDefinitionCategory:
+          type: string
+        processDefinitionDeploymentId:
+          type: string
+        processDefinitionDescription:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        processDefinitionVersion:
+          type: integer
+          format: int32
+        processInstanceId:
+          type: string
+        processInstanceName:
+          type: string
+        processInstanceStartUserId:
+          type: string
+    AbstractRepresentation: {}
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+    ChecklistOrderRepresentation:
+      properties:
+        order:
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials

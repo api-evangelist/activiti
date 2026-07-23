@@ -1,0 +1,108 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About IDM Sync API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: IDM Sync
+  description: Api Idm Sync Log Entry Resource
+paths:
+  /api/enterprise/idm-sync-log-entries:
+    get:
+      tags:
+      - IDM Sync
+      summary: getSyncLogEntries
+      operationId: getSyncLogEntriesUsingGET
+      parameters:
+      - name: tenantId
+        in: query
+        description: tenantId
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: page
+        in: query
+        description: page
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: size
+        in: query
+        description: size
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/SyncLogEntryRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/idm-sync-log-entries/{syncLogEntryId}/logfile:
+    get:
+      tags:
+      - IDM Sync
+      summary: getLogFile
+      operationId: getLogFileUsingGET
+      parameters:
+      - name: syncLogEntryId
+        in: path
+        description: syncLogEntryId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    SyncLogEntryRepresentation:
+      properties:
+        id:
+          type: integer
+          format: int64
+        timeStamp:
+          type: string
+          format: date-time
+        type:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials

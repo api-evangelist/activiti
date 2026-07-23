@@ -1,0 +1,1244 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About Task API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: Task
+  description: Manage Tasks
+paths:
+  /api/enterprise/task-forms/{taskId}:
+    get:
+      tags:
+      - Task
+      summary: Retrieve Task Form
+      operationId: getTaskFormUsingGET
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FormDefinitionRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - Task
+      summary: Complete a Task Form
+      operationId: completeTaskFormUsingPOST
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: completeTaskFormRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CompleteFormRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/task-forms/{taskId}/form-values/{field}:
+    get:
+      tags:
+      - Task
+      summary: Retrieve Populated Field Values
+      description: Form field values that are populated through a REST backend, can be retrieved via this service
+      operationId: getRestFieldValuesUsingGET_2
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      - name: field
+        in: path
+        description: field
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FormValueRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/task-forms/{taskId}/form-values/{field}/{column}:
+    get:
+      tags:
+      - Task
+      summary: Retrieve Column Field Values
+      description: Specific case to retrieve information on a specific column
+      operationId: getRestFieldValuesUsingGET_1
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      - name: field
+        in: path
+        description: field
+        required: true
+        schema:
+          type: string
+      - name: column
+        in: path
+        description: column
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/FormValueRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/task-forms/{taskId}/save-form:
+    post:
+      tags:
+      - Task
+      summary: Save Task Form
+      operationId: saveTaskFormUsingPOST
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: saveTaskFormRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SaveFormRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks:
+    post:
+      tags:
+      - Task
+      summary: Create a Standalone Task
+      description: Standalone Task is not associated with a process instance. You can define only task name & description
+      operationId: createNewTaskUsingPOST
+      requestBody:
+        description: taskRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/filter:
+    post:
+      tags:
+      - Task
+      summary: Filter list of Task
+      operationId: filterTasksUsingPOST
+      requestBody:
+        description: requestNode
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskFilterRequestRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/query:
+    post:
+      tags:
+      - Task
+      summary: List Task
+      operationId: listTasksUsingPOST
+      requestBody:
+        description: requestNode
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjectNode'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}:
+    get:
+      tags:
+      - Task
+      summary: Task Details
+      operationId: getTaskUsingGET
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - Task
+      summary: Update Task Details
+      description: You can edit only name, description and dueDate (ISO 8601 string).
+      operationId: updateTaskUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: updated
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskUpdateRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+      - Task
+      summary: Delete a Task
+      operationId: deleteTaskUsingDELETE
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /api/enterprise/tasks/{taskId}/action/assign:
+    put:
+      tags:
+      - Task
+      summary: Assign a task to a user
+      operationId: assignTaskUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: requestNode
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjectNode'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/action/attach-form:
+    put:
+      tags:
+      - Task
+      summary: Attach a form to a task
+      operationId: attachFormUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: requestNode
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjectNode'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/action/claim:
+    put:
+      tags:
+      - Task
+      summary: Claim a task
+      description: To claim a task (in case the task is assigned to a group)
+      operationId: claimTaskUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/action/complete:
+    put:
+      tags:
+      - Task
+      summary: Complete Task
+      description: To complete a task (standalone or without a task form)
+      operationId: completeTaskUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/action/involve:
+    put:
+      tags:
+      - Task
+      summary: To involve a user with a task
+      operationId: involveUserUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: requestNode
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjectNode'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/action/remove-form:
+    delete:
+      tags:
+      - Task
+      summary: Remove a form to a task
+      operationId: removeFormUsingDELETE
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /api/enterprise/tasks/{taskId}/action/remove-involved:
+    put:
+      tags:
+      - Task
+      summary: Remove an involved user from a task
+      operationId: removeInvolvedUserUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: requestNode
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ObjectNode'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/action/unclaim:
+    put:
+      tags:
+      - Task
+      summary: Unclaim a task
+      description: To unclaim a task (in case the task was assigned to a group)
+      operationId: unclaimTaskUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/checklist:
+    get:
+      tags:
+      - Task
+      summary: Retrieve Checklist added to a task
+      operationId: getChecklistUsingGET
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - Task
+      summary: Create a task checklist
+      operationId: addSubtaskUsingPOST
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: taskRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TaskRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TaskRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - Task
+      summary: Change the order of items on a checklist
+      operationId: orderChecklistUsingPUT
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: orderRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChecklistOrderRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/comments:
+    get:
+      tags:
+      - Task
+      summary: Comment list added to Task
+      operationId: getTaskCommentsUsingGET
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      - name: latestFirst
+        in: query
+        description: latestFirst
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - Task
+      summary: Add a comment to a Task
+      operationId: addTaskCommentUsingPOST
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: commentRequest
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommentRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommentRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/content:
+    get:
+      tags:
+      - Task
+      summary: Retrieve which content is attached to a task
+      operationId: getRelatedContentForTaskUsingGET
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - Task
+      summary: To relate content (eg from Alfresco) to a task
+      operationId: createRelatedContentOnTaskUsingPOST
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      - name: isRelatedContent
+        in: query
+        description: isRelatedContent
+        required: false
+        schema:
+          type: boolean
+      requestBody:
+        description: relatedContent
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RelatedContentRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RelatedContentRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/raw-content:
+    post:
+      tags:
+      - Task
+      summary: Upload content to a task
+      operationId: createRelatedContentOnTaskUsingPOST_1
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      - name: file
+        in: formData
+        description: file
+        required: true
+        schema:
+          type: file
+      - name: isRelatedContent
+        in: query
+        description: isRelatedContent
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RelatedContentRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    SaveFormRepresentation:
+      properties:
+        values:
+          type: object
+    CompleteFormRepresentation:
+      properties:
+        outcome:
+          type: string
+        values:
+          type: object
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+    ObjectNode: {}
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
+    AbstractRepresentation: {}
+    TaskRepresentation:
+      properties:
+        adhocTaskCanBeReassigned:
+          type: boolean
+        assignee:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        category:
+          type: string
+        created:
+          type: string
+          format: date-time
+        description:
+          type: string
+        dueDate:
+          type: string
+          format: date-time
+        duration:
+          type: integer
+          format: int64
+        endDate:
+          type: string
+          format: date-time
+        formKey:
+          type: string
+        id:
+          type: string
+        initiatorCanCompleteTask:
+          type: boolean
+        involvedPeople:
+          type: array
+          items:
+            $ref: '#/components/schemas/LightUserRepresentation'
+        memberOfCandidateGroup:
+          type: boolean
+        memberOfCandidateUsers:
+          type: boolean
+        name:
+          type: string
+        parentTaskId:
+          type: string
+        parentTaskName:
+          type: string
+        priority:
+          type: integer
+          format: int32
+        processDefinitionCategory:
+          type: string
+        processDefinitionDeploymentId:
+          type: string
+        processDefinitionDescription:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        processDefinitionVersion:
+          type: integer
+          format: int32
+        processInstanceId:
+          type: string
+        processInstanceName:
+          type: string
+        processInstanceStartUserId:
+          type: string
+    TaskFilterRepresentation:
+      properties:
+        asc:
+          type: boolean
+        assignment:
+          type: string
+        dueAfter:
+          type: string
+          format: date-time
+        dueBefore:
+          type: string
+          format: date-time
+        name:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        sort:
+          type: string
+        state:
+          type: string
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    TaskUpdateRepresentation:
+      properties:
+        description:
+          type: string
+        descriptionSet:
+          type: boolean
+        dueDate:
+          type: string
+          format: date-time
+        dueDateSet:
+          type: boolean
+        name:
+          type: string
+        nameSet:
+          type: boolean
+    CommentRepresentation:
+      properties:
+        created:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        message:
+          type: string
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    FormFieldRepresentation:
+      properties:
+        className:
+          type: string
+        col:
+          type: integer
+          format: int32
+        colspan:
+          type: integer
+          format: int32
+        hasEmptyValue:
+          type: boolean
+        id:
+          type: string
+        layout:
+          $ref: '#/components/schemas/LayoutRepresentation'
+        maxLength:
+          type: integer
+          format: int32
+        maxValue:
+          type: string
+        minLength:
+          type: integer
+          format: int32
+        minValue:
+          type: string
+        name:
+          type: string
+        optionType:
+          type: string
+        options:
+          type: array
+          items:
+            $ref: '#/components/schemas/OptionRepresentation'
+        overrideId:
+          type: boolean
+        params:
+          type: object
+        placeholder:
+          type: string
+        readOnly:
+          type: boolean
+        regexPattern:
+          type: string
+        required:
+          type: boolean
+        restIdProperty:
+          type: string
+        restLabelProperty:
+          type: string
+        restResponsePath:
+          type: string
+        restUrl:
+          type: string
+        row:
+          type: integer
+          format: int32
+        sizeX:
+          type: integer
+          format: int32
+        sizeY:
+          type: integer
+          format: int32
+        tab:
+          type: string
+        type:
+          type: string
+        value:
+          type: object
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    FormDefinitionRepresentation:
+      properties:
+        className:
+          type: string
+        customFieldTemplates:
+          type: object
+          additionalProperties:
+            type: string
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormFieldRepresentation'
+        gridsterForm:
+          type: boolean
+        id:
+          type: integer
+          format: int64
+        javascriptEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        name:
+          type: string
+        outcomeTarget:
+          type: string
+        outcomes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormOutcomeRepresentation'
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        selectedOutcome:
+          type: string
+        style:
+          type: string
+        tabs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormTabRepresentation'
+        taskDefinitionKey:
+          type: string
+        taskId:
+          type: string
+        taskName:
+          type: string
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    RelatedContentRepresentation:
+      properties:
+        contentAvailable:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        link:
+          type: boolean
+        linkUrl:
+          type: string
+        mimeType:
+          type: string
+        name:
+          type: string
+        previewStatus:
+          type: string
+        simpleType:
+          type: string
+        source:
+          type: string
+        sourceId:
+          type: string
+        thumbnailStatus:
+          type: string
+    ConditionRepresentation:
+      properties:
+        leftFormFieldId:
+          type: string
+        leftRestResponseId:
+          type: string
+        nextConditionOperator:
+          type: string
+        operator:
+          type: string
+        rightFormFieldId:
+          type: string
+        rightRestResponseId:
+          type: string
+        rightType:
+          type: string
+        rightValue:
+          type: object
+    LayoutRepresentation:
+      properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    FormValueRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    TaskFilterRequestRepresentation:
+      properties:
+        appDefinitionId:
+          type: integer
+          format: int64
+        filter:
+          $ref: '#/components/schemas/TaskFilterRepresentation'
+        filterId:
+          type: integer
+          format: int64
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+    ChecklistOrderRepresentation:
+      properties:
+        order:
+          type: array
+          items:
+            type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials

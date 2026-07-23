@@ -1,0 +1,208 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About Comments API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: Comments
+  description: Manage Comments
+paths:
+  /api/enterprise/process-instances/{processInstanceId}/comments:
+    get:
+      tags:
+      - Comments
+      summary: Comment list added to Process
+      operationId: getProcessInstanceCommentsUsingGET
+      parameters:
+      - name: processInstanceId
+        in: path
+        description: processInstanceId
+        required: true
+        schema:
+          type: string
+      - name: latestFirst
+        in: query
+        description: latestFirst
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - Comments
+      summary: Add a comment to a Process
+      operationId: addProcessInstanceCommentUsingPOST
+      parameters:
+      - name: processInstanceId
+        in: path
+        description: processInstanceId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: commentRequest
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommentRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommentRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/tasks/{taskId}/comments:
+    get:
+      tags:
+      - Comments
+      summary: Comment list added to Task
+      operationId: getTaskCommentsUsingGET
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      - name: latestFirst
+        in: query
+        description: latestFirst
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - Comments
+      summary: Add a comment to a Task
+      operationId: addTaskCommentUsingPOST
+      parameters:
+      - name: taskId
+        in: path
+        description: taskId
+        required: true
+        schema:
+          type: string
+      requestBody:
+        description: commentRequest
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CommentRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CommentRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    CommentRepresentation:
+      properties:
+        created:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        message:
+          type: string
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+    AbstractRepresentation: {}
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials

@@ -1,0 +1,400 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About Admin Users API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: Admin Users
+  description: Manage Users
+paths:
+  /api/enterprise/admin/users:
+    get:
+      tags:
+      - Admin Users
+      summary: Get a list of users
+      operationId: getUsersUsingGET_1
+      parameters:
+      - name: filter
+        in: query
+        description: filter
+        required: false
+        schema:
+          type: string
+      - name: status
+        in: query
+        description: status
+        required: false
+        schema:
+          type: string
+      - name: accountType
+        in: query
+        description: accountType
+        required: false
+        schema:
+          type: string
+      - name: sort
+        in: query
+        description: sort
+        required: false
+        schema:
+          type: string
+      - name: company
+        in: query
+        description: company
+        required: false
+        schema:
+          type: string
+      - name: start
+        in: query
+        description: start
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: page
+        in: query
+        description: page
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: size
+        in: query
+        description: size
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: groupId
+        in: query
+        description: groupId
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: tenantId
+        in: query
+        description: tenantId
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: summary
+        in: query
+        description: summary
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - Admin Users
+      summary: Create a new user
+      operationId: createNewUserUsingPOST_1
+      requestBody:
+        description: userRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - Admin Users
+      summary: Bulk Update a list of users
+      operationId: bulkUpdateUsersUsingPUT_1
+      requestBody:
+        description: update
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/BulkUserUpdateRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/admin/users/{userId}:
+    get:
+      tags:
+      - Admin Users
+      summary: Retrieve user information
+      operationId: getUserUsingGET_1
+      parameters:
+      - name: userId
+        in: path
+        description: userId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: summary
+        in: query
+        description: summary
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AbstractUserRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - Admin Users
+      summary: Update user details
+      operationId: updateUserDetailsUsingPUT_1
+      parameters:
+      - name: userId
+        in: path
+        description: userId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: userRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    UserRepresentation:
+      properties:
+        apps:
+          type: array
+          items:
+            $ref: '#/components/schemas/LightAppRepresentation'
+        capabilities:
+          type: array
+          items:
+            type: string
+        company:
+          type: string
+        created:
+          type: string
+          format: date-time
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        fullname:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupRepresentation'
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        lastUpdate:
+          type: string
+          format: date-time
+        latestSyncTimeStamp:
+          type: string
+          format: date-time
+        password:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+        status:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        tenantName:
+          type: string
+        tenantPictureId:
+          type: integer
+          format: int64
+        type:
+          type: string
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    AbstractRepresentation: {}
+    BulkUserUpdateRepresentation:
+      properties:
+        accountType:
+          type: string
+        password:
+          type: string
+        sendNotifications:
+          type: boolean
+        status:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        users:
+          type: array
+          items:
+            type: integer
+            format: int64
+    AbstractUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+    GroupRepresentation:
+      properties:
+        capabilities:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupCapabilityRepresentation'
+        externalId:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupRepresentation'
+        id:
+          type: integer
+          format: int64
+        lastSyncTimeStamp:
+          type: string
+          format: date-time
+        name:
+          type: string
+        parentGroupId:
+          type: integer
+          format: int64
+        status:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        type:
+          type: integer
+          format: int32
+        userCount:
+          type: integer
+          format: int64
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserRepresentation'
+    GroupCapabilityRepresentation:
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    LightAppRepresentation:
+      properties:
+        description:
+          type: string
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        theme:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials

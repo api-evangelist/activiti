@@ -1,0 +1,702 @@
+openapi: 3.0.3
+info:
+  title: Activiti Public Rest About Admin Groups API
+  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  version: 1.4.0
+  contact:
+    name: Activiti Community
+    url: https://www.activiti.org/
+    email: activiti-community@alfresco.com
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+- url: https://{host}/activiti-app
+  description: Activiti BPM Server
+  variables:
+    host:
+      default: localhost:8080
+      description: The Activiti server host
+security:
+- basicAuth: []
+tags:
+- name: Admin Groups
+  description: Manage Endpoints
+paths:
+  /api/enterprise/admin/groups:
+    get:
+      tags:
+      - Admin Groups
+      summary: getGroups
+      operationId: getGroupsUsingGET_2
+      parameters:
+      - name: tenantId
+        in: query
+        description: tenantId
+        required: false
+        schema:
+          type: integer
+          format: int64
+      - name: functional
+        in: query
+        description: functional
+        required: false
+        schema:
+          type: boolean
+      - name: summary
+        in: query
+        description: summary
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LightGroupRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    post:
+      tags:
+      - Admin Groups
+      summary: createNewGroup
+      operationId: createNewGroupUsingPOST_1
+      requestBody:
+        description: groupRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/admin/groups/{groupId}:
+    get:
+      tags:
+      - Admin Groups
+      summary: getGroup
+      operationId: getGroupUsingGET_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: includeAllUsers
+        in: query
+        description: includeAllUsers
+        required: false
+        schema:
+          type: boolean
+      - name: summary
+        in: query
+        description: summary
+        required: false
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AbstractGroupRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    put:
+      tags:
+      - Admin Groups
+      summary: updateGroup
+      operationId: updateGroupUsingPUT_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: groupRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GroupRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GroupRepresentation'
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+      - Admin Groups
+      summary: deleteGroup
+      operationId: deleteGroupUsingDELETE_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /api/enterprise/admin/groups/{groupId}/action/activate:
+    post:
+      tags:
+      - Admin Groups
+      summary: activate
+      operationId: activateUsingPOST_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/admin/groups/{groupId}/add-all-users:
+    post:
+      tags:
+      - Admin Groups
+      summary: addAllUsersToGroup
+      operationId: addAllUsersToGroupUsingPOST_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/admin/groups/{groupId}/capabilities:
+    post:
+      tags:
+      - Admin Groups
+      summary: addGroupCapabilities
+      operationId: addGroupCapabilitiesUsingPOST_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      requestBody:
+        description: addGroupCapabilitiesRepresentation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddGroupCapabilitiesRepresentation'
+        required: true
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/admin/groups/{groupId}/capabilities/{groupCapabilityId}:
+    delete:
+      tags:
+      - Admin Groups
+      summary: deleteGroupCapability
+      operationId: deleteGroupCapabilityUsingDELETE_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: groupCapabilityId
+        in: path
+        description: groupCapabilityId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /api/enterprise/admin/groups/{groupId}/members/{userId}:
+    post:
+      tags:
+      - Admin Groups
+      summary: addGroupMember
+      operationId: addGroupMemberUsingPOST_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: userId
+        in: path
+        description: userId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+      - Admin Groups
+      summary: deleteGroupMember
+      operationId: deleteGroupMemberUsingDELETE_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: userId
+        in: path
+        description: userId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /api/enterprise/admin/groups/{groupId}/potential-capabilities:
+    get:
+      tags:
+      - Admin Groups
+      summary: getCapabilities
+      operationId: getCapabilitiesUsingGET_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/admin/groups/{groupId}/related-groups:
+    get:
+      tags:
+      - Admin Groups
+      summary: getRelatedGroups
+      operationId: getRelatedGroupsUsingGET_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/LightGroupRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+  /api/enterprise/admin/groups/{groupId}/related-groups/{relatedGroupId}:
+    post:
+      tags:
+      - Admin Groups
+      summary: addRelatedGroup
+      operationId: addRelatedGroupUsingPOST_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: relatedGroupId
+        in: path
+        description: relatedGroupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: type
+        in: query
+        description: type
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+        '201':
+          description: Created
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+    delete:
+      tags:
+      - Admin Groups
+      summary: deleteRelatedGroup
+      operationId: deleteRelatedGroupUsingDELETE_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: relatedGroupId
+        in: path
+        description: relatedGroupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      responses:
+        '200':
+          description: OK
+        '204':
+          description: No Content
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+  /api/enterprise/admin/groups/{groupId}/users:
+    get:
+      tags:
+      - Admin Groups
+      summary: getGroupUsers
+      operationId: getGroupUsersUsingGET_1
+      parameters:
+      - name: groupId
+        in: path
+        description: groupId
+        required: true
+        schema:
+          type: integer
+          format: int64
+      - name: filter
+        in: query
+        description: filter
+        required: false
+        schema:
+          type: string
+      - name: page
+        in: query
+        description: page
+        required: false
+        schema:
+          type: integer
+          format: int32
+      - name: pageSize
+        in: query
+        description: pageSize
+        required: false
+        schema:
+          type: integer
+          format: int32
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ResultListDataRepresentation'
+        '401':
+          description: Unauthorized
+        '403':
+          description: Forbidden
+        '404':
+          description: Not Found
+components:
+  schemas:
+    UserRepresentation:
+      properties:
+        apps:
+          type: array
+          items:
+            $ref: '#/components/schemas/LightAppRepresentation'
+        capabilities:
+          type: array
+          items:
+            type: string
+        company:
+          type: string
+        created:
+          type: string
+          format: date-time
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        fullname:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupRepresentation'
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        lastUpdate:
+          type: string
+          format: date-time
+        latestSyncTimeStamp:
+          type: string
+          format: date-time
+        password:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+        status:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        tenantName:
+          type: string
+        tenantPictureId:
+          type: integer
+          format: int64
+        type:
+          type: string
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    AbstractRepresentation: {}
+    AddGroupCapabilitiesRepresentation:
+      properties:
+        capabilities:
+          type: array
+          items:
+            type: string
+    LightGroupRepresentation:
+      properties:
+        externalId:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/LightGroupRepresentation'
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        status:
+          type: string
+    GroupRepresentation:
+      properties:
+        capabilities:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupCapabilityRepresentation'
+        externalId:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupRepresentation'
+        id:
+          type: integer
+          format: int64
+        lastSyncTimeStamp:
+          type: string
+          format: date-time
+        name:
+          type: string
+        parentGroupId:
+          type: integer
+          format: int64
+        status:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        type:
+          type: integer
+          format: int32
+        userCount:
+          type: integer
+          format: int64
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserRepresentation'
+    AbstractGroupRepresentation:
+      properties:
+        externalId:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        status:
+          type: string
+    GroupCapabilityRepresentation:
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    LightAppRepresentation:
+      properties:
+        description:
+          type: string
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        theme:
+          type: string
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: HTTP Basic Authentication using valid Activiti user credentials
