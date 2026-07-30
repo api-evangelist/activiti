@@ -8,7 +8,20 @@ description: >-
   historical data. Activiti Cloud extends the platform to cloud-native
   environments using Spring Boot, Docker, and Kubernetes.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/activiti.png
 url: https://raw.githubusercontent.com/api-evangelist/activiti/refs/heads/main/apis.yml
 created: 2026-06-13
 modified: 2026-06-13
@@ -23,56 +36,535 @@ tags:
   - Java
   - REST API
 apis:
-  - name: Activiti REST API
-    description: >-
-      The Activiti REST API enables integration with the Activiti BPM engine,
-      providing endpoints for managing deployments, process definitions, process
-      instances, tasks, executions, historical data, user and group identity
-      management, jobs, form data, and engine properties. Authentication uses
-      HTTP Basic Auth against valid Activiti user credentials.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://www.activiti.org/userguide/
-    baseURL: https://your-activiti-host/activiti-rest/service
-    tags:
-      - Process Definitions
-      - Process Instances
-      - Tasks
-      - Variables
-      - Deployments
-      - User Management
-      - Workflow
-    properties:
-      - type: Documentation
-        url: https://www.activiti.org/userguide/
-      - type: OpenAPI
-        url: https://github.com/Alfresco/activiti-client-sdk/blob/master/docs/swagger/ActivitiSwagger-1.4.json
-    contact:
-      - FN: Activiti Community
-        email: activiti-community@alfresco.com
-  - name: Activiti Cloud Runtime Bundle API
-    description: >-
-      The Activiti Cloud Runtime Bundle provides a cloud-native REST API for
-      executing BPMN 2.0 processes in a distributed, scalable environment.
-      It exposes endpoints for process instances, tasks, variables, and
-      integration with cloud connectors. Requires the ACTIVITI_USER role for
-      interaction via the TaskRuntime API.
-    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
-    humanURL: https://activiti.gitbook.io/activiti-7-developers-guide/components/activiti-cloud-application/runtime-bundle
-    baseURL: https://your-activiti-cloud-host/rb
-    tags:
-      - Cloud
-      - Runtime Bundle
-      - Process Instances
-      - Tasks
-      - Variables
-      - Spring Boot
-      - Kubernetes
-    properties:
-      - type: Documentation
-        url: https://activiti.gitbook.io/activiti-7-developers-guide/components/activiti-cloud-application/runtime-bundle
-    contact:
-      - FN: Activiti Community
-        email: activiti-community@alfresco.com
+- name: Activiti Cloud Runtime Bundle API
+  description: >-
+    The Activiti Cloud Runtime Bundle provides a cloud-native REST API for executing BPMN 2.0 processes
+    in a distributed, scalable environment. It exposes endpoints for process instances, tasks, variables,
+    and integration with cloud connectors. Requires the ACTIVITI_USER role for interaction via the TaskRuntime
+    API.
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: >-
+    https://activiti.gitbook.io/activiti-7-developers-guide/components/activiti-cloud-application/runtime-bundle
+  baseURL: https://your-activiti-cloud-host/rb
+  tags:
+  - Cloud
+  - Runtime Bundle
+  - Process Instances
+  - Tasks
+  - Variables
+  - Spring Boot
+  - Kubernetes
+  properties:
+  - type: Documentation
+    url: >-
+      https://activiti.gitbook.io/activiti-7-developers-guide/components/activiti-cloud-application/runtime-bundle
+  contact:
+  - FN: Activiti Community
+    email: activiti-community@alfresco.com
+- aid: activiti:activiti-about-api
+  name: Activiti About API
+  description: Information about Activiti BPM Suite
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - About
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-about-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-admin-endpoints-api
+  name: Activiti Admin Endpoints API
+  description: Manage Endpoints
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Admin Endpoints
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-admin-endpoints-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-admin-groups-api
+  name: Activiti Admin Groups API
+  description: Manage Endpoints
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Admin Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-admin-groups-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-admin-tenants-api
+  name: Activiti Admin Tenants API
+  description: Manage Tenants
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Admin Tenants
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-admin-tenants-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-admin-users-api
+  name: Activiti Admin Users API
+  description: Manage Users
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Admin Users
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-admin-users-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-alfresco-api
+  name: Activiti Alfresco API
+  description: The Alfresco API from Activiti — 9 operation(s) for alfresco.
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Alfresco
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-alfresco-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-apps-api
+  name: Activiti Apps API
+  description: The Apps API from Activiti — 5 operation(s) for apps.
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Apps
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-apps-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-apps-definition-api
+  name: Activiti Apps Definition API
+  description: Manage App Definition
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Apps Definition
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-apps-definition-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-apps-runtime-api
+  name: Activiti Apps Runtime API
+  description: Manage Runtime Apps
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Apps Runtime
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-apps-runtime-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-comments-api
+  name: Activiti Comments API
+  description: Manage Comments
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Comments
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-comments-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-content-api
+  name: Activiti Content API
+  description: Manage Contents
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Content
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-content-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-content-rendition-api
+  name: Activiti Content Rendition API
+  description: Retrieve Content Rendition
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Content Rendition
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-content-rendition-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-editor-api
+  name: Activiti Editor API
+  description: Api Editor Form Resource
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Editor
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-editor-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-groups-api
+  name: Activiti Groups API
+  description: Retrieve Groups
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-groups-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-idm-sync-api
+  name: Activiti IDM Sync API
+  description: Api Idm Sync Log Entry Resource
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - IDM Sync
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-idm-sync-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-integration-account-api
+  name: Activiti Integration Account API
+  description: Client Integration Account
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Integration Account
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-integration-account-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-integration-alfresco-cloud-api
+  name: Activiti Integration Alfresco Cloud API
+  description: Manage Alfresco Integration
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Integration Alfresco Cloud
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-integration-alfresco-cloud-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-integration-alfresco-onpremise-api
+  name: Activiti Integration Alfresco OnPremise API
+  description: Manage Alfresco Integration
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Integration Alfresco OnPremise
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-integration-alfresco-onpremise-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-integration-api
+  name: Activiti Integration API
+  description: The Integration API from Activiti — 15 operation(s) for integration.
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Integration
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-integration-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-integration-box-api
+  name: Activiti Integration Box API
+  description: Manage Box Integration
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Integration Box
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-integration-box-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-integration-drive-api
+  name: Activiti Integration Drive API
+  description: Manage Google Drive Integration
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Integration Drive
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-integration-drive-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-model-bpmn-api
+  name: Activiti Model Bpmn API
+  description: ''
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Model Bpmn
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-model-bpmn-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-models-api
+  name: Activiti Models API
+  description: Api Model Resource
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Models
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-models-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-models-history-api
+  name: Activiti Models History API
+  description: Model Version history
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Models History
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-models-history-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-process-api
+  name: Activiti Process API
+  description: The Process API from Activiti — 10 operation(s) for process.
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Process
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-process-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-process-definitions-api
+  name: Activiti Process Definitions API
+  description: Api Process Definitions Resource
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Process Definitions
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-process-definitions-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-process-definitions-form-api
+  name: Activiti Process Definitions Form API
+  description: Start Forms
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Process Definitions Form
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-process-definitions-form-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-process-instances-api
+  name: Activiti Process Instances API
+  description: Manage Process Instances
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Process Instances
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-process-instances-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-process-instances-information-api
+  name: Activiti Process Instances Information API
+  description: Manage process instances
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Process Instances Information
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-process-instances-information-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-process-instances-listing-api
+  name: Activiti Process Instances Listing API
+  description: Listing
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Process Instances Listing
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-process-instances-listing-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-process-scope-api
+  name: Activiti Process Scope API
+  description: Api Process Scope Resource
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Process Scope
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-process-scope-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-profile-api
+  name: Activiti Profile API
+  description: Manage User Information
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Profile
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-profile-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-script-file-api
+  name: Activiti Script File API
+  description: Script file
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Script File
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-script-file-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-system-properties-api
+  name: Activiti System Properties API
+  description: List System Properties
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - System Properties
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-system-properties-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-task-actions-api
+  name: Activiti Task Actions API
+  description: Manage Task Actions
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Task Actions
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-task-actions-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-task-api
+  name: Activiti Task API
+  description: Manage Tasks
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Task
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-task-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-task-checklist-api
+  name: Activiti Task CheckList API
+  description: Manage CheckList
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Task CheckList
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-task-checklist-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-task-forms-api
+  name: Activiti Task Forms API
+  description: Manage Task Forms
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Task Forms
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-task-forms-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-temporary-api
+  name: Activiti Temporary API
+  description: Api Example Form Option Resource
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Temporary
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-temporary-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-user-api
+  name: Activiti User API
+  description: Retrieve Users
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-user-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-user-filters-api
+  name: Activiti User Filters API
+  description: Manage Task & Process Filters
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - User Filters
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-user-filters-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
+- aid: activiti:activiti-users-workflow-api
+  name: Activiti Users Workflow API
+  description: Retrieve Workflow User
+  humanURL: https://www.activiti.org/userguide/
+  baseURL: https://your-activiti-host/activiti-rest/service
+  tags:
+  - Users Workflow
+  properties:
+  - type: OpenAPI
+    url: openapi/activiti-users-workflow-api-openapi.yml
+  - type: Documentation
+    url: https://www.activiti.org/userguide/
 common:
   - type: AgenticAccess
     url: agentic-access/activiti-agentic-access.yml
