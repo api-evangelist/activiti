@@ -566,6 +566,17 @@ apis:
   - type: Documentation
     url: https://www.activiti.org/userguide/
 common:
+  - type: IssueTracker
+    url: https://github.com/Activiti/Activiti/issues
+  - type: Releases
+    url: https://github.com/Activiti/Activiti/releases
+  - type: CodeOfConduct
+    url: https://github.com/Activiti/Activiti/blob/develop/CODE_OF_CONDUCT.md
+  - type: ContributionGuide
+    url: https://github.com/Activiti/Activiti/blob/develop/CONTRIBUTING.md
+  - type: License
+    name: Apache-2.0
+    url: https://github.com/Activiti/Activiti/blob/develop/LICENSE
   - type: AgenticAccess
     url: agentic-access/activiti-agentic-access.yml
   - type: DomainSecurity
