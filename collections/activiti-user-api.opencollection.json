@@ -1,0 +1,185 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About User API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Request password reset ",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/idm/passwords",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Request password reset "
+        },
+        {
+          "info": {
+            "name": "List users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/users",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "filter"
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "query",
+                "description": "email"
+              },
+              {
+                "name": "externalId",
+                "value": "",
+                "type": "query",
+                "description": "externalId"
+              },
+              {
+                "name": "externalIdCaseInsensitive",
+                "value": "",
+                "type": "query",
+                "description": "externalIdCaseInsensitive"
+              },
+              {
+                "name": "excludeTaskId",
+                "value": "",
+                "type": "query",
+                "description": "excludeTaskId"
+              },
+              {
+                "name": "excludeProcessId",
+                "value": "",
+                "type": "query",
+                "description": "excludeProcessId"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "query",
+                "description": "groupId"
+              },
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "query",
+                "description": "tenantId"
+              }
+            ]
+          },
+          "docs": "A common use case is that a user wants to select another user (eg. when assigning a task) or group."
+        },
+        {
+          "info": {
+            "name": "Retrieve user information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ]
+          },
+          "docs": "Retrieve user information"
+        },
+        {
+          "info": {
+            "name": "Execute an action for a specific user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Typical action is updating/reset password"
+        },
+        {
+          "info": {
+            "name": "Update user information",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update user information"
+        },
+        {
+          "info": {
+            "name": "Retrieve user profile picture",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/users/:userId/picture",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ]
+          },
+          "docs": "Retrieve user profile picture"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

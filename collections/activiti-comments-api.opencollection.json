@@ -1,0 +1,121 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Comments API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Comments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Comment list added to Process",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/:processInstanceId/comments",
+            "params": [
+              {
+                "name": "processInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "processInstanceId"
+              },
+              {
+                "name": "latestFirst",
+                "value": "",
+                "type": "query",
+                "description": "latestFirst"
+              }
+            ]
+          },
+          "docs": "Comment list added to Process"
+        },
+        {
+          "info": {
+            "name": "Add a comment to a Process",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/:processInstanceId/comments",
+            "params": [
+              {
+                "name": "processInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "processInstanceId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a comment to a Process"
+        },
+        {
+          "info": {
+            "name": "Comment list added to Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/comments",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              },
+              {
+                "name": "latestFirst",
+                "value": "",
+                "type": "query",
+                "description": "latestFirst"
+              }
+            ]
+          },
+          "docs": "Comment list added to Task"
+        },
+        {
+          "info": {
+            "name": "Add a comment to a Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/comments",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a comment to a Task"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

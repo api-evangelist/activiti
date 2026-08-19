@@ -1,0 +1,36 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "About",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Server Information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/app-version"
+          },
+          "docs": "Retrieve information about the Activiti BPM Suite version"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

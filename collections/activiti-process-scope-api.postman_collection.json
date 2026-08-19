@@ -1,0 +1,392 @@
+{
+  "item": [
+    {
+      "id": "73c6bfb8-c97a-4c41-a64b-41e1dafdfe13",
+      "name": "Process Scope",
+      "description": {
+        "content": "Api Process Scope Resource",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "5282b757-9847-42e3-bf94-45a479bb8192",
+          "name": "getRuntimeProcessScopes",
+          "request": {
+            "name": "getRuntimeProcessScopes",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "process-scopes"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifiers\": [\n    {\n      \"processActivityId\": \"<string>\",\n      \"processModelId\": \"<long>\"\n    },\n    {\n      \"processActivityId\": \"<string>\",\n      \"processModelId\": \"<long>\"\n    }\n  ],\n  \"overriddenModel\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e9001395-037b-40fc-b716-459e6961b360",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-scopes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifiers\": [\n    {\n      \"processActivityId\": \"<string>\",\n      \"processModelId\": \"<long>\"\n    },\n    {\n      \"processActivityId\": \"<string>\",\n      \"processModelId\": \"<long>\"\n    }\n  ],\n  \"overriddenModel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"activityIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"activityIdsByCollapsedSubProcessIdMap\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_2\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"activityIdsByDecisionTableIdMap\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_2\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"activityIdsByFormIdMap\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_2\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"activityIdsWithExcludedSubProcess\": [\n      \"string\",\n      \"string\"\n    ],\n    \"customStencilVariables\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_2\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"entityVariables\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"executionVariables\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"fieldToVariableMappings\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_2\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"forms\": [\n      {\n        \"description\": \"string\",\n        \"fieldVariables\": [\n          {\n            \"className\": \"string\",\n            \"col\": 6409,\n            \"colspan\": 4087,\n            \"hasEmptyValue\": false,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 2080,\n            \"maxValue\": \"string\",\n            \"minLength\": 5546,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": false,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": false,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 6296,\n            \"sizeX\": 5297,\n            \"sizeY\": 2659,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"className\": \"string\",\n            \"col\": 7600,\n            \"colspan\": 4263,\n            \"hasEmptyValue\": true,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 1242,\n            \"maxValue\": \"string\",\n            \"minLength\": 8758,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": true,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": false,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 9372,\n            \"sizeX\": 2559,\n            \"sizeY\": 671,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"fields\": [\n          {\n            \"className\": \"string\",\n            \"col\": 4405,\n            \"colspan\": 9844,\n            \"hasEmptyValue\": true,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 7013,\n            \"maxValue\": \"string\",\n            \"minLength\": 8786,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": true,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": false,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 9059,\n            \"sizeX\": 175,\n            \"sizeY\": 1577,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"className\": \"string\",\n            \"col\": 431,\n            \"colspan\": 9464,\n            \"hasEmptyValue\": false,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 3110,\n            \"maxValue\": \"string\",\n            \"minLength\": 6696,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": false,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": false,\n            \"regexPattern\": \"string\",\n            \"required\": false,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 4738,\n            \"sizeX\": 2955,\n            \"sizeY\": 1582,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"id\": 6510,\n        \"name\": \"string\",\n        \"outcomes\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\"\n          }\n        ]\n      },\n      {\n        \"description\": \"string\",\n        \"fieldVariables\": [\n          {\n            \"className\": \"string\",\n            \"col\": 920,\n            \"colspan\": 9260,\n            \"hasEmptyValue\": true,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 7736,\n            \"maxValue\": \"string\",\n            \"minLength\": 7501,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": false,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": true,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 7016,\n            \"sizeX\": 1245,\n            \"sizeY\": 6689,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"className\": \"string\",\n            \"col\": 8749,\n            \"colspan\": 9256,\n            \"hasEmptyValue\": true,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 9349,\n            \"maxValue\": \"string\",\n            \"minLength\": 3831,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": false,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": false,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 9332,\n            \"sizeX\": 6737,\n            \"sizeY\": 8294,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"fields\": [\n          {\n            \"className\": \"string\",\n            \"col\": 3958,\n            \"colspan\": 6266,\n            \"hasEmptyValue\": true,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 1013,\n            \"maxValue\": \"string\",\n            \"minLength\": 3800,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": false,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": true,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 322,\n            \"sizeX\": 5576,\n            \"sizeY\": 1460,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"className\": \"string\",\n            \"col\": 3995,\n            \"colspan\": 9148,\n            \"hasEmptyValue\": true,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 9842,\n            \"maxValue\": \"string\",\n            \"minLength\": 6003,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": false,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": false,\n            \"regexPattern\": \"string\",\n            \"required\": true,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 2950,\n            \"sizeX\": 4182,\n            \"sizeY\": 4011,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"id\": 7161,\n        \"name\": \"string\",\n        \"outcomes\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"metadataVariables\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"modelId\": 9191,\n    \"processModelType\": 8478,\n    \"responseVariables\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    }\n  },\n  {\n    \"activityIds\": [\n      \"string\",\n      \"string\"\n    ],\n    \"activityIdsByCollapsedSubProcessIdMap\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_2\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_3\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"activityIdsByDecisionTableIdMap\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"activityIdsByFormIdMap\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_2\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"activityIdsWithExcludedSubProcess\": [\n      \"string\",\n      \"string\"\n    ],\n    \"customStencilVariables\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_2\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"entityVariables\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"executionVariables\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_2\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"fieldToVariableMappings\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"forms\": [\n      {\n        \"description\": \"string\",\n        \"fieldVariables\": [\n          {\n            \"className\": \"string\",\n            \"col\": 1774,\n            \"colspan\": 67,\n            \"hasEmptyValue\": false,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 7238,\n            \"maxValue\": \"string\",\n            \"minLength\": 1671,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": true,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": true,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 3431,\n            \"sizeX\": 8477,\n            \"sizeY\": 9707,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"className\": \"string\",\n            \"col\": 3552,\n            \"colspan\": 3866,\n            \"hasEmptyValue\": false,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 8103,\n            \"maxValue\": \"string\",\n            \"minLength\": 592,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": true,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": false,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 5256,\n            \"sizeX\": 8120,\n            \"sizeY\": 129,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"fields\": [\n          {\n            \"className\": \"string\",\n            \"col\": 6558,\n            \"colspan\": 5171,\n            \"hasEmptyValue\": false,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 6249,\n            \"maxValue\": \"string\",\n            \"minLength\": 648,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": true,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": false,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 3859,\n            \"sizeX\": 9364,\n            \"sizeY\": 9226,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"className\": \"string\",\n            \"col\": 2064,\n            \"colspan\": 2132,\n            \"hasEmptyValue\": false,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 7654,\n            \"maxValue\": \"string\",\n            \"minLength\": 5323,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": true,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": false,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 489,\n            \"sizeX\": 6534,\n            \"sizeY\": 3760,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"id\": 1162,\n        \"name\": \"string\",\n        \"outcomes\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\"\n          }\n        ]\n      },\n      {\n        \"description\": \"string\",\n        \"fieldVariables\": [\n          {\n            \"className\": \"string\",\n            \"col\": 260,\n            \"colspan\": 4884,\n            \"hasEmptyValue\": false,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 4696,\n            \"maxValue\": \"string\",\n            \"minLength\": 8156,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": false,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": false,\n            \"regexPattern\": \"string\",\n            \"required\": false,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 8932,\n            \"sizeX\": 1162,\n            \"sizeY\": 102,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"className\": \"string\",\n            \"col\": 2772,\n            \"colspan\": 872,\n            \"hasEmptyValue\": true,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 9413,\n            \"maxValue\": \"string\",\n            \"minLength\": 8145,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": true,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": true,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 33,\n            \"sizeX\": 8247,\n            \"sizeY\": 5688,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"fields\": [\n          {\n            \"className\": \"string\",\n            \"col\": 7478,\n            \"colspan\": 7809,\n            \"hasEmptyValue\": true,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 9750,\n            \"maxValue\": \"string\",\n            \"minLength\": 4226,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": true,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": true,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 7565,\n            \"sizeX\": 5509,\n            \"sizeY\": 2749,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          },\n          {\n            \"className\": \"string\",\n            \"col\": 7574,\n            \"colspan\": 9802,\n            \"hasEmptyValue\": false,\n            \"id\": \"string\",\n            \"layout\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            },\n            \"maxLength\": 9521,\n            \"maxValue\": \"string\",\n            \"minLength\": 1070,\n            \"minValue\": \"string\",\n            \"name\": \"string\",\n            \"optionType\": \"string\",\n            \"options\": [\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            ],\n            \"overrideId\": false,\n            \"params\": {},\n            \"placeholder\": \"string\",\n            \"readOnly\": true,\n            \"regexPattern\": \"string\",\n            \"required\": true,\n            \"restIdProperty\": \"string\",\n            \"restLabelProperty\": \"string\",\n            \"restResponsePath\": \"string\",\n            \"restUrl\": \"string\",\n            \"row\": 8613,\n            \"sizeX\": 4314,\n            \"sizeY\": 6936,\n            \"tab\": \"string\",\n            \"type\": \"string\",\n            \"value\": {},\n            \"visibilityCondition\": {\n              \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n            }\n          }\n        ],\n        \"id\": 6191,\n        \"name\": \"string\",\n        \"outcomes\": [\n          {\n            \"id\": \"string\",\n            \"name\": \"string\"\n          },\n          {\n            \"id\": \"string\",\n            \"name\": \"string\"\n          }\n        ]\n      }\n    ],\n    \"metadataVariables\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      },\n      \"key_1\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    },\n    \"modelId\": 2302,\n    \"processModelType\": 9180,\n    \"responseVariables\": {\n      \"key_0\": {\n        \"value\": \"reference #/components/schemas/List not found in the OpenAPI spec\"\n      }\n    }\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7dfda328-210f-4fc6-8ec1-74a79f0f4743",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-scopes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifiers\": [\n    {\n      \"processActivityId\": \"<string>\",\n      \"processModelId\": \"<long>\"\n    },\n    {\n      \"processActivityId\": \"<string>\",\n      \"processModelId\": \"<long>\"\n    }\n  ],\n  \"overriddenModel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ac03fb89-49f0-41e9-94d8-e090d5314979",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-scopes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifiers\": [\n    {\n      \"processActivityId\": \"<string>\",\n      \"processModelId\": \"<long>\"\n    },\n    {\n      \"processActivityId\": \"<string>\",\n      \"processModelId\": \"<long>\"\n    }\n  ],\n  \"overriddenModel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "18fc9c84-80e9-41d4-aaf2-831593abb87a",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-scopes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifiers\": [\n    {\n      \"processActivityId\": \"<string>\",\n      \"processModelId\": \"<long>\"\n    },\n    {\n      \"processActivityId\": \"<string>\",\n      \"processModelId\": \"<long>\"\n    }\n  ],\n  \"overriddenModel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8930d17a-a91d-425d-adbd-4de5bbc4f820",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-scopes"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"identifiers\": [\n    {\n      \"processActivityId\": \"<string>\",\n      \"processModelId\": \"<long>\"\n    },\n    {\n      \"processActivityId\": \"<string>\",\n      \"processModelId\": \"<long>\"\n    }\n  ],\n  \"overriddenModel\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The Activiti server host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}/activiti-app",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "31abf6a1-cc9e-41ac-b9d2-89cba834d7a6",
+    "name": "Activiti Public Rest About Process Scope API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n\n\nContact Support:\n Name: Activiti Community\n Email: activiti-community@alfresco.com",
+      "type": "text/plain"
+    }
+  }
+}

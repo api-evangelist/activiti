@@ -1,0 +1,239 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Admin Endpoints API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin Endpoints",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getBasicAuthConfigurations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/basic-auths",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "query",
+                "description": "tenantId"
+              }
+            ]
+          },
+          "docs": "getBasicAuthConfigurations"
+        },
+        {
+          "info": {
+            "name": "createBasicAuthConfiguration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/basic-auths",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "createBasicAuthConfiguration"
+        },
+        {
+          "info": {
+            "name": "getBasicAuthConfiguration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/basic-auths/:basicAuthId",
+            "params": [
+              {
+                "name": "basicAuthId",
+                "value": "",
+                "type": "path",
+                "description": "basicAuthId"
+              },
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "query",
+                "description": "tenantId"
+              }
+            ]
+          },
+          "docs": "getBasicAuthConfiguration"
+        },
+        {
+          "info": {
+            "name": "updateBasicAuthConfiguration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/basic-auths/:basicAuthId",
+            "params": [
+              {
+                "name": "basicAuthId",
+                "value": "",
+                "type": "path",
+                "description": "basicAuthId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "updateBasicAuthConfiguration"
+        },
+        {
+          "info": {
+            "name": "removeBasicAuthonfiguration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/basic-auths/:basicAuthId",
+            "params": [
+              {
+                "name": "basicAuthId",
+                "value": "",
+                "type": "path",
+                "description": "basicAuthId"
+              },
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "query",
+                "description": "tenantId"
+              }
+            ]
+          },
+          "docs": "removeBasicAuthonfiguration"
+        },
+        {
+          "info": {
+            "name": "getEndpointConfigurations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/endpoints",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "query",
+                "description": "tenantId"
+              }
+            ]
+          },
+          "docs": "getEndpointConfigurations"
+        },
+        {
+          "info": {
+            "name": "createEndpointConfiguration",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/endpoints",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "createEndpointConfiguration"
+        },
+        {
+          "info": {
+            "name": "getEndpointConfiguration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/endpoints/:endpointConfigurationId",
+            "params": [
+              {
+                "name": "endpointConfigurationId",
+                "value": "",
+                "type": "path",
+                "description": "endpointConfigurationId"
+              },
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "query",
+                "description": "tenantId"
+              }
+            ]
+          },
+          "docs": "getEndpointConfiguration"
+        },
+        {
+          "info": {
+            "name": "updateEndpointConfiguration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/endpoints/:endpointConfigurationId",
+            "params": [
+              {
+                "name": "endpointConfigurationId",
+                "value": "",
+                "type": "path",
+                "description": "endpointConfigurationId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "updateEndpointConfiguration"
+        },
+        {
+          "info": {
+            "name": "removeEndpointConfiguration",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/endpoints/:endpointConfigurationId",
+            "params": [
+              {
+                "name": "endpointConfigurationId",
+                "value": "",
+                "type": "path",
+                "description": "endpointConfigurationId"
+              },
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "query",
+                "description": "tenantId"
+              }
+            ]
+          },
+          "docs": "removeEndpointConfiguration"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

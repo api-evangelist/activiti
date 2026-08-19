@@ -1,0 +1,627 @@
+{
+  "item": [
+    {
+      "id": "c1a7e311-0faf-4f6e-975e-2c2883f12d00",
+      "name": "Apps Runtime",
+      "description": {
+        "content": "Manage Runtime Apps",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "12fcd75d-6b30-4fbe-a3ae-511eb1164449",
+          "name": "List runtime apps",
+          "request": {
+            "name": "List runtime apps",
+            "description": {
+              "content": "When a user logs in into the Alfresco Activiti BPM Suite, the landing page is displayed containing all the apps that the user is allowed to see and use.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "runtime-app-definitions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "d31b72fa-31e8-40dc-9f6d-876cb926ed6c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "runtime-app-definitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"size\": 1849,\n  \"start\": 4364,\n  \"total\": 5778\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "603ada4b-da53-4eab-bc40-5ba0b227382e",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "runtime-app-definitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1cddf143-f678-453c-9bd5-3e60b3d24b81",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "runtime-app-definitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "68f004bf-0f2d-47a3-baf7-ad4fad58ae62",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "runtime-app-definitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3037fd35-70f7-49b8-a7e4-216a27b1a322",
+          "name": "Deploy published app",
+          "request": {
+            "name": "Deploy published app",
+            "description": {
+              "content": "After creating and puclished an app the user can add it to his/her landing page.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "runtime-app-definitions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"appDefinitions\": [\n    {\n      \"defaultAppId\": \"<string>\",\n      \"deploymentId\": \"<string>\",\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"modelId\": \"<long>\",\n      \"name\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"defaultAppId\": \"<string>\",\n      \"deploymentId\": \"<string>\",\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"modelId\": \"<long>\",\n      \"name\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"theme\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "26f6fbaa-e333-42bf-a6fb-16d51ebd11d0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "runtime-app-definitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appDefinitions\": [\n    {\n      \"defaultAppId\": \"<string>\",\n      \"deploymentId\": \"<string>\",\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"modelId\": \"<long>\",\n      \"name\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"defaultAppId\": \"<string>\",\n      \"deploymentId\": \"<string>\",\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"modelId\": \"<long>\",\n      \"name\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"theme\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "ba8afe3b-606f-42b2-aae5-9de9ad298901",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "runtime-app-definitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appDefinitions\": [\n    {\n      \"defaultAppId\": \"<string>\",\n      \"deploymentId\": \"<string>\",\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"modelId\": \"<long>\",\n      \"name\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"defaultAppId\": \"<string>\",\n      \"deploymentId\": \"<string>\",\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"modelId\": \"<long>\",\n      \"name\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"theme\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "40ec63f9-d2fc-4823-9816-b9dba5e1187c",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "runtime-app-definitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appDefinitions\": [\n    {\n      \"defaultAppId\": \"<string>\",\n      \"deploymentId\": \"<string>\",\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"modelId\": \"<long>\",\n      \"name\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"defaultAppId\": \"<string>\",\n      \"deploymentId\": \"<string>\",\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"modelId\": \"<long>\",\n      \"name\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"theme\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "cdb7482d-bc23-473e-9f02-2628122035de",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "runtime-app-definitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appDefinitions\": [\n    {\n      \"defaultAppId\": \"<string>\",\n      \"deploymentId\": \"<string>\",\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"modelId\": \"<long>\",\n      \"name\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"defaultAppId\": \"<string>\",\n      \"deploymentId\": \"<string>\",\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"modelId\": \"<long>\",\n      \"name\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"theme\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "458ca580-6a27-4346-bdd5-152178db7c6d",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "runtime-app-definitions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"appDefinitions\": [\n    {\n      \"defaultAppId\": \"<string>\",\n      \"deploymentId\": \"<string>\",\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"modelId\": \"<long>\",\n      \"name\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"defaultAppId\": \"<string>\",\n      \"deploymentId\": \"<string>\",\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"modelId\": \"<long>\",\n      \"name\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"theme\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The Activiti server host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}/activiti-app",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c13065ed-a3c7-44da-919a-ab1db3ea8c77",
+    "name": "Activiti Public Rest About Apps Runtime API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n\n\nContact Support:\n Name: Activiti Community\n Email: activiti-community@alfresco.com",
+      "type": "text/plain"
+    }
+  }
+}

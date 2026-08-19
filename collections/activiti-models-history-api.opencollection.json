@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Models History API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Models History",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "To get the version information for a model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:modelId/history",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              },
+              {
+                "name": "includeLatestVersion",
+                "value": "",
+                "type": "query",
+                "description": "includeLatestVersion"
+              }
+            ]
+          },
+          "docs": "To get the version information for a model"
+        },
+        {
+          "info": {
+            "name": "To get a particular older version of a model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:modelId/history/:modelHistoryId",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              },
+              {
+                "name": "modelHistoryId",
+                "value": "",
+                "type": "path",
+                "description": "modelHistoryId"
+              }
+            ]
+          },
+          "docs": "To get a particular older version of a model"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

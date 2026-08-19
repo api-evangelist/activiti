@@ -1,0 +1,55 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Process Instances Listing API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Process Instances Listing",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Filter a list of process instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/filter",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Filter a list of process instances"
+        },
+        {
+          "info": {
+            "name": "Retrieve a list of process instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/query",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Retrieve a list of process instances"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

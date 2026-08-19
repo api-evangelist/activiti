@@ -1,0 +1,810 @@
+{
+  "item": [
+    {
+      "id": "3a6ee7d2-d557-4d75-a30b-dac014bec126",
+      "name": "Process Definitions Form",
+      "description": {
+        "content": "Start Forms",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "c0371147-14ad-4746-8db0-eaa0c81d9bf3",
+          "name": "Retrieve the start form for a process definition",
+          "request": {
+            "name": "Retrieve the start form for a process definition",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "process-definitions",
+                ":processDefinitionId",
+                "start-form"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c1d3d941-962c-473b-91e0-2090056f94cf",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-definitions",
+                    ":processDefinitionId",
+                    "start-form"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"className\": \"string\",\n  \"customFieldTemplates\": {\n    \"key_0\": \"string\",\n    \"key_1\": \"string\",\n    \"key_2\": \"string\"\n  },\n  \"fields\": [\n    {\n      \"className\": \"string\",\n      \"col\": 4904,\n      \"colspan\": 9550,\n      \"hasEmptyValue\": true,\n      \"id\": \"string\",\n      \"layout\": {\n        \"colspan\": 2018,\n        \"column\": 7874,\n        \"row\": 8035\n      },\n      \"maxLength\": 6725,\n      \"maxValue\": \"string\",\n      \"minLength\": 5677,\n      \"minValue\": \"string\",\n      \"name\": \"string\",\n      \"optionType\": \"string\",\n      \"options\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ],\n      \"overrideId\": false,\n      \"params\": {},\n      \"placeholder\": \"string\",\n      \"readOnly\": true,\n      \"regexPattern\": \"string\",\n      \"required\": false,\n      \"restIdProperty\": \"string\",\n      \"restLabelProperty\": \"string\",\n      \"restResponsePath\": \"string\",\n      \"restUrl\": \"string\",\n      \"row\": 5309,\n      \"sizeX\": 5076,\n      \"sizeY\": 1301,\n      \"tab\": \"string\",\n      \"type\": \"string\",\n      \"value\": {},\n      \"visibilityCondition\": {\n        \"leftFormFieldId\": \"string\",\n        \"leftRestResponseId\": \"string\",\n        \"nextConditionOperator\": \"string\",\n        \"operator\": \"string\",\n        \"rightFormFieldId\": \"string\",\n        \"rightRestResponseId\": \"string\",\n        \"rightType\": \"string\",\n        \"rightValue\": {}\n      }\n    },\n    {\n      \"className\": \"string\",\n      \"col\": 3973,\n      \"colspan\": 5044,\n      \"hasEmptyValue\": true,\n      \"id\": \"string\",\n      \"layout\": {\n        \"colspan\": 8562,\n        \"column\": 4659,\n        \"row\": 9420\n      },\n      \"maxLength\": 7749,\n      \"maxValue\": \"string\",\n      \"minLength\": 6567,\n      \"minValue\": \"string\",\n      \"name\": \"string\",\n      \"optionType\": \"string\",\n      \"options\": [\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        },\n        {\n          \"id\": \"string\",\n          \"name\": \"string\"\n        }\n      ],\n      \"overrideId\": true,\n      \"params\": {},\n      \"placeholder\": \"string\",\n      \"readOnly\": true,\n      \"regexPattern\": \"string\",\n      \"required\": false,\n      \"restIdProperty\": \"string\",\n      \"restLabelProperty\": \"string\",\n      \"restResponsePath\": \"string\",\n      \"restUrl\": \"string\",\n      \"row\": 1922,\n      \"sizeX\": 1463,\n      \"sizeY\": 7723,\n      \"tab\": \"string\",\n      \"type\": \"string\",\n      \"value\": {},\n      \"visibilityCondition\": {\n        \"leftFormFieldId\": \"string\",\n        \"leftRestResponseId\": \"string\",\n        \"nextConditionOperator\": \"string\",\n        \"operator\": \"string\",\n        \"rightFormFieldId\": \"string\",\n        \"rightRestResponseId\": \"string\",\n        \"rightType\": \"string\",\n        \"rightValue\": {}\n      }\n    }\n  ],\n  \"gridsterForm\": true,\n  \"id\": 5820,\n  \"javascriptEvents\": [\n    {\n      \"event\": \"string\",\n      \"javascriptLogic\": \"string\"\n    },\n    {\n      \"event\": \"string\",\n      \"javascriptLogic\": \"string\"\n    }\n  ],\n  \"metadata\": {\n    \"key_0\": \"string\"\n  },\n  \"name\": \"string\",\n  \"outcomeTarget\": \"string\",\n  \"outcomes\": [\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    },\n    {\n      \"id\": \"string\",\n      \"name\": \"string\"\n    }\n  ],\n  \"processDefinitionId\": \"string\",\n  \"processDefinitionKey\": \"string\",\n  \"processDefinitionName\": \"string\",\n  \"selectedOutcome\": \"string\",\n  \"style\": \"string\",\n  \"tabs\": [\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"visibilityCondition\": {\n        \"leftFormFieldId\": \"string\",\n        \"leftRestResponseId\": \"string\",\n        \"nextConditionOperator\": \"string\",\n        \"operator\": \"string\",\n        \"rightFormFieldId\": \"string\",\n        \"rightRestResponseId\": \"string\",\n        \"rightType\": \"string\",\n        \"rightValue\": {}\n      }\n    },\n    {\n      \"id\": \"string\",\n      \"title\": \"string\",\n      \"visibilityCondition\": {\n        \"leftFormFieldId\": \"string\",\n        \"leftRestResponseId\": \"string\",\n        \"nextConditionOperator\": \"string\",\n        \"operator\": \"string\",\n        \"rightFormFieldId\": \"string\",\n        \"rightRestResponseId\": \"string\",\n        \"rightType\": \"string\",\n        \"rightValue\": {}\n      }\n    }\n  ],\n  \"taskDefinitionKey\": \"string\",\n  \"taskId\": \"string\",\n  \"taskName\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "73a7da1d-5525-4983-9e69-12caf29c5956",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-definitions",
+                    ":processDefinitionId",
+                    "start-form"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "b482dd12-f255-418d-bbc5-da2883879e00",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-definitions",
+                    ":processDefinitionId",
+                    "start-form"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "565fecba-e8cd-4e40-babb-d4e103016a20",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-definitions",
+                    ":processDefinitionId",
+                    "start-form"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d316e22f-6d7e-4227-8bdd-89690f0c2390",
+          "name": "Retrieve field values (eg. the typeahead field)",
+          "request": {
+            "name": "Retrieve field values (eg. the typeahead field)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "process-definitions",
+                ":processDefinitionId",
+                "start-form-values",
+                ":field"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "ad58a776-a944-4e19-80d2-5ebfb44d9a2e",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-definitions",
+                    ":processDefinitionId",
+                    "start-form-values",
+                    ":field"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0dc0e988-e62f-48fc-9954-1588ca9b10b2",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-definitions",
+                    ":processDefinitionId",
+                    "start-form-values",
+                    ":field"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7e0e5999-8640-460a-921a-2c683960238c",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-definitions",
+                    ":processDefinitionId",
+                    "start-form-values",
+                    ":field"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c13da902-f642-46f4-8f5e-63ae6ec11971",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-definitions",
+                    ":processDefinitionId",
+                    "start-form-values",
+                    ":field"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "45cdc69f-5575-4517-9547-532eaa2fddc1",
+          "name": "Retrieve field values (eg. the table field)",
+          "request": {
+            "name": "Retrieve field values (eg. the table field)",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "process-definitions",
+                ":processDefinitionId",
+                "start-form-values",
+                ":field",
+                ":column"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "8ddda0ea-a47b-4dd8-b3bf-964f0ae17ae3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-definitions",
+                    ":processDefinitionId",
+                    "start-form-values",
+                    ":field",
+                    ":column"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"id\": \"string\",\n    \"name\": \"string\"\n  },\n  {\n    \"id\": \"string\",\n    \"name\": \"string\"\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3a4fa903-649e-4ab2-a887-8ed1bd0bd0a7",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-definitions",
+                    ":processDefinitionId",
+                    "start-form-values",
+                    ":field",
+                    ":column"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7e564418-6cb4-4f01-888e-19a783414160",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-definitions",
+                    ":processDefinitionId",
+                    "start-form-values",
+                    ":field",
+                    ":column"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "2b633f9f-1b0f-4c9b-b9df-5c62d4b72c35",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "process-definitions",
+                    ":processDefinitionId",
+                    "start-form-values",
+                    ":field",
+                    ":column"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The Activiti server host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}/activiti-app",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "adb82c1f-a278-4857-b17f-c46b75987ef9",
+    "name": "Activiti Public Rest About Process Definitions Form API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n\n\nContact Support:\n Name: Activiti Community\n Email: activiti-community@alfresco.com",
+      "type": "text/plain"
+    }
+  }
+}

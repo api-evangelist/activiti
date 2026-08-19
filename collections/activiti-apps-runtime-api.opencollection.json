@@ -1,0 +1,51 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Apps Runtime API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Apps Runtime",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List runtime apps",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/runtime-app-definitions"
+          },
+          "docs": "When a user logs in into the Alfresco Activiti BPM Suite, the landing page is displayed containing all the apps that the user is allowed to see and use."
+        },
+        {
+          "info": {
+            "name": "Deploy published app",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/runtime-app-definitions",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "After creating and puclished an app the user can add it to his/her landing page."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

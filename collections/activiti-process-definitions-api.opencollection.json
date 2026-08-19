@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Process Definitions API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Process Definitions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a list of process definitions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/process-definitions",
+            "params": [
+              {
+                "name": "latest",
+                "value": "",
+                "type": "query",
+                "description": "latest"
+              },
+              {
+                "name": "appDefinitionId",
+                "value": "",
+                "type": "query",
+                "description": "appDefinitionId"
+              }
+            ]
+          },
+          "docs": "Get a list of process definitions (visible within the tenant of the user)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

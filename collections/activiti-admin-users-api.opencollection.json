@@ -1,0 +1,182 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Admin Users API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a list of users",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/users",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "filter"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "status"
+              },
+              {
+                "name": "accountType",
+                "value": "",
+                "type": "query",
+                "description": "accountType"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "sort"
+              },
+              {
+                "name": "company",
+                "value": "",
+                "type": "query",
+                "description": "company"
+              },
+              {
+                "name": "start",
+                "value": "",
+                "type": "query",
+                "description": "start"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page"
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "size"
+              },
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "query",
+                "description": "groupId"
+              },
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "query",
+                "description": "tenantId"
+              },
+              {
+                "name": "summary",
+                "value": "",
+                "type": "query",
+                "description": "summary"
+              }
+            ]
+          },
+          "docs": "Get a list of users"
+        },
+        {
+          "info": {
+            "name": "Create a new user",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new user"
+        },
+        {
+          "info": {
+            "name": "Bulk Update a list of users",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/users",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Bulk Update a list of users"
+        },
+        {
+          "info": {
+            "name": "Retrieve user information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              },
+              {
+                "name": "summary",
+                "value": "",
+                "type": "query",
+                "description": "summary"
+              }
+            ]
+          },
+          "docs": "Retrieve user information"
+        },
+        {
+          "info": {
+            "name": "Update user details",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/users/:userId",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update user details"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

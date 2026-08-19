@@ -1,0 +1,130 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Process Instances API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Process Instances",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve a process instance information",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/:processInstanceId",
+            "params": [
+              {
+                "name": "processInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "processInstanceId"
+              }
+            ]
+          },
+          "docs": "Retrieve a process instance information"
+        },
+        {
+          "info": {
+            "name": "Delete a process instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/:processInstanceId",
+            "params": [
+              {
+                "name": "processInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "processInstanceId"
+              }
+            ]
+          },
+          "docs": "Delete a process instance"
+        },
+        {
+          "info": {
+            "name": "Comment list added to Process",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/:processInstanceId/comments",
+            "params": [
+              {
+                "name": "processInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "processInstanceId"
+              },
+              {
+                "name": "latestFirst",
+                "value": "",
+                "type": "query",
+                "description": "latestFirst"
+              }
+            ]
+          },
+          "docs": "Comment list added to Process"
+        },
+        {
+          "info": {
+            "name": "Add a comment to a Process",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/:processInstanceId/comments",
+            "params": [
+              {
+                "name": "processInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "processInstanceId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a comment to a Process"
+        },
+        {
+          "info": {
+            "name": "Get process start form",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/:processInstanceId/start-form",
+            "params": [
+              {
+                "name": "processInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "processInstanceId"
+              }
+            ]
+          },
+          "docs": "When a process definitions has a start form (hasStartForm is true in the call above), the start form can be retrieved"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

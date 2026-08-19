@@ -1,0 +1,146 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Task Forms API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Task Forms",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Task Form",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/task-forms/:taskId",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ]
+          },
+          "docs": "Retrieve Task Form"
+        },
+        {
+          "info": {
+            "name": "Complete a Task Form",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/task-forms/:taskId",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Complete a Task Form"
+        },
+        {
+          "info": {
+            "name": "Retrieve Populated Field Values",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/task-forms/:taskId/form-values/:field",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              },
+              {
+                "name": "field",
+                "value": "",
+                "type": "path",
+                "description": "field"
+              }
+            ]
+          },
+          "docs": "Form field values that are populated through a REST backend, can be retrieved via this service"
+        },
+        {
+          "info": {
+            "name": "Retrieve Column Field Values",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/task-forms/:taskId/form-values/:field/:column",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              },
+              {
+                "name": "field",
+                "value": "",
+                "type": "path",
+                "description": "field"
+              },
+              {
+                "name": "column",
+                "value": "",
+                "type": "path",
+                "description": "column"
+              }
+            ]
+          },
+          "docs": "Specific case to retrieve information on a specific column"
+        },
+        {
+          "info": {
+            "name": "Save Task Form",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/task-forms/:taskId/save-form",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Save Task Form"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

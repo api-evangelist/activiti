@@ -1,0 +1,218 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Alfresco API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Alfresco",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Alfresco Cloud Authorization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco-cloud/confirm-auth-request",
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "code"
+              }
+            ]
+          },
+          "docs": "Returns Alfresco Oauth HTML Page"
+        },
+        {
+          "info": {
+            "name": "List Alfresco networks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco-cloud/networks"
+          },
+          "docs": "List Alfresco networks"
+        },
+        {
+          "info": {
+            "name": "List file & folders inside a specific folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco-cloud/networks/:networkId/folders/:folderId/content",
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "networkId"
+              },
+              {
+                "name": "folderId",
+                "value": "",
+                "type": "path",
+                "description": "folderId"
+              }
+            ]
+          },
+          "docs": "List file & folders inside a specific folder"
+        },
+        {
+          "info": {
+            "name": "List Alfresco sites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco-cloud/networks/:networkId/sites",
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "networkId"
+              }
+            ]
+          },
+          "docs": "Returns ALL Sites"
+        },
+        {
+          "info": {
+            "name": "List file & folders inside a specific site",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco-cloud/networks/:networkId/sites/:siteId/content",
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "networkId"
+              },
+              {
+                "name": "siteId",
+                "value": "",
+                "type": "path",
+                "description": "siteId"
+              }
+            ]
+          },
+          "docs": "List file & folders inside a specific site"
+        },
+        {
+          "info": {
+            "name": "List file & folders inside a specific folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco/:repositoryId/folders/:folderId/content",
+            "params": [
+              {
+                "name": "repositoryId",
+                "value": "",
+                "type": "path",
+                "description": "repositoryId"
+              },
+              {
+                "name": "folderId",
+                "value": "",
+                "type": "path",
+                "description": "folderId"
+              }
+            ]
+          },
+          "docs": "List file & folders inside a specific folder"
+        },
+        {
+          "info": {
+            "name": "List Alfresco sites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco/:repositoryId/sites",
+            "params": [
+              {
+                "name": "repositoryId",
+                "value": "",
+                "type": "path",
+                "description": "repositoryId"
+              }
+            ]
+          },
+          "docs": "Returns ALL Sites"
+        },
+        {
+          "info": {
+            "name": "List file & folders inside a specific site",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco/:repositoryId/sites/:siteId/content",
+            "params": [
+              {
+                "name": "repositoryId",
+                "value": "",
+                "type": "path",
+                "description": "repositoryId"
+              },
+              {
+                "name": "siteId",
+                "value": "",
+                "type": "path",
+                "description": "siteId"
+              }
+            ]
+          },
+          "docs": "List file & folders inside a specific site"
+        },
+        {
+          "info": {
+            "name": "List Alfresco repositories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/profile/accounts/alfresco",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "query",
+                "description": "tenantId"
+              },
+              {
+                "name": "includeAccounts",
+                "value": "",
+                "type": "query",
+                "description": "includeAccounts"
+              }
+            ]
+          },
+          "docs": "A tenant administrator can configure one or more Alfresco repositories to use when working with content."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

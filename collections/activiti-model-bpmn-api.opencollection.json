@@ -1,0 +1,69 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Model Bpmn API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Model Bpmn",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Export a process definition model to a BPMN 2.0 xml file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:processModelId/bpmn20",
+            "params": [
+              {
+                "name": "processModelId",
+                "value": "",
+                "type": "path",
+                "description": "processModelId"
+              }
+            ]
+          },
+          "docs": "Export a process definition model to a BPMN 2.0 xml file"
+        },
+        {
+          "info": {
+            "name": "Export a previous process definition model to a BPMN 2.0 xml file",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:processModelId/history/:processModelHistoryId/bpmn20",
+            "params": [
+              {
+                "name": "processModelId",
+                "value": "",
+                "type": "path",
+                "description": "processModelId"
+              },
+              {
+                "name": "processModelHistoryId",
+                "value": "",
+                "type": "path",
+                "description": "processModelHistoryId"
+              }
+            ]
+          },
+          "docs": "Export a previous process definition model to a BPMN 2.0 xml file"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

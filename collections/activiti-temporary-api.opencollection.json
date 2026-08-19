@@ -1,0 +1,97 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Temporary API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Temporary",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getHeaders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/temporary/example-headers"
+          },
+          "docs": "getHeaders"
+        },
+        {
+          "info": {
+            "name": "getOptions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/temporary/example-options"
+          },
+          "docs": "getOptions"
+        },
+        {
+          "info": {
+            "name": "completeTasks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/temporary/generate-report-data/complete-tasks",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "userId"
+              },
+              {
+                "name": "processDefinitionKey",
+                "value": "",
+                "type": "query",
+                "description": "processDefinitionKey"
+              }
+            ]
+          },
+          "docs": "completeTasks"
+        },
+        {
+          "info": {
+            "name": "generateData",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/temporary/generate-report-data/start-process",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "query",
+                "description": "userId"
+              },
+              {
+                "name": "processDefinitionKey",
+                "value": "",
+                "type": "query",
+                "description": "processDefinitionKey"
+              }
+            ]
+          },
+          "docs": "generateData"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1490 @@
+{
+  "item": [
+    {
+      "id": "1f6aaa7f-e8c4-45f6-95ef-2f71cee44159",
+      "name": "Profile",
+      "description": {
+        "content": "Manage User Information",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "959557a1-b405-4793-b537-307fbf6b5cb8",
+          "name": "Retrieve user information",
+          "request": {
+            "name": "Retrieve user information",
+            "description": {
+              "content": " This is useful to get the name, email, the groups that the user is part of, the user picture, etc.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "00ead674-afc3-44d7-a4bd-6696e4a7d288",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apps\": [\n    {\n      \"description\": \"string\",\n      \"icon\": \"string\",\n      \"id\": 9185,\n      \"name\": \"string\",\n      \"theme\": \"string\"\n    },\n    {\n      \"description\": \"string\",\n      \"icon\": \"string\",\n      \"id\": 8091,\n      \"name\": \"string\",\n      \"theme\": \"string\"\n    }\n  ],\n  \"capabilities\": [\n    \"string\",\n    \"string\"\n  ],\n  \"company\": \"string\",\n  \"created\": \"2006-05-23T12:00:07.304Z\",\n  \"email\": \"string\",\n  \"externalId\": \"string\",\n  \"firstName\": \"string\",\n  \"fullname\": \"string\",\n  \"groups\": [\n    {\n      \"capabilities\": [\n        {\n          \"id\": 6038,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 7040,\n          \"name\": \"string\"\n        }\n      ],\n      \"externalId\": \"string\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": 2443,\n      \"lastSyncTimeStamp\": \"1968-07-03T18:00:15.807Z\",\n      \"name\": \"string\",\n      \"parentGroupId\": 2819,\n      \"status\": \"string\",\n      \"tenantId\": 3967,\n      \"type\": 8726,\n      \"userCount\": 660,\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"string\",\n            \"string\"\n          ],\n          \"company\": \"string\",\n          \"created\": \"1982-05-26T07:51:31.769Z\",\n          \"email\": \"string\",\n          \"externalId\": \"string\",\n          \"firstName\": \"string\",\n          \"fullname\": \"string\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": 2965,\n          \"lastName\": \"string\",\n          \"lastUpdate\": \"1949-11-23T05:15:55.361Z\",\n          \"latestSyncTimeStamp\": \"1967-01-02T05:05:37.666Z\",\n          \"password\": \"string\",\n          \"pictureId\": 5727,\n          \"status\": \"string\",\n          \"tenantId\": 2527,\n          \"tenantName\": \"string\",\n          \"tenantPictureId\": 8640,\n          \"type\": \"string\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"string\",\n            \"string\"\n          ],\n          \"company\": \"string\",\n          \"created\": \"1974-04-12T11:36:47.830Z\",\n          \"email\": \"string\",\n          \"externalId\": \"string\",\n          \"firstName\": \"string\",\n          \"fullname\": \"string\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": 8340,\n          \"lastName\": \"string\",\n          \"lastUpdate\": \"2013-09-21T21:50:54.751Z\",\n          \"latestSyncTimeStamp\": \"1982-10-07T02:55:34.031Z\",\n          \"password\": \"string\",\n          \"pictureId\": 3417,\n          \"status\": \"string\",\n          \"tenantId\": 8659,\n          \"tenantName\": \"string\",\n          \"tenantPictureId\": 1050,\n          \"type\": \"string\"\n        }\n      ]\n    },\n    {\n      \"capabilities\": [\n        {\n          \"id\": 1304,\n          \"name\": \"string\"\n        },\n        {\n          \"id\": 7861,\n          \"name\": \"string\"\n        }\n      ],\n      \"externalId\": \"string\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": 8325,\n      \"lastSyncTimeStamp\": \"1955-03-05T17:43:19.478Z\",\n      \"name\": \"string\",\n      \"parentGroupId\": 4124,\n      \"status\": \"string\",\n      \"tenantId\": 3273,\n      \"type\": 2076,\n      \"userCount\": 7925,\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"string\",\n            \"string\"\n          ],\n          \"company\": \"string\",\n          \"created\": \"2011-05-11T16:30:20.111Z\",\n          \"email\": \"string\",\n          \"externalId\": \"string\",\n          \"firstName\": \"string\",\n          \"fullname\": \"string\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": 4806,\n          \"lastName\": \"string\",\n          \"lastUpdate\": \"1998-08-06T05:41:57.105Z\",\n          \"latestSyncTimeStamp\": \"1975-05-16T17:13:42.874Z\",\n          \"password\": \"string\",\n          \"pictureId\": 8892,\n          \"status\": \"string\",\n          \"tenantId\": 6474,\n          \"tenantName\": \"string\",\n          \"tenantPictureId\": 5477,\n          \"type\": \"string\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"string\",\n            \"string\"\n          ],\n          \"company\": \"string\",\n          \"created\": \"1956-03-25T10:37:29.743Z\",\n          \"email\": \"string\",\n          \"externalId\": \"string\",\n          \"firstName\": \"string\",\n          \"fullname\": \"string\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": 18,\n          \"lastName\": \"string\",\n          \"lastUpdate\": \"2019-10-22T13:38:54.453Z\",\n          \"latestSyncTimeStamp\": \"1968-01-14T19:33:04.355Z\",\n          \"password\": \"string\",\n          \"pictureId\": 8078,\n          \"status\": \"string\",\n          \"tenantId\": 3563,\n          \"tenantName\": \"string\",\n          \"tenantPictureId\": 6990,\n          \"type\": \"string\"\n        }\n      ]\n    }\n  ],\n  \"id\": 7382,\n  \"lastName\": \"string\",\n  \"lastUpdate\": \"1973-02-24T16:05:12.678Z\",\n  \"latestSyncTimeStamp\": \"1985-10-06T06:47:29.435Z\",\n  \"password\": \"string\",\n  \"pictureId\": 7859,\n  \"status\": \"string\",\n  \"tenantId\": 8862,\n  \"tenantName\": \"string\",\n  \"tenantPictureId\": 5676,\n  \"type\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "44c405fb-8ef7-4fba-bdb3-f13f1c85b55b",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "61b35177-6100-4f8f-8a9c-91c62bd788e2",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "435c6d9b-e071-47da-9da4-5bad9e693c9e",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "87af4e47-ff42-41da-b9cc-14986203231c",
+          "name": "Update user information",
+          "request": {
+            "name": "Update user information",
+            "description": {
+              "content": "Only a first name, last name, email and company can be updated",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "profile"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"apps\": [\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    }\n  ],\n  \"capabilities\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"company\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"fullname\": \"<string>\",\n  \"groups\": [\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"id\": \"<long>\",\n  \"lastName\": \"<string>\",\n  \"lastUpdate\": \"<dateTime>\",\n  \"latestSyncTimeStamp\": \"<dateTime>\",\n  \"password\": \"<string>\",\n  \"pictureId\": \"<long>\",\n  \"status\": \"<string>\",\n  \"tenantId\": \"<long>\",\n  \"tenantName\": \"<string>\",\n  \"tenantPictureId\": \"<long>\",\n  \"type\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "cb330ef6-285e-4874-a1c2-f5e5f750b5c2",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apps\": [\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    }\n  ],\n  \"capabilities\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"company\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"fullname\": \"<string>\",\n  \"groups\": [\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"id\": \"<long>\",\n  \"lastName\": \"<string>\",\n  \"lastUpdate\": \"<dateTime>\",\n  \"latestSyncTimeStamp\": \"<dateTime>\",\n  \"password\": \"<string>\",\n  \"pictureId\": \"<long>\",\n  \"status\": \"<string>\",\n  \"tenantId\": \"<long>\",\n  \"tenantName\": \"<string>\",\n  \"tenantPictureId\": \"<long>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apps\": [\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    }\n  ],\n  \"capabilities\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"company\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"fullname\": \"<string>\",\n  \"groups\": [\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"id\": \"<long>\",\n  \"lastName\": \"<string>\",\n  \"lastUpdate\": \"<dateTime>\",\n  \"latestSyncTimeStamp\": \"<dateTime>\",\n  \"password\": \"<string>\",\n  \"pictureId\": \"<long>\",\n  \"status\": \"<string>\",\n  \"tenantId\": \"<long>\",\n  \"tenantName\": \"<string>\",\n  \"tenantPictureId\": \"<long>\",\n  \"type\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "339d6a04-47b3-4124-8917-a251734da65e",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apps\": [\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    }\n  ],\n  \"capabilities\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"company\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"fullname\": \"<string>\",\n  \"groups\": [\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"id\": \"<long>\",\n  \"lastName\": \"<string>\",\n  \"lastUpdate\": \"<dateTime>\",\n  \"latestSyncTimeStamp\": \"<dateTime>\",\n  \"password\": \"<string>\",\n  \"pictureId\": \"<long>\",\n  \"status\": \"<string>\",\n  \"tenantId\": \"<long>\",\n  \"tenantName\": \"<string>\",\n  \"tenantPictureId\": \"<long>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e4d2dcfe-2344-4bfd-a86c-27fbd00b6b09",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apps\": [\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    }\n  ],\n  \"capabilities\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"company\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"fullname\": \"<string>\",\n  \"groups\": [\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"id\": \"<long>\",\n  \"lastName\": \"<string>\",\n  \"lastUpdate\": \"<dateTime>\",\n  \"latestSyncTimeStamp\": \"<dateTime>\",\n  \"password\": \"<string>\",\n  \"pictureId\": \"<long>\",\n  \"status\": \"<string>\",\n  \"tenantId\": \"<long>\",\n  \"tenantName\": \"<string>\",\n  \"tenantPictureId\": \"<long>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "aa469ca9-3ed7-4572-9c77-aacd42f445cc",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apps\": [\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    }\n  ],\n  \"capabilities\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"company\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"fullname\": \"<string>\",\n  \"groups\": [\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"id\": \"<long>\",\n  \"lastName\": \"<string>\",\n  \"lastUpdate\": \"<dateTime>\",\n  \"latestSyncTimeStamp\": \"<dateTime>\",\n  \"password\": \"<string>\",\n  \"pictureId\": \"<long>\",\n  \"status\": \"<string>\",\n  \"tenantId\": \"<long>\",\n  \"tenantName\": \"<string>\",\n  \"tenantPictureId\": \"<long>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "71dd0ed0-2856-4111-a226-025f7fb3b511",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"apps\": [\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    },\n    {\n      \"description\": \"<string>\",\n      \"icon\": \"<string>\",\n      \"id\": \"<long>\",\n      \"name\": \"<string>\",\n      \"theme\": \"<string>\"\n    }\n  ],\n  \"capabilities\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"company\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"email\": \"<string>\",\n  \"externalId\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"fullname\": \"<string>\",\n  \"groups\": [\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"capabilities\": [\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        },\n        {\n          \"id\": \"<long>\",\n          \"name\": \"<string>\"\n        }\n      ],\n      \"externalId\": \"<string>\",\n      \"groups\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n        }\n      ],\n      \"id\": \"<long>\",\n      \"lastSyncTimeStamp\": \"<dateTime>\",\n      \"name\": \"<string>\",\n      \"parentGroupId\": \"<long>\",\n      \"status\": \"<string>\",\n      \"tenantId\": \"<long>\",\n      \"type\": \"<integer>\",\n      \"userCount\": \"<long>\",\n      \"users\": [\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        },\n        {\n          \"apps\": [\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            },\n            {\n              \"description\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"icon\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"id\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"name\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              },\n              \"theme\": {\n                \"value\": \"<Error: Too many levels of nesting to fake this schema>\"\n              }\n            }\n          ],\n          \"capabilities\": [\n            \"<string>\",\n            \"<string>\"\n          ],\n          \"company\": \"<string>\",\n          \"created\": \"<dateTime>\",\n          \"email\": \"<string>\",\n          \"externalId\": \"<string>\",\n          \"firstName\": \"<string>\",\n          \"fullname\": \"<string>\",\n          \"groups\": [\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            },\n            {\n              \"value\": \"<Circular reference to #/components/schemas/GroupRepresentation detected>\"\n            }\n          ],\n          \"id\": \"<long>\",\n          \"lastName\": \"<string>\",\n          \"lastUpdate\": \"<dateTime>\",\n          \"latestSyncTimeStamp\": \"<dateTime>\",\n          \"password\": \"<string>\",\n          \"pictureId\": \"<long>\",\n          \"status\": \"<string>\",\n          \"tenantId\": \"<long>\",\n          \"tenantName\": \"<string>\",\n          \"tenantPictureId\": \"<long>\",\n          \"type\": \"<string>\"\n        }\n      ]\n    }\n  ],\n  \"id\": \"<long>\",\n  \"lastName\": \"<string>\",\n  \"lastUpdate\": \"<dateTime>\",\n  \"latestSyncTimeStamp\": \"<dateTime>\",\n  \"password\": \"<string>\",\n  \"pictureId\": \"<long>\",\n  \"status\": \"<string>\",\n  \"tenantId\": \"<long>\",\n  \"tenantName\": \"<string>\",\n  \"tenantPictureId\": \"<long>\",\n  \"type\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3bcc0054-f08d-46c0-a4f2-a77d69456701",
+          "name": "Change user password",
+          "request": {
+            "name": "Change user password",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "profile-password"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"newPassword\": \"<string>\",\n  \"oldPassword\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "8a1e2a7f-35c0-445d-b8b0-768e1981a209",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-password"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newPassword\": \"<string>\",\n  \"oldPassword\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7ce973e9-8c94-47b9-9533-a9f2aa7217a5",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-password"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newPassword\": \"<string>\",\n  \"oldPassword\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "29f697cb-d349-46a6-b0b8-871a8a8f7e65",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-password"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newPassword\": \"<string>\",\n  \"oldPassword\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d39ff58b-93e3-4b34-99df-a2986ed150e4",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-password"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newPassword\": \"<string>\",\n  \"oldPassword\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c0149d1d-a824-44b4-bff5-65d6038537b9",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-password"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"newPassword\": \"<string>\",\n  \"oldPassword\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "c9228167-d2e6-4d0e-ae34-9d5ee15893d6",
+          "name": "Retrieve user profile picture",
+          "request": {
+            "name": "Retrieve user profile picture",
+            "description": {
+              "content": "Generally returns an image file",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "profile-picture"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "88301a2e-39dc-4ff2-8a6f-1e2316df29ce",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-picture"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "null",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "809e5673-d7f1-4924-8138-4622be9e1ff4",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-picture"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c439b93f-0748-46c0-a385-d06b5f01bf69",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-picture"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "52972b6b-2b7a-46b9-953f-b7ebc521a64d",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-picture"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2128fefb-85a4-4650-9641-7c54ec6bbff8",
+          "name": "Change user profile picture",
+          "request": {
+            "name": "Change user profile picture",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "profile-picture"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4f13dbaf-69a5-43aa-9213-7757855244b0",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-picture"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"created\": \"2008-07-18T00:39:05.703Z\",\n  \"id\": 9478,\n  \"name\": \"string\",\n  \"userId\": 1198\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8544c77b-59fc-48c3-9557-1018d0ca0770",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-picture"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7f591280-8b23-48d5-95bb-98063ee09be8",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-picture"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "49b32143-3229-4b56-89f3-5baa756df264",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-picture"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d0911c01-1ca0-4f08-891f-46c01aa32db3",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "profile-picture"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The Activiti server host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}/activiti-app",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "86b3ac3a-6aa4-4d97-b143-4d02d5155ede",
+    "name": "Activiti Public Rest About Profile API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n\n\nContact Support:\n Name: Activiti Community\n Email: activiti-community@alfresco.com",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Content API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Content",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "createTemporaryRelatedContent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/content",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "createTemporaryRelatedContent"
+        },
+        {
+          "info": {
+            "name": "createTemporaryRawRelatedContent",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/content/raw"
+          },
+          "docs": "createTemporaryRawRelatedContent"
+        },
+        {
+          "info": {
+            "name": "getContent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/content/:contentId",
+            "params": [
+              {
+                "name": "contentId",
+                "value": "",
+                "type": "path",
+                "description": "contentId"
+              }
+            ]
+          },
+          "docs": "getContent"
+        },
+        {
+          "info": {
+            "name": "deleteContent",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/content/:contentId",
+            "params": [
+              {
+                "name": "contentId",
+                "value": "",
+                "type": "path",
+                "description": "contentId"
+              }
+            ]
+          },
+          "docs": "deleteContent"
+        },
+        {
+          "info": {
+            "name": "getRawContent",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/content/:contentId/raw",
+            "params": [
+              {
+                "name": "contentId",
+                "value": "",
+                "type": "path",
+                "description": "contentId"
+              }
+            ]
+          },
+          "docs": "getRawContent"
+        },
+        {
+          "info": {
+            "name": "getRelatedContentForProcessInstance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/:processInstanceId/content",
+            "params": [
+              {
+                "name": "processInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "processInstanceId"
+              }
+            ]
+          },
+          "docs": "getRelatedContentForProcessInstance"
+        },
+        {
+          "info": {
+            "name": "createRelatedContentOnProcessInstance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/:processInstanceId/content",
+            "params": [
+              {
+                "name": "processInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "processInstanceId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "createRelatedContentOnProcessInstance"
+        },
+        {
+          "info": {
+            "name": "Retrieve content attached to process instance fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/:processInstanceId/field-content",
+            "params": [
+              {
+                "name": "processInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "processInstanceId"
+              }
+            ]
+          },
+          "docs": "Retrieve content attached to process instance fields"
+        },
+        {
+          "info": {
+            "name": "createRelatedContentOnProcessInstance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/:processInstanceId/raw-content",
+            "params": [
+              {
+                "name": "processInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "processInstanceId"
+              }
+            ]
+          },
+          "docs": "createRelatedContentOnProcessInstance"
+        },
+        {
+          "info": {
+            "name": "Retrieve which content is attached to a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/content",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ]
+          },
+          "docs": "Retrieve which content is attached to a task"
+        },
+        {
+          "info": {
+            "name": "To relate content (eg from Alfresco) to a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/content",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              },
+              {
+                "name": "isRelatedContent",
+                "value": "",
+                "type": "query",
+                "description": "isRelatedContent"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "To relate content (eg from Alfresco) to a task"
+        },
+        {
+          "info": {
+            "name": "Upload content to a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/raw-content",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              },
+              {
+                "name": "isRelatedContent",
+                "value": "",
+                "type": "query",
+                "description": "isRelatedContent"
+              }
+            ]
+          },
+          "docs": "Upload content to a task"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

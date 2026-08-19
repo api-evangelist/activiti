@@ -1,0 +1,75 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Integration Drive API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Integration Drive",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Drive Authorization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/google-drive/confirm-auth-request",
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "code"
+              }
+            ]
+          },
+          "docs": "Returns Drive Oauth HTML Page"
+        },
+        {
+          "info": {
+            "name": "List file & folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/google-drive/files",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "filter"
+              },
+              {
+                "name": "parent",
+                "value": "",
+                "type": "query",
+                "description": "parent"
+              },
+              {
+                "name": "currentFolderOnly",
+                "value": "",
+                "type": "query",
+                "description": "currentFolderOnly"
+              }
+            ]
+          },
+          "docs": "List file & folders"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

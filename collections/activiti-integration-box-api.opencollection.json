@@ -1,0 +1,164 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Integration Box API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Integration Box",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Box Authorization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/confirm-auth-request",
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "code"
+              }
+            ]
+          },
+          "docs": "Returns Box Oauth HTML Page"
+        },
+        {
+          "info": {
+            "name": "List file & folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/files",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "filter"
+              },
+              {
+                "name": "parent",
+                "value": "",
+                "type": "query",
+                "description": "parent"
+              }
+            ]
+          },
+          "docs": "List file & folders"
+        },
+        {
+          "info": {
+            "name": "Retrieve if Box Integration is enabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/status"
+          },
+          "docs": "Retrieve if Box Integration is enabled"
+        },
+        {
+          "info": {
+            "name": "List Box Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/:userId/account",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ]
+          },
+          "docs": "List Box Account"
+        },
+        {
+          "info": {
+            "name": "Create Box account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/:userId/account",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Box account"
+        },
+        {
+          "info": {
+            "name": "Update Box account",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/:userId/account",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Box account"
+        },
+        {
+          "info": {
+            "name": "Delete Box account",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/:userId/account",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ]
+          },
+          "docs": "Delete Box account"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

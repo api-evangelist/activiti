@@ -1,0 +1,304 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Models API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Models",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List models (process, form, decision rule or app)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/models",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "filter"
+              },
+              {
+                "name": "sort",
+                "value": "",
+                "type": "query",
+                "description": "sort"
+              },
+              {
+                "name": "modelType",
+                "value": "",
+                "type": "query",
+                "description": "modelType"
+              },
+              {
+                "name": "referenceId",
+                "value": "",
+                "type": "query",
+                "description": "referenceId"
+              }
+            ]
+          },
+          "docs": "List models (process, form, decision rule or app)"
+        },
+        {
+          "info": {
+            "name": "To create a new model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/models",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "To create a new model"
+        },
+        {
+          "info": {
+            "name": "TODO",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/models-for-app-definition"
+          },
+          "docs": "TODO"
+        },
+        {
+          "info": {
+            "name": "To retrieve details about a particular model (process, form, decision rule or app)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:modelId",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              },
+              {
+                "name": "includePermissions",
+                "value": "",
+                "type": "query",
+                "description": "includePermissions"
+              }
+            ]
+          },
+          "docs": "To retrieve details about a particular model (process, form, decision rule or app)"
+        },
+        {
+          "info": {
+            "name": "Edit a specific model",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:modelId",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Edit a specific model"
+        },
+        {
+          "info": {
+            "name": "Delete a model",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:modelId",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              },
+              {
+                "name": "cascade",
+                "value": "",
+                "type": "query",
+                "description": "cascade"
+              },
+              {
+                "name": "deleteRuntimeApp",
+                "value": "",
+                "type": "query",
+                "description": "deleteRuntimeApp"
+              }
+            ]
+          },
+          "docs": "Delete a model"
+        },
+        {
+          "info": {
+            "name": "To duplicate an existing model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:modelId/clone",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "To duplicate an existing model"
+        },
+        {
+          "info": {
+            "name": "Get the JSON model",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:modelId/editor/json",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              }
+            ]
+          },
+          "docs": "Get the JSON model"
+        },
+        {
+          "info": {
+            "name": "Save the JSON model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:modelId/editor/json",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Save the JSON model"
+        },
+        {
+          "info": {
+            "name": "Validate the JSON model",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:modelId/editor/validate",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Validate the JSON model"
+        },
+        {
+          "info": {
+            "name": "Create a new model version",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:modelId/newversion",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              }
+            ]
+          },
+          "docs": "Create a new model version"
+        },
+        {
+          "info": {
+            "name": "Get Model thumbnail",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/models/:modelId/thumbnail",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              }
+            ]
+          },
+          "docs": "Get Model thumbnail"
+        },
+        {
+          "info": {
+            "name": "To import a BPMN 2.0 xml file",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/process-models/import"
+          },
+          "docs": "To import a BPMN 2.0 xml file"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

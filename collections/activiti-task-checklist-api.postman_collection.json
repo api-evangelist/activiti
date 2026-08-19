@@ -1,0 +1,1112 @@
+{
+  "item": [
+    {
+      "id": "c7452c19-c64a-483e-94a4-5d904c6565a3",
+      "name": "Task CheckList",
+      "description": {
+        "content": "Manage CheckList",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "e46d7892-9f34-4c34-ad59-ff437d9c3037",
+          "name": "Retrieve Checklist added to a task",
+          "request": {
+            "name": "Retrieve Checklist added to a task",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "tasks",
+                ":taskId",
+                "checklist"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskId",
+                  "description": "(Required) taskId"
+                },
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf18e146-c58d-4389-a964-803ac68c9176",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"size\": 297,\n  \"start\": 2395,\n  \"total\": 9427\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "92fbff8b-aa8d-4540-83ae-1bfcf7dbf8e3",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f6d41960-7e7a-4290-bf89-f30fa0ad227f",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "e9de4566-b8fb-456b-921f-88e293034568",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "de52162d-07dd-47b6-8e31-4d0b27a2e1d5",
+          "name": "Create a task checklist",
+          "request": {
+            "name": "Create a task checklist",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "tasks",
+                ":taskId",
+                "checklist"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskId",
+                  "description": "(Required) taskId"
+                },
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"adhocTaskCanBeReassigned\": \"<boolean>\",\n  \"assignee\": {\n    \"email\": \"<string>\",\n    \"externalId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<long>\",\n    \"lastName\": \"<string>\",\n    \"pictureId\": \"<long>\"\n  },\n  \"category\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"duration\": \"<long>\",\n  \"endDate\": \"<dateTime>\",\n  \"formKey\": \"<string>\",\n  \"id\": \"<string>\",\n  \"initiatorCanCompleteTask\": \"<boolean>\",\n  \"involvedPeople\": [\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    }\n  ],\n  \"memberOfCandidateGroup\": \"<boolean>\",\n  \"memberOfCandidateUsers\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"parentTaskId\": \"<string>\",\n  \"parentTaskName\": \"<string>\",\n  \"priority\": \"<integer>\",\n  \"processDefinitionCategory\": \"<string>\",\n  \"processDefinitionDeploymentId\": \"<string>\",\n  \"processDefinitionDescription\": \"<string>\",\n  \"processDefinitionId\": \"<string>\",\n  \"processDefinitionKey\": \"<string>\",\n  \"processDefinitionName\": \"<string>\",\n  \"processDefinitionVersion\": \"<integer>\",\n  \"processInstanceId\": \"<string>\",\n  \"processInstanceName\": \"<string>\",\n  \"processInstanceStartUserId\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "bb153fdb-ad8c-483a-87b9-830ba17f6517",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"adhocTaskCanBeReassigned\": \"<boolean>\",\n  \"assignee\": {\n    \"email\": \"<string>\",\n    \"externalId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<long>\",\n    \"lastName\": \"<string>\",\n    \"pictureId\": \"<long>\"\n  },\n  \"category\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"duration\": \"<long>\",\n  \"endDate\": \"<dateTime>\",\n  \"formKey\": \"<string>\",\n  \"id\": \"<string>\",\n  \"initiatorCanCompleteTask\": \"<boolean>\",\n  \"involvedPeople\": [\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    }\n  ],\n  \"memberOfCandidateGroup\": \"<boolean>\",\n  \"memberOfCandidateUsers\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"parentTaskId\": \"<string>\",\n  \"parentTaskName\": \"<string>\",\n  \"priority\": \"<integer>\",\n  \"processDefinitionCategory\": \"<string>\",\n  \"processDefinitionDeploymentId\": \"<string>\",\n  \"processDefinitionDescription\": \"<string>\",\n  \"processDefinitionId\": \"<string>\",\n  \"processDefinitionKey\": \"<string>\",\n  \"processDefinitionName\": \"<string>\",\n  \"processDefinitionVersion\": \"<integer>\",\n  \"processInstanceId\": \"<string>\",\n  \"processInstanceName\": \"<string>\",\n  \"processInstanceStartUserId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"adhocTaskCanBeReassigned\": \"<boolean>\",\n  \"assignee\": {\n    \"email\": \"<string>\",\n    \"externalId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<long>\",\n    \"lastName\": \"<string>\",\n    \"pictureId\": \"<long>\"\n  },\n  \"category\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"duration\": \"<long>\",\n  \"endDate\": \"<dateTime>\",\n  \"formKey\": \"<string>\",\n  \"id\": \"<string>\",\n  \"initiatorCanCompleteTask\": \"<boolean>\",\n  \"involvedPeople\": [\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    }\n  ],\n  \"memberOfCandidateGroup\": \"<boolean>\",\n  \"memberOfCandidateUsers\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"parentTaskId\": \"<string>\",\n  \"parentTaskName\": \"<string>\",\n  \"priority\": \"<integer>\",\n  \"processDefinitionCategory\": \"<string>\",\n  \"processDefinitionDeploymentId\": \"<string>\",\n  \"processDefinitionDescription\": \"<string>\",\n  \"processDefinitionId\": \"<string>\",\n  \"processDefinitionKey\": \"<string>\",\n  \"processDefinitionName\": \"<string>\",\n  \"processDefinitionVersion\": \"<integer>\",\n  \"processInstanceId\": \"<string>\",\n  \"processInstanceName\": \"<string>\",\n  \"processInstanceStartUserId\": \"<string>\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3eb0df40-1fd4-44be-891b-9b7cd067308f",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"adhocTaskCanBeReassigned\": \"<boolean>\",\n  \"assignee\": {\n    \"email\": \"<string>\",\n    \"externalId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<long>\",\n    \"lastName\": \"<string>\",\n    \"pictureId\": \"<long>\"\n  },\n  \"category\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"duration\": \"<long>\",\n  \"endDate\": \"<dateTime>\",\n  \"formKey\": \"<string>\",\n  \"id\": \"<string>\",\n  \"initiatorCanCompleteTask\": \"<boolean>\",\n  \"involvedPeople\": [\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    }\n  ],\n  \"memberOfCandidateGroup\": \"<boolean>\",\n  \"memberOfCandidateUsers\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"parentTaskId\": \"<string>\",\n  \"parentTaskName\": \"<string>\",\n  \"priority\": \"<integer>\",\n  \"processDefinitionCategory\": \"<string>\",\n  \"processDefinitionDeploymentId\": \"<string>\",\n  \"processDefinitionDescription\": \"<string>\",\n  \"processDefinitionId\": \"<string>\",\n  \"processDefinitionKey\": \"<string>\",\n  \"processDefinitionName\": \"<string>\",\n  \"processDefinitionVersion\": \"<integer>\",\n  \"processInstanceId\": \"<string>\",\n  \"processInstanceName\": \"<string>\",\n  \"processInstanceStartUserId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "1972d38a-fb9b-4194-9b36-6830e911e165",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"adhocTaskCanBeReassigned\": \"<boolean>\",\n  \"assignee\": {\n    \"email\": \"<string>\",\n    \"externalId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<long>\",\n    \"lastName\": \"<string>\",\n    \"pictureId\": \"<long>\"\n  },\n  \"category\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"duration\": \"<long>\",\n  \"endDate\": \"<dateTime>\",\n  \"formKey\": \"<string>\",\n  \"id\": \"<string>\",\n  \"initiatorCanCompleteTask\": \"<boolean>\",\n  \"involvedPeople\": [\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    }\n  ],\n  \"memberOfCandidateGroup\": \"<boolean>\",\n  \"memberOfCandidateUsers\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"parentTaskId\": \"<string>\",\n  \"parentTaskName\": \"<string>\",\n  \"priority\": \"<integer>\",\n  \"processDefinitionCategory\": \"<string>\",\n  \"processDefinitionDeploymentId\": \"<string>\",\n  \"processDefinitionDescription\": \"<string>\",\n  \"processDefinitionId\": \"<string>\",\n  \"processDefinitionKey\": \"<string>\",\n  \"processDefinitionName\": \"<string>\",\n  \"processDefinitionVersion\": \"<integer>\",\n  \"processInstanceId\": \"<string>\",\n  \"processInstanceName\": \"<string>\",\n  \"processInstanceStartUserId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "307a7702-08ec-430d-9fdb-0616f9e87099",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"adhocTaskCanBeReassigned\": \"<boolean>\",\n  \"assignee\": {\n    \"email\": \"<string>\",\n    \"externalId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<long>\",\n    \"lastName\": \"<string>\",\n    \"pictureId\": \"<long>\"\n  },\n  \"category\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"duration\": \"<long>\",\n  \"endDate\": \"<dateTime>\",\n  \"formKey\": \"<string>\",\n  \"id\": \"<string>\",\n  \"initiatorCanCompleteTask\": \"<boolean>\",\n  \"involvedPeople\": [\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    }\n  ],\n  \"memberOfCandidateGroup\": \"<boolean>\",\n  \"memberOfCandidateUsers\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"parentTaskId\": \"<string>\",\n  \"parentTaskName\": \"<string>\",\n  \"priority\": \"<integer>\",\n  \"processDefinitionCategory\": \"<string>\",\n  \"processDefinitionDeploymentId\": \"<string>\",\n  \"processDefinitionDescription\": \"<string>\",\n  \"processDefinitionId\": \"<string>\",\n  \"processDefinitionKey\": \"<string>\",\n  \"processDefinitionName\": \"<string>\",\n  \"processDefinitionVersion\": \"<integer>\",\n  \"processInstanceId\": \"<string>\",\n  \"processInstanceName\": \"<string>\",\n  \"processInstanceStartUserId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "46cd300b-a13a-4a95-91f5-950c53a52982",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"adhocTaskCanBeReassigned\": \"<boolean>\",\n  \"assignee\": {\n    \"email\": \"<string>\",\n    \"externalId\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"id\": \"<long>\",\n    \"lastName\": \"<string>\",\n    \"pictureId\": \"<long>\"\n  },\n  \"category\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"description\": \"<string>\",\n  \"dueDate\": \"<dateTime>\",\n  \"duration\": \"<long>\",\n  \"endDate\": \"<dateTime>\",\n  \"formKey\": \"<string>\",\n  \"id\": \"<string>\",\n  \"initiatorCanCompleteTask\": \"<boolean>\",\n  \"involvedPeople\": [\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    },\n    {\n      \"email\": \"<string>\",\n      \"externalId\": \"<string>\",\n      \"firstName\": \"<string>\",\n      \"id\": \"<long>\",\n      \"lastName\": \"<string>\",\n      \"pictureId\": \"<long>\"\n    }\n  ],\n  \"memberOfCandidateGroup\": \"<boolean>\",\n  \"memberOfCandidateUsers\": \"<boolean>\",\n  \"name\": \"<string>\",\n  \"parentTaskId\": \"<string>\",\n  \"parentTaskName\": \"<string>\",\n  \"priority\": \"<integer>\",\n  \"processDefinitionCategory\": \"<string>\",\n  \"processDefinitionDeploymentId\": \"<string>\",\n  \"processDefinitionDescription\": \"<string>\",\n  \"processDefinitionId\": \"<string>\",\n  \"processDefinitionKey\": \"<string>\",\n  \"processDefinitionName\": \"<string>\",\n  \"processDefinitionVersion\": \"<integer>\",\n  \"processInstanceId\": \"<string>\",\n  \"processInstanceName\": \"<string>\",\n  \"processInstanceStartUserId\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8fdc78bb-41ea-46bd-bfdd-6d8838b6249d",
+          "name": "Change the order of items on a checklist",
+          "request": {
+            "name": "Change the order of items on a checklist",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "enterprise",
+                "tasks",
+                ":taskId",
+                "checklist"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "taskId",
+                  "description": "(Required) taskId"
+                },
+                {
+                  "description": "The Activiti server host",
+                  "type": "any",
+                  "value": "{{host}}",
+                  "key": "host"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"order\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "6caed91d-6964-4236-803b-09aad04e744c",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "53e146cf-8365-4b2c-84dd-e10de09e514d",
+              "name": "Created",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "761c557a-e994-4e17-8f91-6b91d83ea195",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "094e0c04-eece-4499-8a10-56460168e0e1",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "385b92c2-f9df-4e0b-9a78-a38f4a531ff0",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "enterprise",
+                    "tasks",
+                    ":taskId",
+                    "checklist"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "taskId",
+                      "description": "(Required) taskId"
+                    },
+                    {
+                      "description": "The Activiti server host",
+                      "type": "any",
+                      "value": "{{host}}",
+                      "key": "host"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: basic",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Basic <credentials>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"order\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "description": {
+        "content": "The Activiti server host",
+        "type": "text/plain"
+      },
+      "type": "any",
+      "value": "localhost:8080",
+      "key": "host"
+    },
+    {
+      "type": "string",
+      "value": "https://{{host}}/activiti-app",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "basic",
+    "basic": [
+      {
+        "key": "username",
+        "value": "{{basicAuthUsername}}"
+      },
+      {
+        "key": "password",
+        "value": "{{basicAuthPassword}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "4e3d0a94-09a1-44cd-aa7e-1a18aec3c65b",
+    "name": "Activiti Public Rest About Task CheckList API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n\n\nContact Support:\n Name: Activiti Community\n Email: activiti-community@alfresco.com",
+      "type": "text/plain"
+    }
+  }
+}

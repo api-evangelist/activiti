@@ -1,0 +1,407 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Integration API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Integration",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Alfresco Cloud Authorization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco-cloud/confirm-auth-request",
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "code"
+              }
+            ]
+          },
+          "docs": "Returns Alfresco Oauth HTML Page"
+        },
+        {
+          "info": {
+            "name": "List Alfresco networks",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco-cloud/networks"
+          },
+          "docs": "List Alfresco networks"
+        },
+        {
+          "info": {
+            "name": "List file & folders inside a specific folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco-cloud/networks/:networkId/folders/:folderId/content",
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "networkId"
+              },
+              {
+                "name": "folderId",
+                "value": "",
+                "type": "path",
+                "description": "folderId"
+              }
+            ]
+          },
+          "docs": "List file & folders inside a specific folder"
+        },
+        {
+          "info": {
+            "name": "List Alfresco sites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco-cloud/networks/:networkId/sites",
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "networkId"
+              }
+            ]
+          },
+          "docs": "Returns ALL Sites"
+        },
+        {
+          "info": {
+            "name": "List file & folders inside a specific site",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco-cloud/networks/:networkId/sites/:siteId/content",
+            "params": [
+              {
+                "name": "networkId",
+                "value": "",
+                "type": "path",
+                "description": "networkId"
+              },
+              {
+                "name": "siteId",
+                "value": "",
+                "type": "path",
+                "description": "siteId"
+              }
+            ]
+          },
+          "docs": "List file & folders inside a specific site"
+        },
+        {
+          "info": {
+            "name": "List file & folders inside a specific folder",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco/:repositoryId/folders/:folderId/content",
+            "params": [
+              {
+                "name": "repositoryId",
+                "value": "",
+                "type": "path",
+                "description": "repositoryId"
+              },
+              {
+                "name": "folderId",
+                "value": "",
+                "type": "path",
+                "description": "folderId"
+              }
+            ]
+          },
+          "docs": "List file & folders inside a specific folder"
+        },
+        {
+          "info": {
+            "name": "List Alfresco sites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco/:repositoryId/sites",
+            "params": [
+              {
+                "name": "repositoryId",
+                "value": "",
+                "type": "path",
+                "description": "repositoryId"
+              }
+            ]
+          },
+          "docs": "Returns ALL Sites"
+        },
+        {
+          "info": {
+            "name": "List file & folders inside a specific site",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/alfresco/:repositoryId/sites/:siteId/content",
+            "params": [
+              {
+                "name": "repositoryId",
+                "value": "",
+                "type": "path",
+                "description": "repositoryId"
+              },
+              {
+                "name": "siteId",
+                "value": "",
+                "type": "path",
+                "description": "siteId"
+              }
+            ]
+          },
+          "docs": "List file & folders inside a specific site"
+        },
+        {
+          "info": {
+            "name": "Box Authorization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/confirm-auth-request",
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "code"
+              }
+            ]
+          },
+          "docs": "Returns Box Oauth HTML Page"
+        },
+        {
+          "info": {
+            "name": "List file & folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/files",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "filter"
+              },
+              {
+                "name": "parent",
+                "value": "",
+                "type": "query",
+                "description": "parent"
+              }
+            ]
+          },
+          "docs": "List file & folders"
+        },
+        {
+          "info": {
+            "name": "Retrieve if Box Integration is enabled",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/status"
+          },
+          "docs": "Retrieve if Box Integration is enabled"
+        },
+        {
+          "info": {
+            "name": "List Box Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/:userId/account",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ]
+          },
+          "docs": "List Box Account"
+        },
+        {
+          "info": {
+            "name": "Create Box account",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/:userId/account",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Box account"
+        },
+        {
+          "info": {
+            "name": "Update Box account",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/:userId/account",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update Box account"
+        },
+        {
+          "info": {
+            "name": "Delete Box account",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/box/:userId/account",
+            "params": [
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ]
+          },
+          "docs": "Delete Box account"
+        },
+        {
+          "info": {
+            "name": "Drive Authorization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/google-drive/confirm-auth-request",
+            "params": [
+              {
+                "name": "code",
+                "value": "",
+                "type": "query",
+                "description": "code"
+              }
+            ]
+          },
+          "docs": "Returns Drive Oauth HTML Page"
+        },
+        {
+          "info": {
+            "name": "List file & folders",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/integration/google-drive/files",
+            "params": [
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "filter"
+              },
+              {
+                "name": "parent",
+                "value": "",
+                "type": "query",
+                "description": "parent"
+              },
+              {
+                "name": "currentFolderOnly",
+                "value": "",
+                "type": "query",
+                "description": "currentFolderOnly"
+              }
+            ]
+          },
+          "docs": "List file & folders"
+        },
+        {
+          "info": {
+            "name": "List Alfresco repositories",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/profile/accounts/alfresco",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "query",
+                "description": "tenantId"
+              },
+              {
+                "name": "includeAccounts",
+                "value": "",
+                "type": "query",
+                "description": "includeAccounts"
+              }
+            ]
+          },
+          "docs": "A tenant administrator can configure one or more Alfresco repositories to use when working with content."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

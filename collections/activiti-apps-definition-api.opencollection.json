@@ -1,0 +1,97 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Apps Definition API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Apps Definition",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Import App Definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/app-definitions/import"
+          },
+          "docs": "This is useful to bootstrap an environment (for users or continous integration)."
+        },
+        {
+          "info": {
+            "name": "Export App Definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/app-definitions/:modelId/export",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId from a runtime app or the id of an app definition model"
+              }
+            ]
+          },
+          "docs": "This will return a zip file containing the app definition model and all related models (process definitions and forms)."
+        },
+        {
+          "info": {
+            "name": "Import App",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/app-definitions/:modelId/import",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              }
+            ]
+          },
+          "docs": "To import an app to an existing app definition to create a new version instead of importing a new app definition."
+        },
+        {
+          "info": {
+            "name": "Publish App",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/app-definitions/:modelId/publish",
+            "params": [
+              {
+                "name": "modelId",
+                "value": "",
+                "type": "path",
+                "description": "modelId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Before an app model can be used, it need to be published"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

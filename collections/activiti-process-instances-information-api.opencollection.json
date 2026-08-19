@@ -1,0 +1,59 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Process Instances Information API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Process Instances Information",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Start a process instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Start a process instance"
+        },
+        {
+          "info": {
+            "name": "Retrieve content attached to process instance fields",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/process-instances/:processInstanceId/field-content",
+            "params": [
+              {
+                "name": "processInstanceId",
+                "value": "",
+                "type": "path",
+                "description": "processInstanceId"
+              }
+            ]
+          },
+          "docs": "Retrieve content attached to process instance fields"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

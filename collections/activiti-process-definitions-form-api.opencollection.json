@@ -1,0 +1,58 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Process Definitions Form API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Process Definitions Form",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve the start form for a process definition",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/process-definitions/:processDefinitionId/start-form"
+          },
+          "docs": "Retrieve the start form for a process definition"
+        },
+        {
+          "info": {
+            "name": "Retrieve field values (eg. the typeahead field)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/process-definitions/:processDefinitionId/start-form-values/:field"
+          },
+          "docs": "Retrieve field values (eg. the typeahead field)"
+        },
+        {
+          "info": {
+            "name": "Retrieve field values (eg. the table field)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/process-definitions/:processDefinitionId/start-form-values/:field/:column"
+          },
+          "docs": "Retrieve field values (eg. the table field)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

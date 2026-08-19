@@ -1,0 +1,245 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About User Filters API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "User Filters",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve list of taks filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/filters/processes",
+            "params": [
+              {
+                "name": "appId",
+                "value": "",
+                "type": "query",
+                "description": "appId"
+              }
+            ]
+          },
+          "docs": "Retrieve list of taks filters"
+        },
+        {
+          "info": {
+            "name": "Create a user process instance task filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/filters/processes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a user process instance task filter"
+        },
+        {
+          "info": {
+            "name": "To order the list of user process instance filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/filters/processes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "To order the list of user process instance filters"
+        },
+        {
+          "info": {
+            "name": "Get a specific user process instance task filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/filters/processes/:userFilterId",
+            "params": [
+              {
+                "name": "userFilterId",
+                "value": "",
+                "type": "path",
+                "description": "userFilterId"
+              }
+            ]
+          },
+          "docs": "Get a specific user process instance task filter"
+        },
+        {
+          "info": {
+            "name": "Update a user process instance task filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/filters/processes/:userFilterId",
+            "params": [
+              {
+                "name": "userFilterId",
+                "value": "",
+                "type": "path",
+                "description": "userFilterId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a user process instance task filter"
+        },
+        {
+          "info": {
+            "name": "Delete a user process instance task filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/filters/processes/:userFilterId",
+            "params": [
+              {
+                "name": "userFilterId",
+                "value": "",
+                "type": "path",
+                "description": "userFilterId"
+              }
+            ]
+          },
+          "docs": "Delete a user process instance task filter"
+        },
+        {
+          "info": {
+            "name": "Retrieve list of task filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/filters/tasks",
+            "params": [
+              {
+                "name": "appId",
+                "value": "",
+                "type": "query",
+                "description": "appId"
+              }
+            ]
+          },
+          "docs": "Retrieve list of task filters"
+        },
+        {
+          "info": {
+            "name": "Create a new task filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/filters/tasks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a new task filter"
+        },
+        {
+          "info": {
+            "name": "To order the list of user task filters",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/filters/tasks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "To order the list of user task filters"
+        },
+        {
+          "info": {
+            "name": "Get a specific task filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/filters/tasks/:userFilterId",
+            "params": [
+              {
+                "name": "userFilterId",
+                "value": "",
+                "type": "path",
+                "description": "userFilterId"
+              }
+            ]
+          },
+          "docs": "Get a specific task filter"
+        },
+        {
+          "info": {
+            "name": "Update a specific task filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/filters/tasks/:userFilterId",
+            "params": [
+              {
+                "name": "userFilterId",
+                "value": "",
+                "type": "path",
+                "description": "userFilterId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a specific task filter"
+        },
+        {
+          "info": {
+            "name": "Delete a task filter",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/filters/tasks/:userFilterId",
+            "params": [
+              {
+                "name": "userFilterId",
+                "value": "",
+                "type": "path",
+                "description": "userFilterId"
+              }
+            ]
+          },
+          "docs": "Delete a task filter"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

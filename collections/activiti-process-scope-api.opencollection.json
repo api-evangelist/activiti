@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Process Scope API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Process Scope",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getRuntimeProcessScopes",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/process-scopes",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "getRuntimeProcessScopes"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

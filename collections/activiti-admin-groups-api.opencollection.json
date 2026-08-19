@@ -1,0 +1,411 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Admin Groups API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin Groups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getGroups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "query",
+                "description": "tenantId"
+              },
+              {
+                "name": "functional",
+                "value": "",
+                "type": "query",
+                "description": "functional"
+              },
+              {
+                "name": "summary",
+                "value": "",
+                "type": "query",
+                "description": "summary"
+              }
+            ]
+          },
+          "docs": "getGroups"
+        },
+        {
+          "info": {
+            "name": "createNewGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "createNewGroup"
+        },
+        {
+          "info": {
+            "name": "getGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              },
+              {
+                "name": "includeAllUsers",
+                "value": "",
+                "type": "query",
+                "description": "includeAllUsers"
+              },
+              {
+                "name": "summary",
+                "value": "",
+                "type": "query",
+                "description": "summary"
+              }
+            ]
+          },
+          "docs": "getGroup"
+        },
+        {
+          "info": {
+            "name": "updateGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "updateGroup"
+        },
+        {
+          "info": {
+            "name": "deleteGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              }
+            ]
+          },
+          "docs": "deleteGroup"
+        },
+        {
+          "info": {
+            "name": "activate",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId/action/activate",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              }
+            ]
+          },
+          "docs": "activate"
+        },
+        {
+          "info": {
+            "name": "addAllUsersToGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId/add-all-users",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              }
+            ]
+          },
+          "docs": "addAllUsersToGroup"
+        },
+        {
+          "info": {
+            "name": "addGroupCapabilities",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId/capabilities",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "addGroupCapabilities"
+        },
+        {
+          "info": {
+            "name": "deleteGroupCapability",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId/capabilities/:groupCapabilityId",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              },
+              {
+                "name": "groupCapabilityId",
+                "value": "",
+                "type": "path",
+                "description": "groupCapabilityId"
+              }
+            ]
+          },
+          "docs": "deleteGroupCapability"
+        },
+        {
+          "info": {
+            "name": "addGroupMember",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId/members/:userId",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ]
+          },
+          "docs": "addGroupMember"
+        },
+        {
+          "info": {
+            "name": "deleteGroupMember",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId/members/:userId",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              },
+              {
+                "name": "userId",
+                "value": "",
+                "type": "path",
+                "description": "userId"
+              }
+            ]
+          },
+          "docs": "deleteGroupMember"
+        },
+        {
+          "info": {
+            "name": "getCapabilities",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId/potential-capabilities",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              }
+            ]
+          },
+          "docs": "getCapabilities"
+        },
+        {
+          "info": {
+            "name": "getRelatedGroups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId/related-groups",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              }
+            ]
+          },
+          "docs": "getRelatedGroups"
+        },
+        {
+          "info": {
+            "name": "addRelatedGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId/related-groups/:relatedGroupId",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              },
+              {
+                "name": "relatedGroupId",
+                "value": "",
+                "type": "path",
+                "description": "relatedGroupId"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "type"
+              }
+            ]
+          },
+          "docs": "addRelatedGroup"
+        },
+        {
+          "info": {
+            "name": "deleteRelatedGroup",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId/related-groups/:relatedGroupId",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              },
+              {
+                "name": "relatedGroupId",
+                "value": "",
+                "type": "path",
+                "description": "relatedGroupId"
+              }
+            ]
+          },
+          "docs": "deleteRelatedGroup"
+        },
+        {
+          "info": {
+            "name": "getGroupUsers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/groups/:groupId/users",
+            "params": [
+              {
+                "name": "groupId",
+                "value": "",
+                "type": "path",
+                "description": "groupId"
+              },
+              {
+                "name": "filter",
+                "value": "",
+                "type": "query",
+                "description": "filter"
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "page"
+              },
+              {
+                "name": "pageSize",
+                "value": "",
+                "type": "query",
+                "description": "pageSize"
+              }
+            ]
+          },
+          "docs": "getGroupUsers"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

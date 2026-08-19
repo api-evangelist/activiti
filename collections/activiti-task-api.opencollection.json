@@ -1,0 +1,606 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Task API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Task",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Task Form",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/task-forms/:taskId",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ]
+          },
+          "docs": "Retrieve Task Form"
+        },
+        {
+          "info": {
+            "name": "Complete a Task Form",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/task-forms/:taskId",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Complete a Task Form"
+        },
+        {
+          "info": {
+            "name": "Retrieve Populated Field Values",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/task-forms/:taskId/form-values/:field",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              },
+              {
+                "name": "field",
+                "value": "",
+                "type": "path",
+                "description": "field"
+              }
+            ]
+          },
+          "docs": "Form field values that are populated through a REST backend, can be retrieved via this service"
+        },
+        {
+          "info": {
+            "name": "Retrieve Column Field Values",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/task-forms/:taskId/form-values/:field/:column",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              },
+              {
+                "name": "field",
+                "value": "",
+                "type": "path",
+                "description": "field"
+              },
+              {
+                "name": "column",
+                "value": "",
+                "type": "path",
+                "description": "column"
+              }
+            ]
+          },
+          "docs": "Specific case to retrieve information on a specific column"
+        },
+        {
+          "info": {
+            "name": "Save Task Form",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/task-forms/:taskId/save-form",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Save Task Form"
+        },
+        {
+          "info": {
+            "name": "Create a Standalone Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Standalone Task is not associated with a process instance. You can define only task name & description"
+        },
+        {
+          "info": {
+            "name": "Filter list of Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/filter",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Filter list of Task"
+        },
+        {
+          "info": {
+            "name": "List Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/query",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "List Task"
+        },
+        {
+          "info": {
+            "name": "Task Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ]
+          },
+          "docs": "Task Details"
+        },
+        {
+          "info": {
+            "name": "Update Task Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "You can edit only name, description and dueDate (ISO 8601 string)."
+        },
+        {
+          "info": {
+            "name": "Delete a Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ]
+          },
+          "docs": "Delete a Task"
+        },
+        {
+          "info": {
+            "name": "Assign a task to a user",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/action/assign",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Assign a task to a user"
+        },
+        {
+          "info": {
+            "name": "Attach a form to a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/action/attach-form",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Attach a form to a task"
+        },
+        {
+          "info": {
+            "name": "Claim a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/action/claim",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ]
+          },
+          "docs": "To claim a task (in case the task is assigned to a group)"
+        },
+        {
+          "info": {
+            "name": "Complete Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/action/complete",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ]
+          },
+          "docs": "To complete a task (standalone or without a task form)"
+        },
+        {
+          "info": {
+            "name": "To involve a user with a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/action/involve",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "To involve a user with a task"
+        },
+        {
+          "info": {
+            "name": "Remove a form to a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/action/remove-form",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ]
+          },
+          "docs": "Remove a form to a task"
+        },
+        {
+          "info": {
+            "name": "Remove an involved user from a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/action/remove-involved",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Remove an involved user from a task"
+        },
+        {
+          "info": {
+            "name": "Unclaim a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/action/unclaim",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ]
+          },
+          "docs": "To unclaim a task (in case the task was assigned to a group)"
+        },
+        {
+          "info": {
+            "name": "Retrieve Checklist added to a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/checklist",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ]
+          },
+          "docs": "Retrieve Checklist added to a task"
+        },
+        {
+          "info": {
+            "name": "Create a task checklist",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/checklist",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a task checklist"
+        },
+        {
+          "info": {
+            "name": "Change the order of items on a checklist",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/checklist",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Change the order of items on a checklist"
+        },
+        {
+          "info": {
+            "name": "Comment list added to Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/comments",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              },
+              {
+                "name": "latestFirst",
+                "value": "",
+                "type": "query",
+                "description": "latestFirst"
+              }
+            ]
+          },
+          "docs": "Comment list added to Task"
+        },
+        {
+          "info": {
+            "name": "Add a comment to a Task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/comments",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add a comment to a Task"
+        },
+        {
+          "info": {
+            "name": "Retrieve which content is attached to a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/content",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              }
+            ]
+          },
+          "docs": "Retrieve which content is attached to a task"
+        },
+        {
+          "info": {
+            "name": "To relate content (eg from Alfresco) to a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/content",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              },
+              {
+                "name": "isRelatedContent",
+                "value": "",
+                "type": "query",
+                "description": "isRelatedContent"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "To relate content (eg from Alfresco) to a task"
+        },
+        {
+          "info": {
+            "name": "Upload content to a task",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/tasks/:taskId/raw-content",
+            "params": [
+              {
+                "name": "taskId",
+                "value": "",
+                "type": "path",
+                "description": "taskId"
+              },
+              {
+                "name": "isRelatedContent",
+                "value": "",
+                "type": "query",
+                "description": "isRelatedContent"
+              }
+            ]
+          },
+          "docs": "Upload content to a task"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,47 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Script File API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Script File",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getControllers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/script-files/controllers"
+          },
+          "docs": "getControllers"
+        },
+        {
+          "info": {
+            "name": "getLibraries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/script-files/libraries"
+          },
+          "docs": "getLibraries"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

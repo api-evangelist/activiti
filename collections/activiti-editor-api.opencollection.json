@@ -1,0 +1,126 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Editor API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Editor",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "getForms",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/editor/form-models/values"
+          },
+          "docs": "getForms"
+        },
+        {
+          "info": {
+            "name": "getForm",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/editor/form-models/:formId",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "formId"
+              }
+            ]
+          },
+          "docs": "getForm"
+        },
+        {
+          "info": {
+            "name": "saveForm",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/editor/form-models/:formId",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "formId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "saveForm"
+        },
+        {
+          "info": {
+            "name": "getFormHistory",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/editor/form-models/:formId/history/:formHistoryId",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "formId"
+              },
+              {
+                "name": "formHistoryId",
+                "value": "",
+                "type": "path",
+                "description": "formHistoryId"
+              }
+            ]
+          },
+          "docs": "getFormHistory"
+        },
+        {
+          "info": {
+            "name": "validateModel",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/editor/form-models/:formId/validate",
+            "params": [
+              {
+                "name": "formId",
+                "value": "",
+                "type": "path",
+                "description": "formId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "validateModel"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,50 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Content Rendition API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Content Rendition",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve Raw Content",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/content/:contentId/rendition/:renditionType",
+            "params": [
+              {
+                "name": "contentId",
+                "value": "",
+                "type": "path",
+                "description": "contentId"
+              },
+              {
+                "name": "renditionType",
+                "value": "",
+                "type": "path",
+                "description": "renditionType"
+              }
+            ]
+          },
+          "docs": "Retrieve Raw Content"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

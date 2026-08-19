@@ -1,0 +1,169 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Activiti Public Rest About Admin Tenants API",
+    "version": "1.4.0"
+  },
+  "request": {
+    "auth": {
+      "type": "basic",
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Admin Tenants",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get all tenants",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/tenants"
+          },
+          "docs": "Tenant manager only"
+        },
+        {
+          "info": {
+            "name": "Create a new tenant",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/tenants",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Tenant manager only"
+        },
+        {
+          "info": {
+            "name": "Get tenant details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/tenants/:tenantId",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path",
+                "description": "tenantId"
+              }
+            ]
+          },
+          "docs": "Get tenant details"
+        },
+        {
+          "info": {
+            "name": "Update a tenant",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/tenants/:tenantId",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path",
+                "description": "tenantId"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a tenant"
+        },
+        {
+          "info": {
+            "name": "Delete a tenant",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/tenants/:tenantId",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path",
+                "description": "tenantId"
+              }
+            ]
+          },
+          "docs": "Delete a tenant"
+        },
+        {
+          "info": {
+            "name": "Get tenant events",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/tenants/:tenantId/events",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path",
+                "description": "tenantId"
+              }
+            ]
+          },
+          "docs": "Get tenant events"
+        },
+        {
+          "info": {
+            "name": "Get tenant logo",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/tenants/:tenantId/logo",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path",
+                "description": "tenantId"
+              }
+            ]
+          },
+          "docs": "Get tenant logo"
+        },
+        {
+          "info": {
+            "name": "Update tenant logo",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/activiti-app/api/enterprise/admin/tenants/:tenantId/logo",
+            "params": [
+              {
+                "name": "tenantId",
+                "value": "",
+                "type": "path",
+                "description": "tenantId"
+              }
+            ]
+          },
+          "docs": "Update tenant logo"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
