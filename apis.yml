@@ -29,6 +29,15 @@ specificationVersion: '0.23'
 tags:
   - BPM
   - Business Process Management
+  - Workflows
+  - BPMN
+  - Open-Source
+  - Process Automation
+  - Java
+  - REST API
+tags_raw:
+  - BPM
+  - Business Process Management
   - Workflow
   - BPMN
   - Open Source
@@ -47,6 +56,14 @@ apis:
     https://activiti.gitbook.io/activiti-7-developers-guide/components/activiti-cloud-application/runtime-bundle
   baseURL: https://your-activiti-cloud-host/rb
   tags:
+  - Cloud
+  - Runtime Bundle
+  - Process Instances
+  - Task
+  - Variables
+  - Spring Boot
+  - Kubernetes
+  tags_raw:
   - Cloud
   - Runtime Bundle
   - Process Instances
@@ -139,6 +156,8 @@ apis:
   humanURL: https://www.activiti.org/userguide/
   baseURL: https://your-activiti-host/activiti-rest/service
   tags:
+  - Application
+  tags_raw:
   - Apps
   properties:
   - type: OpenAPI
@@ -223,6 +242,8 @@ apis:
   humanURL: https://www.activiti.org/userguide/
   baseURL: https://your-activiti-host/activiti-rest/service
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -355,6 +376,8 @@ apis:
   humanURL: https://www.activiti.org/userguide/
   baseURL: https://your-activiti-host/activiti-rest/service
   tags:
+  - Processes
+  tags_raw:
   - Process
   properties:
   - type: OpenAPI
