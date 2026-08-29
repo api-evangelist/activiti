@@ -1,0 +1,136 @@
+slug: activiti
+provider: Activiti
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 12
+edges:
+- tag: Model Bpmn
+  spec_file: activiti-model-bpmn-api-openapi.yml
+  capability_id: BC-930.20
+  capability_id_l1: BC-930
+  capability_name: Process Modeling and Documentation
+  confidence: 0.9
+  evidence: GET /api/enterprise/models/{processModelId}/bpmn20  Export a process definition model to a
+    BPMN 2.0 xml file
+  reason: Explicit export of BPMN 2.0 process definition models, including prior versions — process model
+    authoring/publication and version control.
+- tag: Models
+  spec_file: activiti-models-api-openapi.yml
+  capability_id: BC-930.20
+  capability_id_l1: BC-930
+  capability_name: Process Modeling and Documentation
+  confidence: 0.85
+  evidence: GET /api/enterprise/models  List models (process, form, decision rule or app); POST /api/enterprise/models/{modelId}/newversion  Create
+    a new model version
+  reason: CRUD, validation and versioning of process/form/decision models in a BPM suite — process modelling
+    and documentation with version control.
+- tag: Models History
+  spec_file: activiti-models-history-api-openapi.yml
+  capability_id: BC-930.20
+  capability_id_l1: BC-930
+  capability_name: Process Modeling and Documentation
+  confidence: 0.85
+  evidence: GET /api/enterprise/models/{modelId}/history  To get the version information for a model
+  reason: Version history of process models is explicitly part of process model version control and documentation.
+- tag: Process
+  spec_file: activiti-process-api-openapi.yml
+  capability_id: BC-930
+  capability_id_l1: BC-930
+  capability_name: Business Process Management
+  confidence: 0.85
+  evidence: GET /api/enterprise/process-definitions 'Retrieve a list of process definitions'; POST /api/enterprise/process-instances
+    'Start a process instance'
+  reason: Operations define and execute BPMN process definitions and instances — the core of business
+    process management as a managed asset. No single L2 fits, since the surface spans modelling artefacts
+    (definitions) and runtime execution, so only the L1 is asserted.
+- tag: Process Instances
+  spec_file: activiti-process-instances-api-openapi.yml
+  capability_id: BC-930
+  capability_id_l1: BC-930
+  capability_name: Business Process Management
+  confidence: 0.8
+  evidence: GET /api/enterprise/process-instances/{processInstanceId}  'Retrieve a process instance information';
+    'Add a comment to a Process'
+  reason: Runtime lifecycle of executing business process instances in a BPMN engine — squarely business
+    process management execution. No L2 cleanly covers runtime instance execution, so L1 only.
+- tag: Process Instances Information
+  spec_file: activiti-process-instances-information-api-openapi.yml
+  capability_id: BC-930
+  capability_id_l1: BC-930
+  capability_name: Business Process Management
+  confidence: 0.8
+  evidence: POST /api/enterprise/process-instances  startNewProcessInstanceUsingPOST  Start a process
+    instance
+  reason: Starting process instances and retrieving their field content is workflow execution in a BPM
+    engine; L1 only as the evidence does not name a narrower sub-capability.
+- tag: Task
+  spec_file: activiti-task-api-openapi.yml
+  capability_id: BC-930
+  capability_id_l1: BC-930
+  capability_name: Business Process Management
+  confidence: 0.8
+  evidence: POST /api/enterprise/tasks  createNewTaskUsingPOST  Create a Standalone Task; POST /api/enterprise/task-forms/{taskId}  'Complete
+    a Task Form'
+  reason: Human workflow tasks generated and completed within a BPMN process engine (assign, filter, complete
+    task forms). This is business process execution, not generic project task tracking; L1 only as no
+    L2 covers runtime human workflow.
+- tag: Task Actions
+  spec_file: activiti-task-actions-api-openapi.yml
+  capability_id: BC-930
+  capability_id_l1: BC-930
+  capability_name: Business Process Management
+  confidence: 0.8
+  evidence: PUT /api/enterprise/tasks/{taskId}/action/claim  claimTaskUsingPUT  Claim a task; PUT /api/enterprise/tasks/{taskId}/action/complete  Complete
+    Task
+  reason: Claim/unclaim/assign/complete actions on human workflow tasks in the BPM engine — workflow task
+    routing and execution. L1 only, since no listed L2 addresses runtime task handling.
+- tag: Admin Groups
+  spec_file: activiti-admin-groups-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.72
+  evidence: POST /api/enterprise/admin/groups/{groupId}/members/{userId} addGroupMember; POST .../capabilities
+    addGroupCapabilities; schema GroupCapabilityRepresentation
+  reason: Operations manage security groups, their membership and their granted capabilities (permissions)
+    for platform users — group-based access administration, i.e. identity & access management, not HR
+    org management.
+- tag: Editor
+  spec_file: activiti-editor-api-openapi.yml
+  capability_id: BC-930.20
+  capability_id_l1: BC-930
+  capability_name: Process Modeling and Documentation
+  confidence: 0.7
+  evidence: GET /api/enterprise/editor/form-models/{formId} ... PUT saveForm ... validateModel; schemas
+    FormDefinitionRepresentation, FormFieldRepresentation
+  reason: BPM suite modelling editor for form models used in process definitions — authoring/versioning
+    of process artefacts maps to Process Modeling and Documentation. Some risk it is generic low-code
+    form design tooling.
+- tag: Process Instances Listing
+  spec_file: activiti-process-instances-listing-api-openapi.yml
+  capability_id: BC-930
+  capability_id_l1: BC-930
+  capability_name: Business Process Management
+  confidence: 0.7
+  evidence: POST /api/enterprise/process-instances/filter  'Filter a list of process instances'
+  reason: Query/filter views over running and completed process instances — process estate visibility
+    within the BPM engine. Generic listing surface, so no L2 and moderate confidence.
+- tag: User
+  spec_file: activiti-user-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.7
+  evidence: POST /api/enterprise/idm/passwords  Request password reset; GET /api/enterprise/users/{userId}  Retrieve
+    user information; schema GroupCapabilityRepresentation
+  reason: 'IDM user directory administration: user records, groups, capabilities and password reset —
+    identity and access management, not HR employee records.'

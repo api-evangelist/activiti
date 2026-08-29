@@ -603,6 +603,9 @@ apis:
   - type: Documentation
     url: https://www.activiti.org/userguide/
 common:
+  - type: CapabilityMap
+    url: capabilities/activiti-capability-edges.yml
+    name: Activiti Business Capability Map
   - type: IssueTracker
     url: https://github.com/Activiti/Activiti/issues
   - type: Releases
