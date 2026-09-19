@@ -41,6 +41,10 @@ url: https://raw.githubusercontent.com/api-evangelist/activiti/refs/heads/main/a
 created: 2026-06-13
 modified: 2026-06-13
 specificationVersion: '0.23'
+x-docs-platform: gitbook
+x-docs-platform-confidence: medium
+x-docs-platform-checked: 2026-09-17
+x-docs-hosting: github-pages
 tags:
   - Business Process Management
   - Workflows
@@ -476,6 +480,8 @@ apis:
   humanURL: https://www.activiti.org/userguide/
   baseURL: https://your-activiti-host/activiti-rest/service
   tags:
+  - Profiles
+  tags_raw:
   - Profile
   properties:
   - type: OpenAPI
