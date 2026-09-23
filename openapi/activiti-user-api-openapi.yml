@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Activiti Public Rest About User API
-  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  title: Activiti Public Rest User API
+  description: The Alfresco Activiti BPM Suite comes with a REST API.
   version: 1.4.0
   contact:
     name: Activiti Community
@@ -27,7 +27,7 @@ paths:
     post:
       tags:
       - User
-      summary: 'Request password reset '
+      summary: Request password reset
       operationId: requestPasswordResetUsingPOST
       requestBody:
         description: resetPassword
@@ -237,6 +237,91 @@ paths:
           description: Not Found
 components:
   schemas:
+    GroupRepresentation:
+      properties:
+        capabilities:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupCapabilityRepresentation'
+        externalId:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupRepresentation'
+        id:
+          type: integer
+          format: int64
+        lastSyncTimeStamp:
+          type: string
+          format: date-time
+        name:
+          type: string
+        parentGroupId:
+          type: integer
+          format: int64
+        status:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        type:
+          type: integer
+          format: int32
+        userCount:
+          type: integer
+          format: int64
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserRepresentation'
+    LightAppRepresentation:
+      properties:
+        description:
+          type: string
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        theme:
+          type: string
+    ResetPasswordRepresentation:
+      properties:
+        email:
+          type: string
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    GroupCapabilityRepresentation:
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    UserActionRepresentation:
+      properties:
+        action:
+          type: string
+        newPassword:
+          type: string
+        oldPassword:
+          type: string
     UserRepresentation:
       properties:
         apps:
@@ -292,92 +377,7 @@ components:
           format: int64
         type:
           type: string
-    UserActionRepresentation:
-      properties:
-        action:
-          type: string
-        newPassword:
-          type: string
-        oldPassword:
-          type: string
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
     AbstractRepresentation: {}
-    GroupRepresentation:
-      properties:
-        capabilities:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupCapabilityRepresentation'
-        externalId:
-          type: string
-        groups:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupRepresentation'
-        id:
-          type: integer
-          format: int64
-        lastSyncTimeStamp:
-          type: string
-          format: date-time
-        name:
-          type: string
-        parentGroupId:
-          type: integer
-          format: int64
-        status:
-          type: string
-        tenantId:
-          type: integer
-          format: int64
-        type:
-          type: integer
-          format: int32
-        userCount:
-          type: integer
-          format: int64
-        users:
-          type: array
-          items:
-            $ref: '#/components/schemas/UserRepresentation'
-    GroupCapabilityRepresentation:
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-    ResetPasswordRepresentation:
-      properties:
-        email:
-          type: string
-    LightAppRepresentation:
-      properties:
-        description:
-          type: string
-        icon:
-          type: string
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        theme:
-          type: string
   securitySchemes:
     basicAuth:
       type: http

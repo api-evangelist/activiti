@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Activiti Public Rest About Task Forms API
-  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  title: Activiti Public Rest Task Forms API
+  description: The Alfresco Activiti BPM Suite comes with a REST API.
   version: 1.4.0
   contact:
     name: Activiti Community
@@ -188,28 +188,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
-    SaveFormRepresentation:
-      properties:
-        values:
-          type: object
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    CompleteFormRepresentation:
-      properties:
-        outcome:
-          type: string
-        values:
-          type: object
     ConditionRepresentation:
       properties:
         leftFormFieldId:
@@ -228,37 +206,6 @@ components:
           type: string
         rightValue:
           type: object
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
-    FormTabRepresentation:
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
-    FormValueRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
     FormFieldRepresentation:
       properties:
         className:
@@ -330,6 +277,26 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    FormValueRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
     FormDefinitionRepresentation:
       properties:
         className:
@@ -382,6 +349,39 @@ components:
         taskId:
           type: string
         taskName:
+          type: string
+    SaveFormRepresentation:
+      properties:
+        values:
+          type: object
+    LayoutRepresentation:
+      properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    CompleteFormRepresentation:
+      properties:
+        outcome:
+          type: string
+        values:
+          type: object
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
           type: string
   securitySchemes:
     basicAuth:

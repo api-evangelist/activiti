@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Activiti Public Rest About Editor API
-  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  title: Activiti Public Rest Editor API
+  description: The Alfresco Activiti BPM Suite comes with a REST API.
   version: 1.4.0
   contact:
     name: Activiti Community
@@ -180,18 +180,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
     ConditionRepresentation:
       properties:
         leftFormFieldId:
@@ -210,82 +198,12 @@ components:
           type: string
         rightValue:
           type: object
-    OptionRepresentation:
+    FormOutcomeRepresentation:
       properties:
         id:
           type: string
         name:
           type: string
-    FormRepresentation:
-      properties:
-        description:
-          type: string
-        formDefinition:
-          $ref: '#/components/schemas/FormDefinitionRepresentation'
-        id:
-          type: integer
-          format: int64
-        lastUpdated:
-          type: string
-          format: date-time
-        lastUpdatedBy:
-          type: integer
-          format: int64
-        lastUpdatedByFullName:
-          type: string
-        name:
-          type: string
-        referenceId:
-          type: integer
-          format: int64
-        stencilSetId:
-          type: integer
-          format: int64
-        version:
-          type: integer
-          format: int32
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
-    ValidationErrorRepresentation:
-      properties:
-        defaultDescription:
-          type: string
-        id:
-          type: string
-        name:
-          type: string
-        problem:
-          type: string
-        problemReference:
-          type: string
-        validatorSetName:
-          type: string
-        warning:
-          type: boolean
-    ProcessScopeIdentifierRepresentation:
-      properties:
-        processActivityId:
-          type: string
-        processModelId:
-          type: integer
-          format: int64
-    FormTabRepresentation:
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
     FormFieldRepresentation:
       properties:
         className:
@@ -357,6 +275,52 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    ValidationErrorRepresentation:
+      properties:
+        defaultDescription:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        problem:
+          type: string
+        problemReference:
+          type: string
+        validatorSetName:
+          type: string
+        warning:
+          type: boolean
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    FormSaveRepresentation:
+      properties:
+        comment:
+          type: string
+        formImageBase64:
+          type: string
+        formRepresentation:
+          $ref: '#/components/schemas/FormRepresentation'
+        newVersion:
+          type: boolean
+        processScopeIdentifiers:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessScopeIdentifierRepresentation'
+        reusable:
+          type: boolean
     FormDefinitionRepresentation:
       properties:
         className:
@@ -410,22 +374,58 @@ components:
           type: string
         taskName:
           type: string
-    FormSaveRepresentation:
+    LayoutRepresentation:
       properties:
-        comment:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    ProcessScopeIdentifierRepresentation:
+      properties:
+        processActivityId:
           type: string
-        formImageBase64:
+        processModelId:
+          type: integer
+          format: int64
+    FormRepresentation:
+      properties:
+        description:
           type: string
-        formRepresentation:
-          $ref: '#/components/schemas/FormRepresentation'
-        newVersion:
-          type: boolean
-        processScopeIdentifiers:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProcessScopeIdentifierRepresentation'
-        reusable:
-          type: boolean
+        formDefinition:
+          $ref: '#/components/schemas/FormDefinitionRepresentation'
+        id:
+          type: integer
+          format: int64
+        lastUpdated:
+          type: string
+          format: date-time
+        lastUpdatedBy:
+          type: integer
+          format: int64
+        lastUpdatedByFullName:
+          type: string
+        name:
+          type: string
+        referenceId:
+          type: integer
+          format: int64
+        stencilSetId:
+          type: integer
+          format: int64
+        version:
+          type: integer
+          format: int32
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
   securitySchemes:
     basicAuth:
       type: http

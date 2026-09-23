@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Activiti Public Rest About Models API
-  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  title: Activiti Public Rest Models API
+  description: The Alfresco Activiti BPM Suite comes with a REST API.
   version: 1.4.0
   contact:
     name: Activiti Community
@@ -119,7 +119,7 @@ paths:
     get:
       tags:
       - Models
-      summary: To retrieve details about a particular model (process, form, decision rule or app)
+      summary: To retrieve details about a particular model (process, form, decision rule or…
       operationId: getModelUsingGET
       parameters:
       - name: modelId
@@ -452,6 +452,39 @@ paths:
           description: Not Found
 components:
   schemas:
+    ValidationErrorRepresentation:
+      properties:
+        defaultDescription:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        problem:
+          type: string
+        problemReference:
+          type: string
+        validatorSetName:
+          type: string
+        warning:
+          type: boolean
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    ObjectNode: {}
+    AbstractRepresentation: {}
     ModelRepresentation:
       properties:
         comment:
@@ -494,39 +527,6 @@ components:
         version:
           type: integer
           format: int32
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
-    AbstractRepresentation: {}
-    ValidationErrorRepresentation:
-      properties:
-        defaultDescription:
-          type: string
-        id:
-          type: string
-        name:
-          type: string
-        problem:
-          type: string
-        problemReference:
-          type: string
-        validatorSetName:
-          type: string
-        warning:
-          type: boolean
-    ObjectNode: {}
   securitySchemes:
     basicAuth:
       type: http

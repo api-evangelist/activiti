@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Activiti Public Rest About Task API
-  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  title: Activiti Public Rest Task API
+  description: The Alfresco Activiti BPM Suite comes with a REST API.
   version: 1.4.0
   contact:
     name: Activiti Community
@@ -842,184 +842,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    SaveFormRepresentation:
-      properties:
-        values:
-          type: object
-    CompleteFormRepresentation:
-      properties:
-        outcome:
-          type: string
-        values:
-          type: object
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
-    ObjectNode: {}
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
-    AbstractRepresentation: {}
-    TaskRepresentation:
-      properties:
-        adhocTaskCanBeReassigned:
-          type: boolean
-        assignee:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        category:
-          type: string
-        created:
-          type: string
-          format: date-time
-        description:
-          type: string
-        dueDate:
-          type: string
-          format: date-time
-        duration:
-          type: integer
-          format: int64
-        endDate:
-          type: string
-          format: date-time
-        formKey:
-          type: string
-        id:
-          type: string
-        initiatorCanCompleteTask:
-          type: boolean
-        involvedPeople:
-          type: array
-          items:
-            $ref: '#/components/schemas/LightUserRepresentation'
-        memberOfCandidateGroup:
-          type: boolean
-        memberOfCandidateUsers:
-          type: boolean
-        name:
-          type: string
-        parentTaskId:
-          type: string
-        parentTaskName:
-          type: string
-        priority:
-          type: integer
-          format: int32
-        processDefinitionCategory:
-          type: string
-        processDefinitionDeploymentId:
-          type: string
-        processDefinitionDescription:
-          type: string
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        processDefinitionName:
-          type: string
-        processDefinitionVersion:
-          type: integer
-          format: int32
-        processInstanceId:
-          type: string
-        processInstanceName:
-          type: string
-        processInstanceStartUserId:
-          type: string
-    TaskFilterRepresentation:
-      properties:
-        asc:
-          type: boolean
-        assignment:
-          type: string
-        dueAfter:
-          type: string
-          format: date-time
-        dueBefore:
-          type: string
-          format: date-time
-        name:
-          type: string
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        sort:
-          type: string
-        state:
-          type: string
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
-    TaskUpdateRepresentation:
-      properties:
-        description:
-          type: string
-        descriptionSet:
-          type: boolean
-        dueDate:
-          type: string
-          format: date-time
-        dueDateSet:
-          type: boolean
-        name:
-          type: string
-        nameSet:
-          type: boolean
-    CommentRepresentation:
-      properties:
-        created:
-          type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        id:
-          type: integer
-          format: int64
-        message:
-          type: string
-    FormTabRepresentation:
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
     FormFieldRepresentation:
       properties:
         className:
@@ -1091,6 +913,211 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
+    LayoutRepresentation:
+      properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    CompleteFormRepresentation:
+      properties:
+        outcome:
+          type: string
+        values:
+          type: object
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    SaveFormRepresentation:
+      properties:
+        values:
+          type: object
+    ConditionRepresentation:
+      properties:
+        leftFormFieldId:
+          type: string
+        leftRestResponseId:
+          type: string
+        nextConditionOperator:
+          type: string
+        operator:
+          type: string
+        rightFormFieldId:
+          type: string
+        rightRestResponseId:
+          type: string
+        rightType:
+          type: string
+        rightValue:
+          type: object
+    TaskUpdateRepresentation:
+      properties:
+        description:
+          type: string
+        descriptionSet:
+          type: boolean
+        dueDate:
+          type: string
+          format: date-time
+        dueDateSet:
+          type: boolean
+        name:
+          type: string
+        nameSet:
+          type: boolean
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    TaskFilterRequestRepresentation:
+      properties:
+        appDefinitionId:
+          type: integer
+          format: int64
+        filter:
+          $ref: '#/components/schemas/TaskFilterRepresentation'
+        filterId:
+          type: integer
+          format: int64
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+    CommentRepresentation:
+      properties:
+        created:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        message:
+          type: string
+    TaskRepresentation:
+      properties:
+        adhocTaskCanBeReassigned:
+          type: boolean
+        assignee:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        category:
+          type: string
+        created:
+          type: string
+          format: date-time
+        description:
+          type: string
+        dueDate:
+          type: string
+          format: date-time
+        duration:
+          type: integer
+          format: int64
+        endDate:
+          type: string
+          format: date-time
+        formKey:
+          type: string
+        id:
+          type: string
+        initiatorCanCompleteTask:
+          type: boolean
+        involvedPeople:
+          type: array
+          items:
+            $ref: '#/components/schemas/LightUserRepresentation'
+        memberOfCandidateGroup:
+          type: boolean
+        memberOfCandidateUsers:
+          type: boolean
+        name:
+          type: string
+        parentTaskId:
+          type: string
+        parentTaskName:
+          type: string
+        priority:
+          type: integer
+          format: int32
+        processDefinitionCategory:
+          type: string
+        processDefinitionDeploymentId:
+          type: string
+        processDefinitionDescription:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        processDefinitionVersion:
+          type: integer
+          format: int32
+        processInstanceId:
+          type: string
+        processInstanceName:
+          type: string
+        processInstanceStartUserId:
+          type: string
+    ChecklistOrderRepresentation:
+      properties:
+        order:
+          type: array
+          items:
+            type: string
+    TaskFilterRepresentation:
+      properties:
+        asc:
+          type: boolean
+        assignment:
+          type: string
+        dueAfter:
+          type: string
+          format: date-time
+        dueBefore:
+          type: string
+          format: date-time
+        name:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        sort:
+          type: string
+        state:
+          type: string
     FormDefinitionRepresentation:
       properties:
         className:
@@ -1144,7 +1171,20 @@ components:
           type: string
         taskName:
           type: string
+    ObjectNode: {}
     FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
+    FormValueRepresentation:
       properties:
         id:
           type: string
@@ -1180,63 +1220,23 @@ components:
           type: string
         thumbnailStatus:
           type: string
-    ConditionRepresentation:
+    LightUserRepresentation:
       properties:
-        leftFormFieldId:
+        email:
           type: string
-        leftRestResponseId:
+        externalId:
           type: string
-        nextConditionOperator:
+        firstName:
           type: string
-        operator:
-          type: string
-        rightFormFieldId:
-          type: string
-        rightRestResponseId:
-          type: string
-        rightType:
-          type: string
-        rightValue:
-          type: object
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
-    FormValueRepresentation:
-      properties:
         id:
-          type: string
-        name:
-          type: string
-    TaskFilterRequestRepresentation:
-      properties:
-        appDefinitionId:
           type: integer
           format: int64
-        filter:
-          $ref: '#/components/schemas/TaskFilterRepresentation'
-        filterId:
+        lastName:
+          type: string
+        pictureId:
           type: integer
           format: int64
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-    ChecklistOrderRepresentation:
-      properties:
-        order:
-          type: array
-          items:
-            type: string
+    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http

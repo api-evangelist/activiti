@@ -1,7 +1,7 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Activiti Public Rest About Apps Runtime API
-  description: " The Alfresco Activiti BPM Suite comes with a REST API. It includes both an Enterprise equivalent of the Activiti Open Source REST API exposing the generic Activiti Engine operations, and a dedicated set op REST API endpoints specific for the functionality in the Alfresco Activiti BPM Suite. \n      Note that there is also an 'internal' REST API, which are the REST endpoints used by the Javascript UI. It is advised not to use this API, these REST API urls and way of using it will change and evolve with the product and are unsupported. The supported API is stable. Also, the internal REST API uses a different authentication mechanism tailored towards web browser usage.\n"
+  title: Activiti Public Rest Apps Runtime API
+  description: The Alfresco Activiti BPM Suite comes with a REST API.
   version: 1.4.0
   contact:
     name: Activiti Community
@@ -69,6 +69,27 @@ paths:
           description: Not Found
 components:
   schemas:
+    RuntimeAppDefinitionSaveRepresentation:
+      properties:
+        appDefinitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/AppDefinitionRepresentation'
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
     AppDefinitionRepresentation:
       properties:
         defaultAppId:
@@ -92,28 +113,7 @@ components:
           format: int64
         theme:
           type: string
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
     AbstractRepresentation: {}
-    RuntimeAppDefinitionSaveRepresentation:
-      properties:
-        appDefinitions:
-          type: array
-          items:
-            $ref: '#/components/schemas/AppDefinitionRepresentation'
   securitySchemes:
     basicAuth:
       type: http
