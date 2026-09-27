@@ -194,6 +194,13 @@ paths:
           description: Not Found
 components:
   schemas:
+    AbstractRepresentation: {}
+    AppDefinitionPublishRepresentation:
+      properties:
+        comment:
+          type: string
+        force:
+          type: boolean
     AppDefinitionUpdateResultRepresentation:
       properties:
         appDefinition:
@@ -211,12 +218,6 @@ components:
           type: string
         messageKey:
           type: string
-    RuntimeAppDefinitionSaveRepresentation:
-      properties:
-        appDefinitions:
-          type: array
-          items:
-            $ref: '#/components/schemas/AppDefinitionRepresentation'
     AppDefinitionRepresentation:
       properties:
         defaultAppId:
@@ -240,6 +241,12 @@ components:
           format: int64
         theme:
           type: string
+    RuntimeAppDefinitionSaveRepresentation:
+      properties:
+        appDefinitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/AppDefinitionRepresentation'
     ResultListDataRepresentation:
       properties:
         data:
@@ -255,13 +262,6 @@ components:
         total:
           type: integer
           format: int32
-    AbstractRepresentation: {}
-    AppDefinitionPublishRepresentation:
-      properties:
-        comment:
-          type: string
-        force:
-          type: boolean
   securitySchemes:
     basicAuth:
       type: http

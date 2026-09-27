@@ -230,62 +230,7 @@ paths:
           description: Not Found
 components:
   schemas:
-    BulkUserUpdateRepresentation:
-      properties:
-        accountType:
-          type: string
-        password:
-          type: string
-        sendNotifications:
-          type: boolean
-        status:
-          type: string
-        tenantId:
-          type: integer
-          format: int64
-        users:
-          type: array
-          items:
-            type: integer
-            format: int64
-    GroupRepresentation:
-      properties:
-        capabilities:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupCapabilityRepresentation'
-        externalId:
-          type: string
-        groups:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupRepresentation'
-        id:
-          type: integer
-          format: int64
-        lastSyncTimeStamp:
-          type: string
-          format: date-time
-        name:
-          type: string
-        parentGroupId:
-          type: integer
-          format: int64
-        status:
-          type: string
-        tenantId:
-          type: integer
-          format: int64
-        type:
-          type: integer
-          format: int32
-        userCount:
-          type: integer
-          format: int64
-        users:
-          type: array
-          items:
-            $ref: '#/components/schemas/UserRepresentation'
+    AbstractRepresentation: {}
     LightAppRepresentation:
       properties:
         description:
@@ -299,44 +244,6 @@ components:
           type: string
         theme:
           type: string
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
-    GroupCapabilityRepresentation:
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-    AbstractUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
     UserRepresentation:
       properties:
         apps:
@@ -392,7 +299,100 @@ components:
           format: int64
         type:
           type: string
-    AbstractRepresentation: {}
+    GroupCapabilityRepresentation:
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    BulkUserUpdateRepresentation:
+      properties:
+        accountType:
+          type: string
+        password:
+          type: string
+        sendNotifications:
+          type: boolean
+        status:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        users:
+          type: array
+          items:
+            type: integer
+            format: int64
+    AbstractUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+    GroupRepresentation:
+      properties:
+        capabilities:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupCapabilityRepresentation'
+        externalId:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupRepresentation'
+        id:
+          type: integer
+          format: int64
+        lastSyncTimeStamp:
+          type: string
+          format: date-time
+        name:
+          type: string
+        parentGroupId:
+          type: integer
+          format: int64
+        status:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        type:
+          type: integer
+          format: int32
+        userCount:
+          type: integer
+          format: int64
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserRepresentation'
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
   securitySchemes:
     basicAuth:
       type: http

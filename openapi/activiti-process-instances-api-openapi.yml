@@ -165,6 +165,96 @@ paths:
           description: Not Found
 components:
   schemas:
+    RestVariable:
+      properties:
+        name:
+          type: string
+        scope:
+          type: string
+        type:
+          type: string
+        value:
+          type: object
+        valueUrl:
+          type: string
+    AbstractRepresentation: {}
+    CommentRepresentation:
+      properties:
+        created:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        message:
+          type: string
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
+    FormDefinitionRepresentation:
+      properties:
+        className:
+          type: string
+        customFieldTemplates:
+          type: object
+          additionalProperties:
+            type: string
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormFieldRepresentation'
+        gridsterForm:
+          type: boolean
+        id:
+          type: integer
+          format: int64
+        javascriptEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        name:
+          type: string
+        outcomeTarget:
+          type: string
+        outcomes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormOutcomeRepresentation'
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        selectedOutcome:
+          type: string
+        style:
+          type: string
+        tabs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormTabRepresentation'
+        taskDefinitionKey:
+          type: string
+        taskId:
+          type: string
+        taskName:
+          type: string
     ConditionRepresentation:
       properties:
         leftFormFieldId:
@@ -183,6 +273,47 @@ components:
           type: string
         rightValue:
           type: object
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    LayoutRepresentation:
+      properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
     FormFieldRepresentation:
       properties:
         className:
@@ -254,44 +385,6 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    RestVariable:
-      properties:
-        name:
-          type: string
-        scope:
-          type: string
-        type:
-          type: string
-        value:
-          type: object
-        valueUrl:
-          type: string
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    CommentRepresentation:
-      properties:
-        created:
-          type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        id:
-          type: integer
-          format: int64
-        message:
-          type: string
-    FormTabRepresentation:
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
     ProcessInstanceRepresentation:
       properties:
         businessKey:
@@ -333,59 +426,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RestVariable'
-    FormDefinitionRepresentation:
-      properties:
-        className:
-          type: string
-        customFieldTemplates:
-          type: object
-          additionalProperties:
-            type: string
-        fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormFieldRepresentation'
-        gridsterForm:
-          type: boolean
-        id:
-          type: integer
-          format: int64
-        javascriptEvents:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-        name:
-          type: string
-        outcomeTarget:
-          type: string
-        outcomes:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormOutcomeRepresentation'
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        processDefinitionName:
-          type: string
-        selectedOutcome:
-          type: string
-        style:
-          type: string
-        tabs:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormTabRepresentation'
-        taskDefinitionKey:
-          type: string
-        taskId:
-          type: string
-        taskName:
-          type: string
     ResultListDataRepresentation:
       properties:
         data:
@@ -401,46 +441,6 @@ components:
         total:
           type: integer
           format: int32
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
-    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http

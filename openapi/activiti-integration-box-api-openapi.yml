@@ -210,6 +210,12 @@ paths:
           description: Forbidden
 components:
   schemas:
+    UserAccountCredentialsRepresentation:
+      properties:
+        password:
+          type: string
+        username:
+          type: string
     BoxUserAccountCredentialsRepresentation:
       properties:
         authenticationURL:
@@ -219,6 +225,7 @@ components:
           format: date-time
         ownerEmail:
           type: string
+    AbstractRepresentation: {}
     ResultListDataRepresentation:
       properties:
         data:
@@ -234,13 +241,6 @@ components:
         total:
           type: integer
           format: int32
-    UserAccountCredentialsRepresentation:
-      properties:
-        password:
-          type: string
-        username:
-          type: string
-    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http

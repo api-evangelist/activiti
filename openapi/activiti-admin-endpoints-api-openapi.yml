@@ -333,6 +333,17 @@ paths:
           description: Forbidden
 components:
   schemas:
+    CreateEndpointBasicAuthRepresentation:
+      properties:
+        name:
+          type: string
+        password:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        username:
+          type: string
     EndpointRequestHeaderRepresentation:
       properties:
         name:
@@ -378,17 +389,6 @@ components:
           type: string
           format: date-time
         name:
-          type: string
-        tenantId:
-          type: integer
-          format: int64
-        username:
-          type: string
-    CreateEndpointBasicAuthRepresentation:
-      properties:
-        name:
-          type: string
-        password:
           type: string
         tenantId:
           type: integer

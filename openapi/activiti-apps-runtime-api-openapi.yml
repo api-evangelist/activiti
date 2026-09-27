@@ -75,21 +75,7 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AppDefinitionRepresentation'
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
+    AbstractRepresentation: {}
     AppDefinitionRepresentation:
       properties:
         defaultAppId:
@@ -113,7 +99,21 @@ components:
           format: int64
         theme:
           type: string
-    AbstractRepresentation: {}
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
   securitySchemes:
     basicAuth:
       type: http

@@ -250,23 +250,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
-    ObjectNode: {}
     TaskRepresentation:
       properties:
         adhocTaskCanBeReassigned:
@@ -333,6 +316,23 @@ components:
           type: string
         processInstanceStartUserId:
           type: string
+    ObjectNode: {}
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
   securitySchemes:
     basicAuth:
       type: http

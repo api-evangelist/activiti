@@ -245,19 +245,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    ImageUploadRepresentation:
-      properties:
-        created:
-          type: string
-          format: date-time
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        userId:
-          type: integer
-          format: int64
     CreateTenantRepresentation:
       properties:
         active:
@@ -269,25 +256,12 @@ components:
           format: int32
         name:
           type: string
-    TenantEvent:
+    LightTenantRepresentation:
       properties:
-        eventTime:
-          type: string
-          format: date-time
-        eventType:
-          type: string
-        extraInfo:
-          type: string
         id:
           type: integer
           format: int64
-        tenantId:
-          type: integer
-          format: int64
-        userId:
-          type: integer
-          format: int64
-        userName:
+        name:
           type: string
     TenantRepresentation:
       properties:
@@ -312,12 +286,38 @@ components:
           format: int32
         name:
           type: string
-    LightTenantRepresentation:
+    ImageUploadRepresentation:
       properties:
+        created:
+          type: string
+          format: date-time
         id:
           type: integer
           format: int64
         name:
+          type: string
+        userId:
+          type: integer
+          format: int64
+    TenantEvent:
+      properties:
+        eventTime:
+          type: string
+          format: date-time
+        eventType:
+          type: string
+        extraInfo:
+          type: string
+        id:
+          type: integer
+          format: int64
+        tenantId:
+          type: integer
+          format: int64
+        userId:
+          type: integer
+          format: int64
+        userName:
           type: string
   securitySchemes:
     basicAuth:

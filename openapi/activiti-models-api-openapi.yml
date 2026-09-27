@@ -452,38 +452,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    ValidationErrorRepresentation:
-      properties:
-        defaultDescription:
-          type: string
-        id:
-          type: string
-        name:
-          type: string
-        problem:
-          type: string
-        problemReference:
-          type: string
-        validatorSetName:
-          type: string
-        warning:
-          type: boolean
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
-    ObjectNode: {}
     AbstractRepresentation: {}
     ModelRepresentation:
       properties:
@@ -525,6 +493,38 @@ components:
           type: integer
           format: int64
         version:
+          type: integer
+          format: int32
+    ObjectNode: {}
+    ValidationErrorRepresentation:
+      properties:
+        defaultDescription:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        problem:
+          type: string
+        problemReference:
+          type: string
+        validatorSetName:
+          type: string
+        warning:
+          type: boolean
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
           type: integer
           format: int32
   securitySchemes:

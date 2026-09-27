@@ -180,6 +180,99 @@ paths:
           description: Not Found
 components:
   schemas:
+    FormRepresentation:
+      properties:
+        description:
+          type: string
+        formDefinition:
+          $ref: '#/components/schemas/FormDefinitionRepresentation'
+        id:
+          type: integer
+          format: int64
+        lastUpdated:
+          type: string
+          format: date-time
+        lastUpdatedBy:
+          type: integer
+          format: int64
+        lastUpdatedByFullName:
+          type: string
+        name:
+          type: string
+        referenceId:
+          type: integer
+          format: int64
+        stencilSetId:
+          type: integer
+          format: int64
+        version:
+          type: integer
+          format: int32
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
+    FormDefinitionRepresentation:
+      properties:
+        className:
+          type: string
+        customFieldTemplates:
+          type: object
+          additionalProperties:
+            type: string
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormFieldRepresentation'
+        gridsterForm:
+          type: boolean
+        id:
+          type: integer
+          format: int64
+        javascriptEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        name:
+          type: string
+        outcomeTarget:
+          type: string
+        outcomes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormOutcomeRepresentation'
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        selectedOutcome:
+          type: string
+        style:
+          type: string
+        tabs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormTabRepresentation'
+        taskDefinitionKey:
+          type: string
+        taskId:
+          type: string
+        taskName:
+          type: string
     ConditionRepresentation:
       properties:
         leftFormFieldId:
@@ -198,12 +291,63 @@ components:
           type: string
         rightValue:
           type: object
-    FormOutcomeRepresentation:
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    LayoutRepresentation:
+      properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    OptionRepresentation:
       properties:
         id:
           type: string
         name:
           type: string
+    ValidationErrorRepresentation:
+      properties:
+        defaultDescription:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        problem:
+          type: string
+        problemReference:
+          type: string
+        validatorSetName:
+          type: string
+        warning:
+          type: boolean
+    FormSaveRepresentation:
+      properties:
+        comment:
+          type: string
+        formImageBase64:
+          type: string
+        formRepresentation:
+          $ref: '#/components/schemas/FormRepresentation'
+        newVersion:
+          type: boolean
+        processScopeIdentifiers:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessScopeIdentifierRepresentation'
+        reusable:
+          type: boolean
     FormFieldRepresentation:
       properties:
         className:
@@ -275,116 +419,6 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    ValidationErrorRepresentation:
-      properties:
-        defaultDescription:
-          type: string
-        id:
-          type: string
-        name:
-          type: string
-        problem:
-          type: string
-        problemReference:
-          type: string
-        validatorSetName:
-          type: string
-        warning:
-          type: boolean
-    FormTabRepresentation:
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
-    FormSaveRepresentation:
-      properties:
-        comment:
-          type: string
-        formImageBase64:
-          type: string
-        formRepresentation:
-          $ref: '#/components/schemas/FormRepresentation'
-        newVersion:
-          type: boolean
-        processScopeIdentifiers:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProcessScopeIdentifierRepresentation'
-        reusable:
-          type: boolean
-    FormDefinitionRepresentation:
-      properties:
-        className:
-          type: string
-        customFieldTemplates:
-          type: object
-          additionalProperties:
-            type: string
-        fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormFieldRepresentation'
-        gridsterForm:
-          type: boolean
-        id:
-          type: integer
-          format: int64
-        javascriptEvents:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-        name:
-          type: string
-        outcomeTarget:
-          type: string
-        outcomes:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormOutcomeRepresentation'
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        processDefinitionName:
-          type: string
-        selectedOutcome:
-          type: string
-        style:
-          type: string
-        tabs:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormTabRepresentation'
-        taskDefinitionKey:
-          type: string
-        taskId:
-          type: string
-        taskName:
-          type: string
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
     ProcessScopeIdentifierRepresentation:
       properties:
         processActivityId:
@@ -392,40 +426,6 @@ components:
         processModelId:
           type: integer
           format: int64
-    FormRepresentation:
-      properties:
-        description:
-          type: string
-        formDefinition:
-          $ref: '#/components/schemas/FormDefinitionRepresentation'
-        id:
-          type: integer
-          format: int64
-        lastUpdated:
-          type: string
-          format: date-time
-        lastUpdatedBy:
-          type: integer
-          format: int64
-        lastUpdatedByFullName:
-          type: string
-        name:
-          type: string
-        referenceId:
-          type: integer
-          format: int64
-        stencilSetId:
-          type: integer
-          format: int64
-        version:
-          type: integer
-          format: int32
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
   securitySchemes:
     basicAuth:
       type: http

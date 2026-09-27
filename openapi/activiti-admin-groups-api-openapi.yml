@@ -534,44 +534,46 @@ paths:
           description: Not Found
 components:
   schemas:
-    GroupRepresentation:
+    AbstractGroupRepresentation:
       properties:
-        capabilities:
-          type: array
-          items:
-            $ref: '#/components/schemas/GroupCapabilityRepresentation'
+        externalId:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        status:
+          type: string
+    LightGroupRepresentation:
+      properties:
         externalId:
           type: string
         groups:
           type: array
           items:
-            $ref: '#/components/schemas/GroupRepresentation'
+            $ref: '#/components/schemas/LightGroupRepresentation'
         id:
           type: integer
           format: int64
-        lastSyncTimeStamp:
-          type: string
-          format: date-time
         name:
           type: string
-        parentGroupId:
-          type: integer
-          format: int64
         status:
           type: string
-        tenantId:
+    AbstractRepresentation: {}
+    LightAppRepresentation:
+      properties:
+        description:
+          type: string
+        icon:
+          type: string
+        id:
           type: integer
           format: int64
-        type:
-          type: integer
-          format: int32
-        userCount:
-          type: integer
-          format: int64
-        users:
-          type: array
-          items:
-            $ref: '#/components/schemas/UserRepresentation'
+        name:
+          type: string
+        theme:
+          type: string
     UserRepresentation:
       properties:
         apps:
@@ -627,25 +629,57 @@ components:
           format: int64
         type:
           type: string
-    LightAppRepresentation:
-      properties:
-        description:
-          type: string
-        icon:
-          type: string
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        theme:
-          type: string
     AddGroupCapabilitiesRepresentation:
       properties:
         capabilities:
           type: array
           items:
             type: string
+    GroupCapabilityRepresentation:
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    GroupRepresentation:
+      properties:
+        capabilities:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupCapabilityRepresentation'
+        externalId:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/GroupRepresentation'
+        id:
+          type: integer
+          format: int64
+        lastSyncTimeStamp:
+          type: string
+          format: date-time
+        name:
+          type: string
+        parentGroupId:
+          type: integer
+          format: int64
+        status:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        type:
+          type: integer
+          format: int32
+        userCount:
+          type: integer
+          format: int64
+        users:
+          type: array
+          items:
+            $ref: '#/components/schemas/UserRepresentation'
     ResultListDataRepresentation:
       properties:
         data:
@@ -661,40 +695,6 @@ components:
         total:
           type: integer
           format: int32
-    LightGroupRepresentation:
-      properties:
-        externalId:
-          type: string
-        groups:
-          type: array
-          items:
-            $ref: '#/components/schemas/LightGroupRepresentation'
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        status:
-          type: string
-    GroupCapabilityRepresentation:
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-    AbstractGroupRepresentation:
-      properties:
-        externalId:
-          type: string
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        status:
-          type: string
-    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http

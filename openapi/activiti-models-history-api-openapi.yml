@@ -92,21 +92,7 @@ paths:
           description: Not Found
 components:
   schemas:
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
+    AbstractRepresentation: {}
     ModelRepresentation:
       properties:
         comment:
@@ -149,7 +135,21 @@ components:
         version:
           type: integer
           format: int32
-    AbstractRepresentation: {}
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
   securitySchemes:
     basicAuth:
       type: http

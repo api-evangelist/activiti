@@ -303,6 +303,124 @@ paths:
           description: Not Found
 components:
   schemas:
+    RestVariable:
+      properties:
+        name:
+          type: string
+        scope:
+          type: string
+        type:
+          type: string
+        value:
+          type: object
+        valueUrl:
+          type: string
+    AbstractRepresentation: {}
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
+    FormDefinitionRepresentation:
+      properties:
+        className:
+          type: string
+        customFieldTemplates:
+          type: object
+          additionalProperties:
+            type: string
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormFieldRepresentation'
+        gridsterForm:
+          type: boolean
+        id:
+          type: integer
+          format: int64
+        javascriptEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        name:
+          type: string
+        outcomeTarget:
+          type: string
+        outcomes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormOutcomeRepresentation'
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        selectedOutcome:
+          type: string
+        style:
+          type: string
+        tabs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormTabRepresentation'
+        taskDefinitionKey:
+          type: string
+        taskId:
+          type: string
+        taskName:
+          type: string
+    ObjectNode: {}
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    ProcessInstanceFilterRequestRepresentation:
+      properties:
+        appDefinitionId:
+          type: integer
+          format: int64
+        filter:
+          $ref: '#/components/schemas/ProcessInstanceFilterRepresentation'
+        filterId:
+          type: integer
+          format: int64
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
     ConditionRepresentation:
       properties:
         leftFormFieldId:
@@ -321,22 +439,59 @@ components:
           type: string
         rightValue:
           type: object
-    CreateProcessInstanceRepresentation:
+    LayoutRepresentation:
       properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    ProcessInstanceFilterRepresentation:
+      properties:
+        asc:
+          type: boolean
         name:
-          type: string
-        outcome:
           type: string
         processDefinitionId:
           type: string
-        values:
-          type: object
-    FormOutcomeRepresentation:
+        processDefinitionKey:
+          type: string
+        sort:
+          type: string
+        state:
+          type: string
+    FormValueRepresentation:
       properties:
         id:
           type: string
         name:
           type: string
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
     FormFieldRepresentation:
       properties:
         className:
@@ -408,68 +563,6 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    RestVariable:
-      properties:
-        name:
-          type: string
-        scope:
-          type: string
-        type:
-          type: string
-        value:
-          type: object
-        valueUrl:
-          type: string
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    FormValueRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
-    FormTabRepresentation:
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
-    ProcessInstanceFilterRepresentation:
-      properties:
-        asc:
-          type: boolean
-        name:
-          type: string
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        sort:
-          type: string
-        state:
-          type: string
     ProcessInstanceRepresentation:
       properties:
         businessKey:
@@ -511,109 +604,16 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RestVariable'
-    ResultListDataRepresentation:
+    CreateProcessInstanceRepresentation:
       properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
-    FormDefinitionRepresentation:
-      properties:
-        className:
-          type: string
-        customFieldTemplates:
-          type: object
-          additionalProperties:
-            type: string
-        fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormFieldRepresentation'
-        gridsterForm:
-          type: boolean
-        id:
-          type: integer
-          format: int64
-        javascriptEvents:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
         name:
           type: string
-        outcomeTarget:
+        outcome:
           type: string
-        outcomes:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormOutcomeRepresentation'
         processDefinitionId:
           type: string
-        processDefinitionKey:
-          type: string
-        processDefinitionName:
-          type: string
-        selectedOutcome:
-          type: string
-        style:
-          type: string
-        tabs:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormTabRepresentation'
-        taskDefinitionKey:
-          type: string
-        taskId:
-          type: string
-        taskName:
-          type: string
-    ProcessInstanceFilterRequestRepresentation:
-      properties:
-        appDefinitionId:
-          type: integer
-          format: int64
-        filter:
-          $ref: '#/components/schemas/ProcessInstanceFilterRepresentation'
-        filterId:
-          type: integer
-          format: int64
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
-    ObjectNode: {}
-    AbstractRepresentation: {}
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
+        values:
+          type: object
   securitySchemes:
     basicAuth:
       type: http

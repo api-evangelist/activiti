@@ -157,6 +157,18 @@ paths:
           description: Not Found
 components:
   schemas:
+    CommentRepresentation:
+      properties:
+        created:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        message:
+          type: string
     LightUserRepresentation:
       properties:
         email:
@@ -173,6 +185,7 @@ components:
         pictureId:
           type: integer
           format: int64
+    AbstractRepresentation: {}
     ResultListDataRepresentation:
       properties:
         data:
@@ -188,19 +201,6 @@ components:
         total:
           type: integer
           format: int32
-    AbstractRepresentation: {}
-    CommentRepresentation:
-      properties:
-        created:
-          type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        id:
-          type: integer
-          format: int64
-        message:
-          type: string
   securitySchemes:
     basicAuth:
       type: http

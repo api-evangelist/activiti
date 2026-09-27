@@ -79,16 +79,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    CreateProcessInstanceRepresentation:
-      properties:
-        name:
-          type: string
-        outcome:
-          type: string
-        processDefinitionId:
-          type: string
-        values:
-          type: object
     RestVariable:
       properties:
         name:
@@ -101,6 +91,33 @@ components:
           type: object
         valueUrl:
           type: string
+    AbstractRepresentation: {}
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+    CreateProcessInstanceRepresentation:
+      properties:
+        name:
+          type: string
+        outcome:
+          type: string
+        processDefinitionId:
+          type: string
+        values:
+          type: object
     ProcessInstanceRepresentation:
       properties:
         businessKey:
@@ -157,23 +174,6 @@ components:
         total:
           type: integer
           format: int32
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
-    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http

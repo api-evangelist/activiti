@@ -81,22 +81,8 @@ paths:
           description: Not Found
 components:
   schemas:
+    AbstractRepresentation: {}
     ObjectNode: {}
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
     ProcessInstanceFilterRequestRepresentation:
       properties:
         appDefinitionId:
@@ -127,7 +113,21 @@ components:
           type: string
         state:
           type: string
-    AbstractRepresentation: {}
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
   securitySchemes:
     basicAuth:
       type: http

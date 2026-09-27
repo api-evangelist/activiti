@@ -55,6 +55,68 @@ paths:
           description: Not Found
 components:
   schemas:
+    ProcessScopeRepresentation:
+      properties:
+        activityIds:
+          type: array
+          items:
+            type: string
+        activityIdsByCollapsedSubProcessIdMap:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        activityIdsByDecisionTableIdMap:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        activityIdsByFormIdMap:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        activityIdsWithExcludedSubProcess:
+          type: array
+          items:
+            type: string
+        customStencilVariables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        entityVariables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        executionVariables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        fieldToVariableMappings:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        forms:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormScopeRepresentation'
+        metadataVariables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+        modelId:
+          type: integer
+          format: int64
+        processModelType:
+          type: integer
+          format: int32
+        responseVariables:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/List'
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
     ConditionRepresentation:
       properties:
         leftFormFieldId:
@@ -73,6 +135,52 @@ components:
           type: string
         rightValue:
           type: object
+    LayoutRepresentation:
+      properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    ProcessScopesRequestRepresentation:
+      properties:
+        identifiers:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessScopeIdentifierRepresentation'
+        overriddenModel:
+          type: string
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    FormScopeRepresentation:
+      properties:
+        description:
+          type: string
+        fieldVariables:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormFieldRepresentation'
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormFieldRepresentation'
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        outcomes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormOutcomeRepresentation'
     FormFieldRepresentation:
       properties:
         className:
@@ -144,41 +252,6 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    FormScopeRepresentation:
-      properties:
-        description:
-          type: string
-        fieldVariables:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormFieldRepresentation'
-        fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormFieldRepresentation'
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        outcomes:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormOutcomeRepresentation'
-    ProcessScopesRequestRepresentation:
-      properties:
-        identifiers:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProcessScopeIdentifierRepresentation'
-        overriddenModel:
-          type: string
     ProcessScopeIdentifierRepresentation:
       properties:
         processActivityId:
@@ -186,79 +259,6 @@ components:
         processModelId:
           type: integer
           format: int64
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
-    ProcessScopeRepresentation:
-      properties:
-        activityIds:
-          type: array
-          items:
-            type: string
-        activityIdsByCollapsedSubProcessIdMap:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/List'
-        activityIdsByDecisionTableIdMap:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/List'
-        activityIdsByFormIdMap:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/List'
-        activityIdsWithExcludedSubProcess:
-          type: array
-          items:
-            type: string
-        customStencilVariables:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/List'
-        entityVariables:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/List'
-        executionVariables:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/List'
-        fieldToVariableMappings:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/List'
-        forms:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormScopeRepresentation'
-        metadataVariables:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/List'
-        modelId:
-          type: integer
-          format: int64
-        processModelType:
-          type: integer
-          format: int32
-        responseVariables:
-          type: object
-          additionalProperties:
-            $ref: '#/components/schemas/List'
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
   securitySchemes:
     basicAuth:
       type: http

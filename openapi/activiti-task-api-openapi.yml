@@ -842,6 +842,315 @@ paths:
           description: Not Found
 components:
   schemas:
+    RelatedContentRepresentation:
+      properties:
+        contentAvailable:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        link:
+          type: boolean
+        linkUrl:
+          type: string
+        mimeType:
+          type: string
+        name:
+          type: string
+        previewStatus:
+          type: string
+        simpleType:
+          type: string
+        source:
+          type: string
+        sourceId:
+          type: string
+        thumbnailStatus:
+          type: string
+    AbstractRepresentation: {}
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    CommentRepresentation:
+      properties:
+        created:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        message:
+          type: string
+    TaskFilterRepresentation:
+      properties:
+        asc:
+          type: boolean
+        assignment:
+          type: string
+        dueAfter:
+          type: string
+          format: date-time
+        dueBefore:
+          type: string
+          format: date-time
+        name:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        sort:
+          type: string
+        state:
+          type: string
+    TaskFilterRequestRepresentation:
+      properties:
+        appDefinitionId:
+          type: integer
+          format: int64
+        filter:
+          $ref: '#/components/schemas/TaskFilterRepresentation'
+        filterId:
+          type: integer
+          format: int64
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+    FormValueRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    SaveFormRepresentation:
+      properties:
+        values:
+          type: object
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
+    TaskUpdateRepresentation:
+      properties:
+        description:
+          type: string
+        descriptionSet:
+          type: boolean
+        dueDate:
+          type: string
+          format: date-time
+        dueDateSet:
+          type: boolean
+        name:
+          type: string
+        nameSet:
+          type: boolean
+    ConditionRepresentation:
+      properties:
+        leftFormFieldId:
+          type: string
+        leftRestResponseId:
+          type: string
+        nextConditionOperator:
+          type: string
+        operator:
+          type: string
+        rightFormFieldId:
+          type: string
+        rightRestResponseId:
+          type: string
+        rightType:
+          type: string
+        rightValue:
+          type: object
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    ChecklistOrderRepresentation:
+      properties:
+        order:
+          type: array
+          items:
+            type: string
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+    FormDefinitionRepresentation:
+      properties:
+        className:
+          type: string
+        customFieldTemplates:
+          type: object
+          additionalProperties:
+            type: string
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormFieldRepresentation'
+        gridsterForm:
+          type: boolean
+        id:
+          type: integer
+          format: int64
+        javascriptEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        name:
+          type: string
+        outcomeTarget:
+          type: string
+        outcomes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormOutcomeRepresentation'
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        selectedOutcome:
+          type: string
+        style:
+          type: string
+        tabs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormTabRepresentation'
+        taskDefinitionKey:
+          type: string
+        taskId:
+          type: string
+        taskName:
+          type: string
+    ObjectNode: {}
+    LayoutRepresentation:
+      properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    CompleteFormRepresentation:
+      properties:
+        outcome:
+          type: string
+        values:
+          type: object
+    TaskRepresentation:
+      properties:
+        adhocTaskCanBeReassigned:
+          type: boolean
+        assignee:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        category:
+          type: string
+        created:
+          type: string
+          format: date-time
+        description:
+          type: string
+        dueDate:
+          type: string
+          format: date-time
+        duration:
+          type: integer
+          format: int64
+        endDate:
+          type: string
+          format: date-time
+        formKey:
+          type: string
+        id:
+          type: string
+        initiatorCanCompleteTask:
+          type: boolean
+        involvedPeople:
+          type: array
+          items:
+            $ref: '#/components/schemas/LightUserRepresentation'
+        memberOfCandidateGroup:
+          type: boolean
+        memberOfCandidateUsers:
+          type: boolean
+        name:
+          type: string
+        parentTaskId:
+          type: string
+        parentTaskName:
+          type: string
+        priority:
+          type: integer
+          format: int32
+        processDefinitionCategory:
+          type: string
+        processDefinitionDeploymentId:
+          type: string
+        processDefinitionDescription:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        processDefinitionVersion:
+          type: integer
+          format: int32
+        processInstanceId:
+          type: string
+        processInstanceName:
+          type: string
+        processInstanceStartUserId:
+          type: string
     FormFieldRepresentation:
       properties:
         className:
@@ -913,31 +1222,6 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
-    CompleteFormRepresentation:
-      properties:
-        outcome:
-          type: string
-        values:
-          type: object
-    FormTabRepresentation:
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
     ResultListDataRepresentation:
       properties:
         data:
@@ -953,290 +1237,6 @@ components:
         total:
           type: integer
           format: int32
-    SaveFormRepresentation:
-      properties:
-        values:
-          type: object
-    ConditionRepresentation:
-      properties:
-        leftFormFieldId:
-          type: string
-        leftRestResponseId:
-          type: string
-        nextConditionOperator:
-          type: string
-        operator:
-          type: string
-        rightFormFieldId:
-          type: string
-        rightRestResponseId:
-          type: string
-        rightType:
-          type: string
-        rightValue:
-          type: object
-    TaskUpdateRepresentation:
-      properties:
-        description:
-          type: string
-        descriptionSet:
-          type: boolean
-        dueDate:
-          type: string
-          format: date-time
-        dueDateSet:
-          type: boolean
-        name:
-          type: string
-        nameSet:
-          type: boolean
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    TaskFilterRequestRepresentation:
-      properties:
-        appDefinitionId:
-          type: integer
-          format: int64
-        filter:
-          $ref: '#/components/schemas/TaskFilterRepresentation'
-        filterId:
-          type: integer
-          format: int64
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-    CommentRepresentation:
-      properties:
-        created:
-          type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        id:
-          type: integer
-          format: int64
-        message:
-          type: string
-    TaskRepresentation:
-      properties:
-        adhocTaskCanBeReassigned:
-          type: boolean
-        assignee:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        category:
-          type: string
-        created:
-          type: string
-          format: date-time
-        description:
-          type: string
-        dueDate:
-          type: string
-          format: date-time
-        duration:
-          type: integer
-          format: int64
-        endDate:
-          type: string
-          format: date-time
-        formKey:
-          type: string
-        id:
-          type: string
-        initiatorCanCompleteTask:
-          type: boolean
-        involvedPeople:
-          type: array
-          items:
-            $ref: '#/components/schemas/LightUserRepresentation'
-        memberOfCandidateGroup:
-          type: boolean
-        memberOfCandidateUsers:
-          type: boolean
-        name:
-          type: string
-        parentTaskId:
-          type: string
-        parentTaskName:
-          type: string
-        priority:
-          type: integer
-          format: int32
-        processDefinitionCategory:
-          type: string
-        processDefinitionDeploymentId:
-          type: string
-        processDefinitionDescription:
-          type: string
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        processDefinitionName:
-          type: string
-        processDefinitionVersion:
-          type: integer
-          format: int32
-        processInstanceId:
-          type: string
-        processInstanceName:
-          type: string
-        processInstanceStartUserId:
-          type: string
-    ChecklistOrderRepresentation:
-      properties:
-        order:
-          type: array
-          items:
-            type: string
-    TaskFilterRepresentation:
-      properties:
-        asc:
-          type: boolean
-        assignment:
-          type: string
-        dueAfter:
-          type: string
-          format: date-time
-        dueBefore:
-          type: string
-          format: date-time
-        name:
-          type: string
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        sort:
-          type: string
-        state:
-          type: string
-    FormDefinitionRepresentation:
-      properties:
-        className:
-          type: string
-        customFieldTemplates:
-          type: object
-          additionalProperties:
-            type: string
-        fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormFieldRepresentation'
-        gridsterForm:
-          type: boolean
-        id:
-          type: integer
-          format: int64
-        javascriptEvents:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-        name:
-          type: string
-        outcomeTarget:
-          type: string
-        outcomes:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormOutcomeRepresentation'
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        processDefinitionName:
-          type: string
-        selectedOutcome:
-          type: string
-        style:
-          type: string
-        tabs:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormTabRepresentation'
-        taskDefinitionKey:
-          type: string
-        taskId:
-          type: string
-        taskName:
-          type: string
-    ObjectNode: {}
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
-    FormValueRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    RelatedContentRepresentation:
-      properties:
-        contentAvailable:
-          type: boolean
-        created:
-          type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        id:
-          type: integer
-          format: int64
-        link:
-          type: boolean
-        linkUrl:
-          type: string
-        mimeType:
-          type: string
-        name:
-          type: string
-        previewStatus:
-          type: string
-        simpleType:
-          type: string
-        source:
-          type: string
-        sourceId:
-          type: string
-        thumbnailStatus:
-          type: string
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
-    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http

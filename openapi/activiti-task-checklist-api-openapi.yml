@@ -115,6 +115,29 @@ paths:
           description: Not Found
 components:
   schemas:
+    AbstractRepresentation: {}
+    ChecklistOrderRepresentation:
+      properties:
+        order:
+          type: array
+          items:
+            type: string
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
     TaskRepresentation:
       properties:
         adhocTaskCanBeReassigned:
@@ -181,12 +204,6 @@ components:
           type: string
         processInstanceStartUserId:
           type: string
-    ChecklistOrderRepresentation:
-      properties:
-        order:
-          type: array
-          items:
-            type: string
     ResultListDataRepresentation:
       properties:
         data:
@@ -202,23 +219,6 @@ components:
         total:
           type: integer
           format: int32
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
-    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http
