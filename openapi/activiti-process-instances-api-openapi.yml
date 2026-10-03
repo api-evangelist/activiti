@@ -165,43 +165,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    RestVariable:
-      properties:
-        name:
-          type: string
-        scope:
-          type: string
-        type:
-          type: string
-        value:
-          type: object
-        valueUrl:
-          type: string
-    AbstractRepresentation: {}
-    CommentRepresentation:
-      properties:
-        created:
-          type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        id:
-          type: integer
-          format: int64
-        message:
-          type: string
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
     FormDefinitionRepresentation:
       properties:
         className:
@@ -255,6 +218,80 @@ components:
           type: string
         taskName:
           type: string
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    CommentRepresentation:
+      properties:
+        created:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        message:
+          type: string
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
+    ProcessInstanceRepresentation:
+      properties:
+        businessKey:
+          type: string
+        ended:
+          type: string
+          format: date-time
+        graphicalNotationDefined:
+          type: boolean
+        id:
+          type: string
+        name:
+          type: string
+        processDefinitionCategory:
+          type: string
+        processDefinitionDeploymentId:
+          type: string
+        processDefinitionDescription:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        processDefinitionVersion:
+          type: integer
+          format: int32
+        startFormDefined:
+          type: boolean
+        started:
+          type: string
+          format: date-time
+        startedBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        tenantId:
+          type: string
+        variables:
+          type: array
+          items:
+            $ref: '#/components/schemas/RestVariable'
     ConditionRepresentation:
       properties:
         leftFormFieldId:
@@ -273,47 +310,6 @@ components:
           type: string
         rightValue:
           type: object
-    FormTabRepresentation:
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
     FormFieldRepresentation:
       properties:
         className:
@@ -385,62 +381,66 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    ProcessInstanceRepresentation:
+    FormTabRepresentation:
       properties:
-        businessKey:
+        id:
           type: string
-        ended:
+        title:
           type: string
-          format: date-time
-        graphicalNotationDefined:
-          type: boolean
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    FormOutcomeRepresentation:
+      properties:
         id:
           type: string
         name:
           type: string
-        processDefinitionCategory:
-          type: string
-        processDefinitionDeploymentId:
-          type: string
-        processDefinitionDescription:
-          type: string
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        processDefinitionName:
-          type: string
-        processDefinitionVersion:
-          type: integer
-          format: int32
-        startFormDefined:
-          type: boolean
-        started:
-          type: string
-          format: date-time
-        startedBy:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        tenantId:
-          type: string
-        variables:
-          type: array
-          items:
-            $ref: '#/components/schemas/RestVariable'
-    ResultListDataRepresentation:
+    AbstractRepresentation: {}
+    LayoutRepresentation:
       properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
+        colspan:
           type: integer
           format: int32
-        start:
+        column:
           type: integer
           format: int32
-        total:
+        row:
           type: integer
           format: int32
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+    RestVariable:
+      properties:
+        name:
+          type: string
+        scope:
+          type: string
+        type:
+          type: string
+        value:
+          type: object
+        valueUrl:
+          type: string
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
   securitySchemes:
     basicAuth:
       type: http

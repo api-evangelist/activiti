@@ -79,35 +79,21 @@ paths:
           description: Not Found
 components:
   schemas:
-    RestVariable:
+    ResultListDataRepresentation:
       properties:
-        name:
-          type: string
-        scope:
-          type: string
-        type:
-          type: string
-        value:
-          type: object
-        valueUrl:
-          type: string
-    AbstractRepresentation: {}
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
           type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
+          format: int32
+        start:
           type: integer
-          format: int64
+          format: int32
+        total:
+          type: integer
+          format: int32
     CreateProcessInstanceRepresentation:
       properties:
         name:
@@ -159,21 +145,35 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RestVariable'
-    ResultListDataRepresentation:
+    AbstractRepresentation: {}
+    LightUserRepresentation:
       properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
           type: integer
-          format: int32
-        start:
+          format: int64
+        lastName:
+          type: string
+        pictureId:
           type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
+          format: int64
+    RestVariable:
+      properties:
+        name:
+          type: string
+        scope:
+          type: string
+        type:
+          type: string
+        value:
+          type: object
+        valueUrl:
+          type: string
   securitySchemes:
     basicAuth:
       type: http

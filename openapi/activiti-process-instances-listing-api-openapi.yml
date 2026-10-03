@@ -81,24 +81,23 @@ paths:
           description: Not Found
 components:
   schemas:
-    AbstractRepresentation: {}
-    ObjectNode: {}
-    ProcessInstanceFilterRequestRepresentation:
+    ResultListDataRepresentation:
       properties:
-        appDefinitionId:
-          type: integer
-          format: int64
-        filter:
-          $ref: '#/components/schemas/ProcessInstanceFilterRepresentation'
-        filterId:
-          type: integer
-          format: int64
-        page:
-          type: integer
-          format: int32
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
         size:
           type: integer
           format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    AbstractRepresentation: {}
+    ObjectNode: {}
     ProcessInstanceFilterRepresentation:
       properties:
         asc:
@@ -113,19 +112,20 @@ components:
           type: string
         state:
           type: string
-    ResultListDataRepresentation:
+    ProcessInstanceFilterRequestRepresentation:
       properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
+        appDefinitionId:
+          type: integer
+          format: int64
+        filter:
+          $ref: '#/components/schemas/ProcessInstanceFilterRepresentation'
+        filterId:
+          type: integer
+          format: int64
+        page:
+          type: integer
+          format: int32
         size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
           type: integer
           format: int32
   securitySchemes:

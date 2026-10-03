@@ -86,7 +86,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    AbstractRepresentation: {}
     ResultListDataRepresentation:
       properties:
         data:
@@ -102,6 +101,7 @@ components:
         total:
           type: integer
           format: int32
+    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http

@@ -194,30 +194,12 @@ paths:
           description: Not Found
 components:
   schemas:
-    AbstractRepresentation: {}
-    AppDefinitionPublishRepresentation:
+    RuntimeAppDefinitionSaveRepresentation:
       properties:
-        comment:
-          type: string
-        force:
-          type: boolean
-    AppDefinitionUpdateResultRepresentation:
-      properties:
-        appDefinition:
-          $ref: '#/components/schemas/AppDefinitionRepresentation'
-        customData:
-          type: object
-        error:
-          type: boolean
-        errorDescription:
-          type: string
-        errorType:
-          type: integer
-          format: int32
-        message:
-          type: string
-        messageKey:
-          type: string
+        appDefinitions:
+          type: array
+          items:
+            $ref: '#/components/schemas/AppDefinitionRepresentation'
     AppDefinitionRepresentation:
       properties:
         defaultAppId:
@@ -241,12 +223,6 @@ components:
           format: int64
         theme:
           type: string
-    RuntimeAppDefinitionSaveRepresentation:
-      properties:
-        appDefinitions:
-          type: array
-          items:
-            $ref: '#/components/schemas/AppDefinitionRepresentation'
     ResultListDataRepresentation:
       properties:
         data:
@@ -262,6 +238,30 @@ components:
         total:
           type: integer
           format: int32
+    AppDefinitionPublishRepresentation:
+      properties:
+        comment:
+          type: string
+        force:
+          type: boolean
+    AbstractRepresentation: {}
+    AppDefinitionUpdateResultRepresentation:
+      properties:
+        appDefinition:
+          $ref: '#/components/schemas/AppDefinitionRepresentation'
+        customData:
+          type: object
+        error:
+          type: boolean
+        errorDescription:
+          type: string
+        errorType:
+          type: integer
+          format: int32
+        message:
+          type: string
+        messageKey:
+          type: string
   securitySchemes:
     basicAuth:
       type: http

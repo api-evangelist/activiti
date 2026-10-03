@@ -303,31 +303,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    RestVariable:
-      properties:
-        name:
-          type: string
-        scope:
-          type: string
-        type:
-          type: string
-        value:
-          type: object
-        valueUrl:
-          type: string
-    AbstractRepresentation: {}
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
     FormDefinitionRepresentation:
       properties:
         className:
@@ -381,7 +356,16 @@ components:
           type: string
         taskName:
           type: string
-    ObjectNode: {}
+    CreateProcessInstanceRepresentation:
+      properties:
+        name:
+          type: string
+        outcome:
+          type: string
+        processDefinitionId:
+          type: string
+        values:
+          type: object
     ResultListDataRepresentation:
       properties:
         data:
@@ -397,30 +381,53 @@ components:
         total:
           type: integer
           format: int32
-    FormTabRepresentation:
+    FormJavascriptEventRepresentation:
       properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
+    ProcessInstanceRepresentation:
+      properties:
+        businessKey:
+          type: string
+        ended:
+          type: string
+          format: date-time
+        graphicalNotationDefined:
+          type: boolean
         id:
           type: string
-        title:
+        name:
           type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
-    ProcessInstanceFilterRequestRepresentation:
-      properties:
-        appDefinitionId:
-          type: integer
-          format: int64
-        filter:
-          $ref: '#/components/schemas/ProcessInstanceFilterRepresentation'
-        filterId:
-          type: integer
-          format: int64
-        page:
-          type: integer
-          format: int32
-        size:
+        processDefinitionCategory:
+          type: string
+        processDefinitionDeploymentId:
+          type: string
+        processDefinitionDescription:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        processDefinitionVersion:
           type: integer
           format: int32
+        startFormDefined:
+          type: boolean
+        started:
+          type: string
+          format: date-time
+        startedBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        tenantId:
+          type: string
+        variables:
+          type: array
+          items:
+            $ref: '#/components/schemas/RestVariable'
     ConditionRepresentation:
       properties:
         leftFormFieldId:
@@ -439,59 +446,6 @@ components:
           type: string
         rightValue:
           type: object
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
-    ProcessInstanceFilterRepresentation:
-      properties:
-        asc:
-          type: boolean
-        name:
-          type: string
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        sort:
-          type: string
-        state:
-          type: string
-    FormValueRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
     FormFieldRepresentation:
       properties:
         className:
@@ -563,57 +517,103 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    ProcessInstanceRepresentation:
+    FormTabRepresentation:
       properties:
-        businessKey:
+        id:
           type: string
-        ended:
+        title:
           type: string
-          format: date-time
-        graphicalNotationDefined:
-          type: boolean
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    FormOutcomeRepresentation:
+      properties:
         id:
           type: string
         name:
           type: string
-        processDefinitionCategory:
+    AbstractRepresentation: {}
+    OptionRepresentation:
+      properties:
+        id:
           type: string
-        processDefinitionDeploymentId:
+        name:
           type: string
-        processDefinitionDescription:
+    LayoutRepresentation:
+      properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+    RestVariable:
+      properties:
+        name:
+          type: string
+        scope:
+          type: string
+        type:
+          type: string
+        value:
+          type: object
+        valueUrl:
+          type: string
+    ObjectNode: {}
+    FormValueRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    ProcessInstanceFilterRepresentation:
+      properties:
+        asc:
+          type: boolean
+        name:
           type: string
         processDefinitionId:
           type: string
         processDefinitionKey:
           type: string
-        processDefinitionName:
+        sort:
           type: string
-        processDefinitionVersion:
+        state:
+          type: string
+    ProcessInstanceFilterRequestRepresentation:
+      properties:
+        appDefinitionId:
+          type: integer
+          format: int64
+        filter:
+          $ref: '#/components/schemas/ProcessInstanceFilterRepresentation'
+        filterId:
+          type: integer
+          format: int64
+        page:
           type: integer
           format: int32
-        startFormDefined:
-          type: boolean
-        started:
-          type: string
-          format: date-time
-        startedBy:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        tenantId:
-          type: string
-        variables:
-          type: array
-          items:
-            $ref: '#/components/schemas/RestVariable'
-    CreateProcessInstanceRepresentation:
-      properties:
-        name:
-          type: string
-        outcome:
-          type: string
-        processDefinitionId:
-          type: string
-        values:
-          type: object
+        size:
+          type: integer
+          format: int32
   securitySchemes:
     basicAuth:
       type: http

@@ -379,6 +379,37 @@ paths:
           description: Not Found
 components:
   schemas:
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
     RelatedContentRepresentation:
       properties:
         contentAvailable:
@@ -410,37 +441,6 @@ components:
         thumbnailStatus:
           type: string
     AbstractRepresentation: {}
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
   securitySchemes:
     basicAuth:
       type: http

@@ -169,6 +169,21 @@ components:
           format: int64
         message:
           type: string
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
     LightUserRepresentation:
       properties:
         email:
@@ -186,21 +201,6 @@ components:
           type: integer
           format: int64
     AbstractRepresentation: {}
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
   securitySchemes:
     basicAuth:
       type: http

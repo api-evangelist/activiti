@@ -144,19 +144,19 @@ paths:
           description: Not Found
 components:
   schemas:
-    LightAppRepresentation:
+    ImageUploadRepresentation:
       properties:
-        description:
+        created:
           type: string
-        icon:
-          type: string
+          format: date-time
         id:
           type: integer
           format: int64
         name:
           type: string
-        theme:
-          type: string
+        userId:
+          type: integer
+          format: int64
     UserRepresentation:
       properties:
         apps:
@@ -212,6 +212,25 @@ components:
           format: int64
         type:
           type: string
+    ChangePasswordRepresentation:
+      properties:
+        newPassword:
+          type: string
+        oldPassword:
+          type: string
+    LightAppRepresentation:
+      properties:
+        description:
+          type: string
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        theme:
+          type: string
     GroupCapabilityRepresentation:
       properties:
         id:
@@ -257,25 +276,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UserRepresentation'
-    ChangePasswordRepresentation:
-      properties:
-        newPassword:
-          type: string
-        oldPassword:
-          type: string
-    ImageUploadRepresentation:
-      properties:
-        created:
-          type: string
-          format: date-time
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        userId:
-          type: integer
-          format: int64
   securitySchemes:
     basicAuth:
       type: http

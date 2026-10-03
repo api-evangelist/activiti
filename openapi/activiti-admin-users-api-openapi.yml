@@ -230,20 +230,39 @@ paths:
           description: Not Found
 components:
   schemas:
-    AbstractRepresentation: {}
-    LightAppRepresentation:
+    ResultListDataRepresentation:
       properties:
-        description:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    BulkUserUpdateRepresentation:
+      properties:
+        accountType:
           type: string
-        icon:
+        password:
           type: string
-        id:
+        sendNotifications:
+          type: boolean
+        status:
+          type: string
+        tenantId:
           type: integer
           format: int64
-        name:
-          type: string
-        theme:
-          type: string
+        users:
+          type: array
+          items:
+            type: integer
+            format: int64
     UserRepresentation:
       properties:
         apps:
@@ -299,6 +318,20 @@ components:
           format: int64
         type:
           type: string
+    AbstractRepresentation: {}
+    LightAppRepresentation:
+      properties:
+        description:
+          type: string
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        theme:
+          type: string
     GroupCapabilityRepresentation:
       properties:
         id:
@@ -306,24 +339,6 @@ components:
           format: int64
         name:
           type: string
-    BulkUserUpdateRepresentation:
-      properties:
-        accountType:
-          type: string
-        password:
-          type: string
-        sendNotifications:
-          type: boolean
-        status:
-          type: string
-        tenantId:
-          type: integer
-          format: int64
-        users:
-          type: array
-          items:
-            type: integer
-            format: int64
     AbstractUserRepresentation:
       properties:
         email:
@@ -378,21 +393,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UserRepresentation'
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
   securitySchemes:
     basicAuth:
       type: http

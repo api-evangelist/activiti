@@ -115,13 +115,28 @@ paths:
           description: Not Found
 components:
   schemas:
-    AbstractRepresentation: {}
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
     ChecklistOrderRepresentation:
       properties:
         order:
           type: array
           items:
             type: string
+    AbstractRepresentation: {}
     LightUserRepresentation:
       properties:
         email:
@@ -204,21 +219,6 @@ components:
           type: string
         processInstanceStartUserId:
           type: string
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
   securitySchemes:
     basicAuth:
       type: http

@@ -75,7 +75,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/AppDefinitionRepresentation'
-    AbstractRepresentation: {}
     AppDefinitionRepresentation:
       properties:
         defaultAppId:
@@ -114,6 +113,7 @@ components:
         total:
           type: integer
           format: int32
+    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http

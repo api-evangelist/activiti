@@ -534,46 +534,21 @@ paths:
           description: Not Found
 components:
   schemas:
-    AbstractGroupRepresentation:
+    ResultListDataRepresentation:
       properties:
-        externalId:
-          type: string
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        status:
-          type: string
-    LightGroupRepresentation:
-      properties:
-        externalId:
-          type: string
-        groups:
+        data:
           type: array
           items:
-            $ref: '#/components/schemas/LightGroupRepresentation'
-        id:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
           type: integer
-          format: int64
-        name:
-          type: string
-        status:
-          type: string
-    AbstractRepresentation: {}
-    LightAppRepresentation:
-      properties:
-        description:
-          type: string
-        icon:
-          type: string
-        id:
+          format: int32
+        start:
           type: integer
-          format: int64
-        name:
-          type: string
-        theme:
-          type: string
+          format: int32
+        total:
+          type: integer
+          format: int32
     UserRepresentation:
       properties:
         apps:
@@ -635,6 +610,46 @@ components:
           type: array
           items:
             type: string
+    AbstractRepresentation: {}
+    LightGroupRepresentation:
+      properties:
+        externalId:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/LightGroupRepresentation'
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        status:
+          type: string
+    AbstractGroupRepresentation:
+      properties:
+        externalId:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        status:
+          type: string
+    LightAppRepresentation:
+      properties:
+        description:
+          type: string
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        theme:
+          type: string
     GroupCapabilityRepresentation:
       properties:
         id:
@@ -680,21 +695,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UserRepresentation'
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
   securitySchemes:
     basicAuth:
       type: http

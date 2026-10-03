@@ -237,20 +237,21 @@ paths:
           description: Not Found
 components:
   schemas:
-    AbstractRepresentation: {}
-    LightAppRepresentation:
+    ResultListDataRepresentation:
       properties:
-        description:
-          type: string
-        icon:
-          type: string
-        id:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
           type: integer
-          format: int64
-        name:
-          type: string
-        theme:
-          type: string
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
     UserRepresentation:
       properties:
         apps:
@@ -306,17 +307,23 @@ components:
           format: int64
         type:
           type: string
-    UserActionRepresentation:
-      properties:
-        action:
-          type: string
-        newPassword:
-          type: string
-        oldPassword:
-          type: string
     ResetPasswordRepresentation:
       properties:
         email:
+          type: string
+    AbstractRepresentation: {}
+    LightAppRepresentation:
+      properties:
+        description:
+          type: string
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        theme:
           type: string
     GroupCapabilityRepresentation:
       properties:
@@ -363,21 +370,14 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UserRepresentation'
-    ResultListDataRepresentation:
+    UserActionRepresentation:
       properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
+        action:
+          type: string
+        newPassword:
+          type: string
+        oldPassword:
+          type: string
   securitySchemes:
     basicAuth:
       type: http

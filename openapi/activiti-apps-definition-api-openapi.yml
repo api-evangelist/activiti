@@ -151,29 +151,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    AppDefinitionPublishRepresentation:
-      properties:
-        comment:
-          type: string
-        force:
-          type: boolean
-    AppDefinitionUpdateResultRepresentation:
-      properties:
-        appDefinition:
-          $ref: '#/components/schemas/AppDefinitionRepresentation'
-        customData:
-          type: object
-        error:
-          type: boolean
-        errorDescription:
-          type: string
-        errorType:
-          type: integer
-          format: int32
-        message:
-          type: string
-        messageKey:
-          type: string
     AppDefinitionRepresentation:
       properties:
         defaultAppId:
@@ -197,6 +174,29 @@ components:
           format: int64
         theme:
           type: string
+    AppDefinitionUpdateResultRepresentation:
+      properties:
+        appDefinition:
+          $ref: '#/components/schemas/AppDefinitionRepresentation'
+        customData:
+          type: object
+        error:
+          type: boolean
+        errorDescription:
+          type: string
+        errorType:
+          type: integer
+          format: int32
+        message:
+          type: string
+        messageKey:
+          type: string
+    AppDefinitionPublishRepresentation:
+      properties:
+        comment:
+          type: string
+        force:
+          type: boolean
   securitySchemes:
     basicAuth:
       type: http

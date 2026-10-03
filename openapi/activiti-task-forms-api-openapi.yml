@@ -188,18 +188,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
     FormDefinitionRepresentation:
       properties:
         className:
@@ -253,59 +241,14 @@ components:
           type: string
         taskName:
           type: string
-    ConditionRepresentation:
+    FormJavascriptEventRepresentation:
       properties:
-        leftFormFieldId:
+        event:
           type: string
-        leftRestResponseId:
+        javascriptLogic:
           type: string
-        nextConditionOperator:
-          type: string
-        operator:
-          type: string
-        rightFormFieldId:
-          type: string
-        rightRestResponseId:
-          type: string
-        rightType:
-          type: string
-        rightValue:
-          type: object
-    FormTabRepresentation:
+    SaveFormRepresentation:
       properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
-    FormValueRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    CompleteFormRepresentation:
-      properties:
-        outcome:
-          type: string
         values:
           type: object
     FormFieldRepresentation:
@@ -379,10 +322,67 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    SaveFormRepresentation:
+    ConditionRepresentation:
       properties:
+        leftFormFieldId:
+          type: string
+        leftRestResponseId:
+          type: string
+        nextConditionOperator:
+          type: string
+        operator:
+          type: string
+        rightFormFieldId:
+          type: string
+        rightRestResponseId:
+          type: string
+        rightType:
+          type: string
+        rightValue:
+          type: object
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    CompleteFormRepresentation:
+      properties:
+        outcome:
+          type: string
         values:
           type: object
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    LayoutRepresentation:
+      properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    FormValueRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
   securitySchemes:
     basicAuth:
       type: http

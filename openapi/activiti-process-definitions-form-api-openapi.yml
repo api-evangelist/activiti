@@ -86,18 +86,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
     FormDefinitionRepresentation:
       properties:
         className:
@@ -151,6 +139,12 @@ components:
           type: string
         taskName:
           type: string
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
     ConditionRepresentation:
       properties:
         leftFormFieldId:
@@ -169,37 +163,6 @@ components:
           type: string
         rightValue:
           type: object
-    FormTabRepresentation:
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
-    FormValueRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
     FormFieldRepresentation:
       properties:
         className:
@@ -271,6 +234,43 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    LayoutRepresentation:
+      properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    FormValueRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
   securitySchemes:
     basicAuth:
       type: http
