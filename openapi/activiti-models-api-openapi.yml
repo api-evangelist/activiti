@@ -452,6 +452,7 @@ paths:
           description: Not Found
 components:
   schemas:
+    ObjectNode: {}
     ResultListDataRepresentation:
       properties:
         data:
@@ -509,7 +510,6 @@ components:
         version:
           type: integer
           format: int32
-    AbstractRepresentation: {}
     ValidationErrorRepresentation:
       properties:
         defaultDescription:
@@ -526,7 +526,7 @@ components:
           type: string
         warning:
           type: boolean
-    ObjectNode: {}
+    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http

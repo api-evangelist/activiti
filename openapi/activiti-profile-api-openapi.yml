@@ -157,6 +157,13 @@ components:
         userId:
           type: integer
           format: int64
+    GroupCapabilityRepresentation:
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
     UserRepresentation:
       properties:
         apps:
@@ -212,32 +219,6 @@ components:
           format: int64
         type:
           type: string
-    ChangePasswordRepresentation:
-      properties:
-        newPassword:
-          type: string
-        oldPassword:
-          type: string
-    LightAppRepresentation:
-      properties:
-        description:
-          type: string
-        icon:
-          type: string
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        theme:
-          type: string
-    GroupCapabilityRepresentation:
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
     GroupRepresentation:
       properties:
         capabilities:
@@ -276,6 +257,25 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UserRepresentation'
+    ChangePasswordRepresentation:
+      properties:
+        newPassword:
+          type: string
+        oldPassword:
+          type: string
+    LightAppRepresentation:
+      properties:
+        description:
+          type: string
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        theme:
+          type: string
   securitySchemes:
     basicAuth:
       type: http

@@ -842,27 +842,50 @@ paths:
           description: Not Found
 components:
   schemas:
-    TaskFilterRepresentation:
+    SaveFormRepresentation:
       properties:
-        asc:
+        values:
+          type: object
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    ChecklistOrderRepresentation:
+      properties:
+        order:
+          type: array
+          items:
+            type: string
+    TaskUpdateRepresentation:
+      properties:
+        description:
+          type: string
+        descriptionSet:
           type: boolean
-        assignment:
-          type: string
-        dueAfter:
+        dueDate:
           type: string
           format: date-time
-        dueBefore:
-          type: string
-          format: date-time
+        dueDateSet:
+          type: boolean
         name:
           type: string
-        processDefinitionId:
+        nameSet:
+          type: boolean
+    CommentRepresentation:
+      properties:
+        created:
           type: string
-        processDefinitionKey:
-          type: string
-        sort:
-          type: string
-        state:
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        message:
           type: string
     FormFieldRepresentation:
       properties:
@@ -935,19 +958,6 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    AbstractRepresentation: {}
-    CompleteFormRepresentation:
-      properties:
-        outcome:
-          type: string
-        values:
-          type: object
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
     TaskFilterRequestRepresentation:
       properties:
         appDefinitionId:
@@ -964,37 +974,120 @@ components:
         size:
           type: integer
           format: int32
-    ChecklistOrderRepresentation:
+    CompleteFormRepresentation:
       properties:
-        order:
-          type: array
-          items:
-            type: string
-    SaveFormRepresentation:
-      properties:
+        outcome:
+          type: string
         values:
           type: object
-    TaskUpdateRepresentation:
+    LightUserRepresentation:
       properties:
-        description:
+        email:
           type: string
-        descriptionSet:
-          type: boolean
-        dueDate:
+        externalId:
           type: string
-          format: date-time
-        dueDateSet:
-          type: boolean
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+    ObjectNode: {}
+    OptionRepresentation:
+      properties:
+        id:
+          type: string
         name:
           type: string
-        nameSet:
+    RelatedContentRepresentation:
+      properties:
+        contentAvailable:
           type: boolean
+        created:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        link:
+          type: boolean
+        linkUrl:
+          type: string
+        mimeType:
+          type: string
+        name:
+          type: string
+        previewStatus:
+          type: string
+        simpleType:
+          type: string
+        source:
+          type: string
+        sourceId:
+          type: string
+        thumbnailStatus:
+          type: string
+    FormValueRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
     FormOutcomeRepresentation:
       properties:
         id:
           type: string
         name:
           type: string
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
+    TaskFilterRepresentation:
+      properties:
+        asc:
+          type: boolean
+        assignment:
+          type: string
+        dueAfter:
+          type: string
+          format: date-time
+        dueBefore:
+          type: string
+          format: date-time
+        name:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        sort:
+          type: string
+        state:
+          type: string
+    ResultListDataRepresentation:
+      properties:
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
     LayoutRepresentation:
       properties:
         colspan:
@@ -1072,64 +1165,24 @@ components:
           type: string
         processInstanceStartUserId:
           type: string
-    LightUserRepresentation:
+    ConditionRepresentation:
       properties:
-        email:
+        leftFormFieldId:
           type: string
-        externalId:
+        leftRestResponseId:
           type: string
-        firstName:
+        nextConditionOperator:
           type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
+        operator:
           type: string
-        pictureId:
-          type: integer
-          format: int64
-    FormValueRepresentation:
-      properties:
-        id:
+        rightFormFieldId:
           type: string
-        name:
+        rightRestResponseId:
           type: string
-    ObjectNode: {}
-    FormTabRepresentation:
-      properties:
-        id:
+        rightType:
           type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
-    CommentRepresentation:
-      properties:
-        created:
-          type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        id:
-          type: integer
-          format: int64
-        message:
-          type: string
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
+        rightValue:
+          type: object
     FormDefinitionRepresentation:
       properties:
         className:
@@ -1183,60 +1236,7 @@ components:
           type: string
         taskName:
           type: string
-    ConditionRepresentation:
-      properties:
-        leftFormFieldId:
-          type: string
-        leftRestResponseId:
-          type: string
-        nextConditionOperator:
-          type: string
-        operator:
-          type: string
-        rightFormFieldId:
-          type: string
-        rightRestResponseId:
-          type: string
-        rightType:
-          type: string
-        rightValue:
-          type: object
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    RelatedContentRepresentation:
-      properties:
-        contentAvailable:
-          type: boolean
-        created:
-          type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        id:
-          type: integer
-          format: int64
-        link:
-          type: boolean
-        linkUrl:
-          type: string
-        mimeType:
-          type: string
-        name:
-          type: string
-        previewStatus:
-          type: string
-        simpleType:
-          type: string
-        source:
-          type: string
-        sourceId:
-          type: string
-        thumbnailStatus:
-          type: string
+    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http

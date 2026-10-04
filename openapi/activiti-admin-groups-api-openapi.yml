@@ -549,6 +549,35 @@ components:
         total:
           type: integer
           format: int32
+    AddGroupCapabilitiesRepresentation:
+      properties:
+        capabilities:
+          type: array
+          items:
+            type: string
+    AbstractRepresentation: {}
+    GroupCapabilityRepresentation:
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    LightGroupRepresentation:
+      properties:
+        externalId:
+          type: string
+        groups:
+          type: array
+          items:
+            $ref: '#/components/schemas/LightGroupRepresentation'
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        status:
+          type: string
     UserRepresentation:
       properties:
         apps:
@@ -604,59 +633,6 @@ components:
           format: int64
         type:
           type: string
-    AddGroupCapabilitiesRepresentation:
-      properties:
-        capabilities:
-          type: array
-          items:
-            type: string
-    AbstractRepresentation: {}
-    LightGroupRepresentation:
-      properties:
-        externalId:
-          type: string
-        groups:
-          type: array
-          items:
-            $ref: '#/components/schemas/LightGroupRepresentation'
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        status:
-          type: string
-    AbstractGroupRepresentation:
-      properties:
-        externalId:
-          type: string
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        status:
-          type: string
-    LightAppRepresentation:
-      properties:
-        description:
-          type: string
-        icon:
-          type: string
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        theme:
-          type: string
-    GroupCapabilityRepresentation:
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
     GroupRepresentation:
       properties:
         capabilities:
@@ -695,6 +671,30 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UserRepresentation'
+    AbstractGroupRepresentation:
+      properties:
+        externalId:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        status:
+          type: string
+    LightAppRepresentation:
+      properties:
+        description:
+          type: string
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        theme:
+          type: string
   securitySchemes:
     basicAuth:
       type: http

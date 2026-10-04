@@ -180,83 +180,47 @@ paths:
           description: Not Found
 components:
   schemas:
-    FormDefinitionRepresentation:
+    FormRepresentation:
       properties:
-        className:
+        description:
           type: string
-        customFieldTemplates:
-          type: object
-          additionalProperties:
-            type: string
-        fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormFieldRepresentation'
-        gridsterForm:
-          type: boolean
+        formDefinition:
+          $ref: '#/components/schemas/FormDefinitionRepresentation'
         id:
           type: integer
           format: int64
-        javascriptEvents:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
+        lastUpdated:
+          type: string
+          format: date-time
+        lastUpdatedBy:
+          type: integer
+          format: int64
+        lastUpdatedByFullName:
+          type: string
         name:
           type: string
-        outcomeTarget:
-          type: string
-        outcomes:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormOutcomeRepresentation'
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        processDefinitionName:
-          type: string
-        selectedOutcome:
-          type: string
-        style:
-          type: string
-        tabs:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormTabRepresentation'
-        taskDefinitionKey:
-          type: string
-        taskId:
-          type: string
-        taskName:
-          type: string
-    FormJavascriptEventRepresentation:
+        referenceId:
+          type: integer
+          format: int64
+        stencilSetId:
+          type: integer
+          format: int64
+        version:
+          type: integer
+          format: int32
+    ProcessScopeIdentifierRepresentation:
       properties:
-        event:
+        processActivityId:
           type: string
-        javascriptLogic:
-          type: string
-    ConditionRepresentation:
+        processModelId:
+          type: integer
+          format: int64
+    OptionRepresentation:
       properties:
-        leftFormFieldId:
+        id:
           type: string
-        leftRestResponseId:
+        name:
           type: string
-        nextConditionOperator:
-          type: string
-        operator:
-          type: string
-        rightFormFieldId:
-          type: string
-        rightRestResponseId:
-          type: string
-        rightType:
-          type: string
-        rightValue:
-          type: object
     FormFieldRepresentation:
       properties:
         className:
@@ -328,64 +292,6 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    FormTabRepresentation:
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    FormRepresentation:
-      properties:
-        description:
-          type: string
-        formDefinition:
-          $ref: '#/components/schemas/FormDefinitionRepresentation'
-        id:
-          type: integer
-          format: int64
-        lastUpdated:
-          type: string
-          format: date-time
-        lastUpdatedBy:
-          type: integer
-          format: int64
-        lastUpdatedByFullName:
-          type: string
-        name:
-          type: string
-        referenceId:
-          type: integer
-          format: int64
-        stencilSetId:
-          type: integer
-          format: int64
-        version:
-          type: integer
-          format: int32
-    ValidationErrorRepresentation:
-      properties:
-        defaultDescription:
-          type: string
-        id:
-          type: string
-        name:
-          type: string
-        problem:
-          type: string
-        problemReference:
-          type: string
-        validatorSetName:
-          type: string
-        warning:
-          type: boolean
     LayoutRepresentation:
       properties:
         colspan:
@@ -397,19 +303,30 @@ components:
         row:
           type: integer
           format: int32
-    OptionRepresentation:
+    FormOutcomeRepresentation:
       properties:
         id:
           type: string
         name:
           type: string
-    ProcessScopeIdentifierRepresentation:
+    ConditionRepresentation:
       properties:
-        processActivityId:
+        leftFormFieldId:
           type: string
-        processModelId:
-          type: integer
-          format: int64
+        leftRestResponseId:
+          type: string
+        nextConditionOperator:
+          type: string
+        operator:
+          type: string
+        rightFormFieldId:
+          type: string
+        rightRestResponseId:
+          type: string
+        rightType:
+          type: string
+        rightValue:
+          type: object
     FormSaveRepresentation:
       properties:
         comment:
@@ -425,6 +342,89 @@ components:
           items:
             $ref: '#/components/schemas/ProcessScopeIdentifierRepresentation'
         reusable:
+          type: boolean
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
+    FormDefinitionRepresentation:
+      properties:
+        className:
+          type: string
+        customFieldTemplates:
+          type: object
+          additionalProperties:
+            type: string
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormFieldRepresentation'
+        gridsterForm:
+          type: boolean
+        id:
+          type: integer
+          format: int64
+        javascriptEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        name:
+          type: string
+        outcomeTarget:
+          type: string
+        outcomes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormOutcomeRepresentation'
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        selectedOutcome:
+          type: string
+        style:
+          type: string
+        tabs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormTabRepresentation'
+        taskDefinitionKey:
+          type: string
+        taskId:
+          type: string
+        taskName:
+          type: string
+    ValidationErrorRepresentation:
+      properties:
+        defaultDescription:
+          type: string
+        id:
+          type: string
+        name:
+          type: string
+        problem:
+          type: string
+        problemReference:
+          type: string
+        validatorSetName:
+          type: string
+        warning:
           type: boolean
   securitySchemes:
     basicAuth:

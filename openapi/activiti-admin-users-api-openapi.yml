@@ -263,6 +263,14 @@ components:
           items:
             type: integer
             format: int64
+    AbstractRepresentation: {}
+    GroupCapabilityRepresentation:
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
     UserRepresentation:
       properties:
         apps:
@@ -318,43 +326,6 @@ components:
           format: int64
         type:
           type: string
-    AbstractRepresentation: {}
-    LightAppRepresentation:
-      properties:
-        description:
-          type: string
-        icon:
-          type: string
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        theme:
-          type: string
-    GroupCapabilityRepresentation:
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-    AbstractUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
     GroupRepresentation:
       properties:
         capabilities:
@@ -393,6 +364,35 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UserRepresentation'
+    AbstractUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
+    LightAppRepresentation:
+      properties:
+        description:
+          type: string
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        theme:
+          type: string
   securitySchemes:
     basicAuth:
       type: http

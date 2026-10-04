@@ -245,6 +245,24 @@ paths:
           description: Not Found
 components:
   schemas:
+    CreateTenantRepresentation:
+      properties:
+        active:
+          type: boolean
+        domain:
+          type: string
+        maxUsers:
+          type: integer
+          format: int32
+        name:
+          type: string
+    LightTenantRepresentation:
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
     ImageUploadRepresentation:
       properties:
         created:
@@ -258,13 +276,6 @@ components:
         userId:
           type: integer
           format: int64
-    LightTenantRepresentation:
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
     TenantRepresentation:
       properties:
         active:
@@ -307,17 +318,6 @@ components:
           type: integer
           format: int64
         userName:
-          type: string
-    CreateTenantRepresentation:
-      properties:
-        active:
-          type: boolean
-        domain:
-          type: string
-        maxUsers:
-          type: integer
-          format: int32
-        name:
           type: string
   securitySchemes:
     basicAuth:

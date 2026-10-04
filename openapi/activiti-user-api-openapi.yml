@@ -252,6 +252,22 @@ components:
         total:
           type: integer
           format: int32
+    AbstractRepresentation: {}
+    GroupCapabilityRepresentation:
+      properties:
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+    UserActionRepresentation:
+      properties:
+        action:
+          type: string
+        newPassword:
+          type: string
+        oldPassword:
+          type: string
     UserRepresentation:
       properties:
         apps:
@@ -307,31 +323,6 @@ components:
           format: int64
         type:
           type: string
-    ResetPasswordRepresentation:
-      properties:
-        email:
-          type: string
-    AbstractRepresentation: {}
-    LightAppRepresentation:
-      properties:
-        description:
-          type: string
-        icon:
-          type: string
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
-        theme:
-          type: string
-    GroupCapabilityRepresentation:
-      properties:
-        id:
-          type: integer
-          format: int64
-        name:
-          type: string
     GroupRepresentation:
       properties:
         capabilities:
@@ -370,13 +361,22 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/UserRepresentation'
-    UserActionRepresentation:
+    ResetPasswordRepresentation:
       properties:
-        action:
+        email:
           type: string
-        newPassword:
+    LightAppRepresentation:
+      properties:
+        description:
           type: string
-        oldPassword:
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        name:
+          type: string
+        theme:
           type: string
   securitySchemes:
     basicAuth:

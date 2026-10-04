@@ -344,30 +344,6 @@ components:
           format: int64
         username:
           type: string
-    EndpointRequestHeaderRepresentation:
-      properties:
-        name:
-          type: string
-        value:
-          type: string
-    EndpointBasicAuthRepresentation:
-      properties:
-        created:
-          type: string
-          format: date-time
-        id:
-          type: integer
-          format: int64
-        lastUpdated:
-          type: string
-          format: date-time
-        name:
-          type: string
-        tenantId:
-          type: integer
-          format: int64
-        username:
-          type: string
     EndpointConfigurationRepresentation:
       properties:
         basicAuthId:
@@ -395,6 +371,30 @@ components:
         tenantId:
           type: integer
           format: int64
+    EndpointBasicAuthRepresentation:
+      properties:
+        created:
+          type: string
+          format: date-time
+        id:
+          type: integer
+          format: int64
+        lastUpdated:
+          type: string
+          format: date-time
+        name:
+          type: string
+        tenantId:
+          type: integer
+          format: int64
+        username:
+          type: string
+    EndpointRequestHeaderRepresentation:
+      properties:
+        name:
+          type: string
+        value:
+          type: string
   securitySchemes:
     basicAuth:
       type: http

@@ -55,24 +55,27 @@ paths:
           description: Not Found
 components:
   schemas:
-    ConditionRepresentation:
+    ProcessScopesRequestRepresentation:
       properties:
-        leftFormFieldId:
+        identifiers:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessScopeIdentifierRepresentation'
+        overriddenModel:
           type: string
-        leftRestResponseId:
+    OptionRepresentation:
+      properties:
+        id:
           type: string
-        nextConditionOperator:
+        name:
           type: string
-        operator:
+    ProcessScopeIdentifierRepresentation:
+      properties:
+        processActivityId:
           type: string
-        rightFormFieldId:
-          type: string
-        rightRestResponseId:
-          type: string
-        rightType:
-          type: string
-        rightValue:
-          type: object
+        processModelId:
+          type: integer
+          format: int64
     FormFieldRepresentation:
       properties:
         className:
@@ -144,12 +147,6 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
     LayoutRepresentation:
       properties:
         colspan:
@@ -161,6 +158,30 @@ components:
         row:
           type: integer
           format: int32
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    ConditionRepresentation:
+      properties:
+        leftFormFieldId:
+          type: string
+        leftRestResponseId:
+          type: string
+        nextConditionOperator:
+          type: string
+        operator:
+          type: string
+        rightFormFieldId:
+          type: string
+        rightRestResponseId:
+          type: string
+        rightType:
+          type: string
+        rightValue:
+          type: object
     ProcessScopeRepresentation:
       properties:
         activityIds:
@@ -217,27 +238,6 @@ components:
           type: object
           additionalProperties:
             $ref: '#/components/schemas/List'
-    ProcessScopesRequestRepresentation:
-      properties:
-        identifiers:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProcessScopeIdentifierRepresentation'
-        overriddenModel:
-          type: string
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    ProcessScopeIdentifierRepresentation:
-      properties:
-        processActivityId:
-          type: string
-        processModelId:
-          type: integer
-          format: int64
     FormScopeRepresentation:
       properties:
         description:

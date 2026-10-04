@@ -145,7 +145,18 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RestVariable'
-    AbstractRepresentation: {}
+    RestVariable:
+      properties:
+        name:
+          type: string
+        scope:
+          type: string
+        type:
+          type: string
+        value:
+          type: object
+        valueUrl:
+          type: string
     LightUserRepresentation:
       properties:
         email:
@@ -162,18 +173,7 @@ components:
         pictureId:
           type: integer
           format: int64
-    RestVariable:
-      properties:
-        name:
-          type: string
-        scope:
-          type: string
-        type:
-          type: string
-        value:
-          type: object
-        valueUrl:
-          type: string
+    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http
