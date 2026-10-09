@@ -1,3 +1,8 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-06-13 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
+generated: '2026-06-13'
 name: Activiti Plans and Pricing
 description: >-
   Activiti is open-source software distributed under the Apache License 2.0.
@@ -49,3 +54,23 @@ notes: >-
   The project originated at Alfresco and the enterprise offering (Alfresco
   Process Services) is now maintained under Hyland. Pricing for enterprise
   subscriptions requires direct contact with Hyland/Alfresco sales.
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - negotiated
+  units: []
+  plans:
+  - name: Community (Open Source)
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods: []
+  - name: Alfresco Process Services (Enterprise)
+    access: other
+    model: negotiated
+    model_how: derived
+    units: []
+    periods: []

@@ -1,24 +1,41 @@
-generated: '2026-07-15'
+generated: '2026-09-23'
 method: generated
-source: openapi/activiti-rest-openapi.yml
+source: openapi/activiti-about-api-openapi.yml, openapi/activiti-admin-endpoints-api-openapi.yml,
+  openapi/activiti-admin-groups-api-openapi.yml, openapi/activiti-admin-tenants-api-openapi.yml,
+  openapi/activiti-admin-users-api-openapi.yml, openapi/activiti-alfresco-api-openapi.yml, openapi/activiti-apps-api-openapi.yml,
+  openapi/activiti-apps-definition-api-openapi.yml, openapi/activiti-apps-runtime-api-openapi.yml,
+  openapi/activiti-comments-api-openapi.yml, openapi/activiti-content-api-openapi.yml, openapi/activiti-content-rendition-api-openapi.yml,
+  openapi/activiti-editor-api-openapi.yml, openapi/activiti-groups-api-openapi.yml, openapi/activiti-idm-sync-api-openapi.yml,
+  openapi/activiti-integration-account-api-openapi.yml, openapi/activiti-integration-alfresco-cloud-api-openapi.yml,
+  openapi/activiti-integration-alfresco-onpremise-api-openapi.yml, openapi/activiti-integration-api-openapi.yml,
+  openapi/activiti-integration-box-api-openapi.yml, openapi/activiti-integration-drive-api-openapi.yml,
+  openapi/activiti-model-bpmn-api-openapi.yml, openapi/activiti-models-api-openapi.yml, openapi/activiti-models-history-api-openapi.yml,
+  openapi/activiti-process-api-openapi.yml, openapi/activiti-process-definitions-api-openapi.yml,
+  openapi/activiti-process-definitions-form-api-openapi.yml, openapi/activiti-process-instances-api-openapi.yml,
+  openapi/activiti-process-instances-information-api-openapi.yml, openapi/activiti-process-instances-listing-api-openapi.yml,
+  openapi/activiti-process-scope-api-openapi.yml, openapi/activiti-profile-api-openapi.yml,
+  openapi/activiti-script-file-api-openapi.yml, openapi/activiti-system-properties-api-openapi.yml,
+  openapi/activiti-task-actions-api-openapi.yml, openapi/activiti-task-api-openapi.yml, openapi/activiti-task-checklist-api-openapi.yml,
+  openapi/activiti-task-forms-api-openapi.yml, openapi/activiti-temporary-api-openapi.yml, openapi/activiti-user-api-openapi.yml,
+  openapi/activiti-user-filters-api-openapi.yml, openapi/activiti-users-workflow-api-openapi.yml
 description: Recommended x-agentic-access execution contracts, classified heuristically from
   the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
   audience per deployment. See research/curity/agentic-governance/.
 summary:
-  operations: 171
+  operations: 240
   by_action_class:
-    connected: 85
-    acting: 86
+    connected: 131
+    acting: 109
   by_consequence:
-    read: 85
-    write: 81
-    physical: 4
+    read: 131
+    write: 102
+    physical: 6
     safety-critical: 1
   human_in_the_loop_required: 1
 operations:
-- path: /api/enterprise/account/integration
+- path: /api/enterprise/app-version
   method: get
-  operationId: getAccountsUsingGET
+  operationId: getAppVersionUsingGET
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -560,6 +577,96 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /api/enterprise/integration/alfresco-cloud/confirm-auth-request
+  method: get
+  operationId: confirmAuthorisationUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco-cloud/networks
+  method: get
+  operationId: getAllNetworksUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco-cloud/networks/{networkId}/folders/{folderId}/content
+  method: get
+  operationId: getContentInFolderUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco-cloud/networks/{networkId}/sites
+  method: get
+  operationId: getAllSitesUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco-cloud/networks/{networkId}/sites/{siteId}/content
+  method: get
+  operationId: getContentInSiteUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco/{repositoryId}/folders/{folderId}/content
+  method: get
+  operationId: getContentInFolderUsingGET_1
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco/{repositoryId}/sites
+  method: get
+  operationId: getAllSitesUsingGET_1
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco/{repositoryId}/sites/{siteId}/content
+  method: get
+  operationId: getContentInSiteUsingGET_1
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/profile/accounts/alfresco
+  method: get
+  operationId: getRepositoriesUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /api/enterprise/app-definitions/import
   method: post
   operationId: importAppDefinitionUsingPOST
@@ -618,9 +725,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /api/enterprise/app-version
+- path: /api/enterprise/runtime-app-definitions
   method: get
-  operationId: getAppVersionUsingGET
+  operationId: getAppDefinitionsUsingGET
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -628,6 +735,162 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /api/enterprise/runtime-app-definitions
+  method: post
+  operationId: deployAppDefinitionsUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/app-definitions/import
+  method: post
+  operationId: importAppDefinitionUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/app-definitions/{modelId}/export
+  method: get
+  operationId: exportAppDefinitionUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/app-definitions/{modelId}/import
+  method: post
+  operationId: importAppDefinitionUsingPOST_1
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/app-definitions/{modelId}/publish
+  method: post
+  operationId: publishAppDefinitionUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/runtime-app-definitions
+  method: get
+  operationId: getAppDefinitionsUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/runtime-app-definitions
+  method: post
+  operationId: deployAppDefinitionsUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/process-instances/{processInstanceId}/comments
+  method: get
+  operationId: getProcessInstanceCommentsUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/process-instances/{processInstanceId}/comments
+  method: post
+  operationId: addProcessInstanceCommentUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/tasks/{taskId}/comments
+  method: get
+  operationId: getTaskCommentsUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/tasks/{taskId}/comments
+  method: post
+  operationId: addTaskCommentUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /api/enterprise/content
   method: post
   operationId: createTemporaryRelatedContentUsingPOST
@@ -696,6 +959,100 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /api/enterprise/process-instances/{processInstanceId}/content
+  method: get
+  operationId: getRelatedContentForProcessInstanceUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/process-instances/{processInstanceId}/content
+  method: post
+  operationId: createRelatedContentOnProcessInstanceUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/process-instances/{processInstanceId}/field-content
+  method: get
+  operationId: getProcessInstanceContentUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/process-instances/{processInstanceId}/raw-content
+  method: post
+  operationId: createRelatedContentOnProcessInstanceUsingPOST_1
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/tasks/{taskId}/content
+  method: get
+  operationId: getRelatedContentForTaskUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/tasks/{taskId}/content
+  method: post
+  operationId: createRelatedContentOnTaskUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/tasks/{taskId}/raw-content
+  method: post
+  operationId: createRelatedContentOnTaskUsingPOST_1
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /api/enterprise/content/{contentId}/rendition/{renditionType}
   method: get
   operationId: getRawContentUsingGET_2
@@ -768,178 +1125,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /api/enterprise/filters/processes
-  method: get
-  operationId: getUserProcessInstanceFiltersUsingGET
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/enterprise/filters/processes
-  method: post
-  operationId: createUserProcessInstanceFilterUsingPOST
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/enterprise/filters/processes
-  method: put
-  operationId: orderUserProcessInstanceFiltersUsingPUT
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/enterprise/filters/processes/{userFilterId}
-  method: get
-  operationId: getUserProcessInstanceFilterUsingGET
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/enterprise/filters/processes/{userFilterId}
-  method: put
-  operationId: updateUserProcessInstanceFilterUsingPUT
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/enterprise/filters/processes/{userFilterId}
-  method: delete
-  operationId: deleteUserProcessInstanceFilterUsingDELETE
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/enterprise/filters/tasks
-  method: get
-  operationId: getUserTaskFiltersUsingGET
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/enterprise/filters/tasks
-  method: post
-  operationId: createUserTaskFilterUsingPOST
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/enterprise/filters/tasks
-  method: put
-  operationId: orderUserTaskFiltersUsingPUT
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/enterprise/filters/tasks/{userFilterId}
-  method: get
-  operationId: getUserTaskFilterUsingGET
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/enterprise/filters/tasks/{userFilterId}
-  method: put
-  operationId: updateUserTaskFilterUsingPUT
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
-- path: /api/enterprise/filters/tasks/{userFilterId}
-  method: delete
-  operationId: deleteUserTaskFilterUsingDELETE
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /api/enterprise/groups
   method: get
   operationId: getGroupsUsingGET_1
@@ -980,22 +1165,106 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/enterprise/idm/passwords
-  method: post
-  operationId: requestPasswordResetUsingPOST
+- path: /api/enterprise/account/integration
+  method: get
+  operationId: getAccountsUsingGET
   x-agentic-access:
-    action-class: acting
-    consequence: safety-critical
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 120
-      exchange: true
-      purpose-required: true
-      proof-of-possession: true
-    escalation:
-      human-in-the-loop: required
-    audit: required
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco-cloud/confirm-auth-request
+  method: get
+  operationId: confirmAuthorisationUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco-cloud/networks
+  method: get
+  operationId: getAllNetworksUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco-cloud/networks/{networkId}/folders/{folderId}/content
+  method: get
+  operationId: getContentInFolderUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco-cloud/networks/{networkId}/sites
+  method: get
+  operationId: getAllSitesUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco-cloud/networks/{networkId}/sites/{siteId}/content
+  method: get
+  operationId: getContentInSiteUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco/{repositoryId}/folders/{folderId}/content
+  method: get
+  operationId: getContentInFolderUsingGET_1
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco/{repositoryId}/sites
+  method: get
+  operationId: getAllSitesUsingGET_1
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/alfresco/{repositoryId}/sites/{siteId}/content
+  method: get
+  operationId: getContentInSiteUsingGET_1
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/profile/accounts/alfresco
+  method: get
+  operationId: getRepositoriesUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /api/enterprise/integration/alfresco-cloud/confirm-auth-request
   method: get
   operationId: confirmAuthorisationUsingGET
@@ -1184,6 +1453,144 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /api/enterprise/profile/accounts/alfresco
+  method: get
+  operationId: getRepositoriesUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/box/confirm-auth-request
+  method: get
+  operationId: confirmAuthorisationUsingGET_1
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/box/files
+  method: get
+  operationId: getFilesUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/box/status
+  method: get
+  operationId: getBoxPluginStatusUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/box/{userId}/account
+  method: get
+  operationId: getRepositoryAccountUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/box/{userId}/account
+  method: post
+  operationId: createRepositoryAccountUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/integration/box/{userId}/account
+  method: put
+  operationId: updateRepositoryAccountUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/integration/box/{userId}/account
+  method: delete
+  operationId: deleteRepositoryAccountUsingDELETE
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/integration/google-drive/confirm-auth-request
+  method: get
+  operationId: confirmAuthorisationUsingGET_2
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/integration/google-drive/files
+  method: get
+  operationId: getFilesUsingGET_1
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/models/{processModelId}/bpmn20
+  method: get
+  operationId: getProcessModelBpmn20XmlUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/models/{processModelId}/history/{processModelHistoryId}/bpmn20
+  method: get
+  operationId: getHistoricProcessModelBpmn20XmlUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /api/enterprise/models
   method: get
   operationId: getModelsUsingGET
@@ -1320,26 +1727,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /api/enterprise/models/{modelId}/history
-  method: get
-  operationId: getModelHistoryCollectionUsingGET
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/enterprise/models/{modelId}/history/{modelHistoryId}
-  method: get
-  operationId: getProcessModelHistoryUsingGET
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
 - path: /api/enterprise/models/{modelId}/newversion
   method: post
   operationId: importNewVersionUsingPOST
@@ -1366,9 +1753,25 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/enterprise/models/{processModelId}/bpmn20
+- path: /api/enterprise/process-models/import
+  method: post
+  operationId: importProcessModelUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/models/{modelId}/history
   method: get
-  operationId: getProcessModelBpmn20XmlUsingGET
+  operationId: getModelHistoryCollectionUsingGET
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -1376,9 +1779,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/enterprise/models/{processModelId}/history/{processModelHistoryId}/bpmn20
+- path: /api/enterprise/models/{modelId}/history/{modelHistoryId}
   method: get
-  operationId: getHistoricProcessModelBpmn20XmlUsingGET
+  operationId: getProcessModelHistoryUsingGET
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -1462,6 +1865,26 @@ operations:
   method: post
   operationId: getProcessInstancesUsingPOST
   x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/process-instances/{processInstanceId}
+  method: get
+  operationId: getProcessInstanceUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/process-instances/{processInstanceId}
+  method: delete
+  operationId: deleteProcessInstanceUsingDELETE
+  x-agentic-access:
     action-class: acting
     consequence: write
     subject: required
@@ -1474,6 +1897,66 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /api/enterprise/process-instances/{processInstanceId}/field-content
+  method: get
+  operationId: getProcessInstanceContentUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/process-instances/{processInstanceId}/start-form
+  method: get
+  operationId: getProcessInstanceStartFormUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/process-definitions
+  method: get
+  operationId: getProcessDefinitionsUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/process-definitions/{processDefinitionId}/start-form
+  method: get
+  operationId: getProcessDefinitionStartFormUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/process-definitions/{processDefinitionId}/start-form-values/{field}
+  method: get
+  operationId: getRestFieldValuesUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/process-definitions/{processDefinitionId}/start-form-values/{field}/{column}
+  method: get
+  operationId: getRestTableFieldValuesUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
 - path: /api/enterprise/process-instances/{processInstanceId}
   method: get
   operationId: getProcessInstanceUsingGET
@@ -1526,9 +2009,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /api/enterprise/process-instances/{processInstanceId}/content
+- path: /api/enterprise/process-instances/{processInstanceId}/start-form
   method: get
-  operationId: getRelatedContentForProcessInstanceUsingGET
+  operationId: getProcessInstanceStartFormUsingGET
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -1536,9 +2019,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/enterprise/process-instances/{processInstanceId}/content
+- path: /api/enterprise/process-instances
   method: post
-  operationId: createRelatedContentOnProcessInstanceUsingPOST
+  operationId: startNewProcessInstanceUsingPOST
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1562,9 +2045,9 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/enterprise/process-instances/{processInstanceId}/raw-content
+- path: /api/enterprise/process-instances/filter
   method: post
-  operationId: createRelatedContentOnProcessInstanceUsingPOST_1
+  operationId: filterProcessInstancesUsingPOST
   x-agentic-access:
     action-class: acting
     consequence: write
@@ -1578,9 +2061,9 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /api/enterprise/process-instances/{processInstanceId}/start-form
-  method: get
-  operationId: getProcessInstanceStartFormUsingGET
+- path: /api/enterprise/process-instances/query
+  method: post
+  operationId: getProcessInstancesUsingPOST
   x-agentic-access:
     action-class: connected
     consequence: read
@@ -1588,38 +2071,16 @@ operations:
     token:
       max-ttl: 3600
     audit: none
-- path: /api/enterprise/process-models/import
-  method: post
-  operationId: importProcessModelUsingPOST
-  x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
-    token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /api/enterprise/process-scopes
   method: post
   operationId: getRuntimeProcessScopesUsingPOST
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /api/enterprise/profile
   method: get
   operationId: getProfileUsingGET
@@ -1688,44 +2149,6 @@ operations:
       - abnormal
       - high-value
     audit: required
-- path: /api/enterprise/profile/accounts/alfresco
-  method: get
-  operationId: getRepositoriesUsingGET
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/enterprise/runtime-app-definitions
-  method: get
-  operationId: getAppDefinitionsUsingGET
-  x-agentic-access:
-    action-class: connected
-    consequence: read
-    subject: optional
-    token:
-      max-ttl: 3600
-    audit: none
-- path: /api/enterprise/runtime-app-definitions
-  method: post
-  operationId: deployAppDefinitionsUsingPOST
-  x-agentic-access:
-    action-class: acting
-    consequence: physical
-    subject: required
-    audience: null
-    token:
-      max-ttl: 300
-      exchange: true
-      purpose-required: true
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
 - path: /api/enterprise/script-files/controllers
   method: get
   operationId: getControllersUsingGET
@@ -1756,6 +2179,134 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /api/enterprise/tasks/{taskId}/action/assign
+  method: put
+  operationId: assignTaskUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/tasks/{taskId}/action/attach-form
+  method: put
+  operationId: attachFormUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/tasks/{taskId}/action/claim
+  method: put
+  operationId: claimTaskUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/tasks/{taskId}/action/complete
+  method: put
+  operationId: completeTaskUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/tasks/{taskId}/action/involve
+  method: put
+  operationId: involveUserUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/tasks/{taskId}/action/remove-form
+  method: delete
+  operationId: removeFormUsingDELETE
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/tasks/{taskId}/action/remove-involved
+  method: put
+  operationId: removeInvolvedUserUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/tasks/{taskId}/action/unclaim
+  method: put
+  operationId: unclaimTaskUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /api/enterprise/task-forms/{taskId}
   method: get
   operationId: getTaskFormUsingGET
@@ -1854,18 +2405,12 @@ operations:
   method: post
   operationId: listTasksUsingPOST
   x-agentic-access:
-    action-class: acting
-    consequence: write
-    subject: required
-    audience: null
+    action-class: connected
+    consequence: read
+    subject: optional
     token:
-      max-ttl: 900
-    escalation:
-      human-in-the-loop: conditional
-      triggers:
-      - abnormal
-      - high-value
-    audit: required
+      max-ttl: 3600
+    audit: none
 - path: /api/enterprise/tasks/{taskId}
   method: get
   operationId: getTaskUsingGET
@@ -2148,6 +2693,112 @@ operations:
       - abnormal
       - high-value
     audit: required
+- path: /api/enterprise/tasks/{taskId}/checklist
+  method: get
+  operationId: getChecklistUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/tasks/{taskId}/checklist
+  method: post
+  operationId: addSubtaskUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/tasks/{taskId}/checklist
+  method: put
+  operationId: orderChecklistUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/task-forms/{taskId}
+  method: get
+  operationId: getTaskFormUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/task-forms/{taskId}
+  method: post
+  operationId: completeTaskFormUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/task-forms/{taskId}/form-values/{field}
+  method: get
+  operationId: getRestFieldValuesUsingGET_2
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/task-forms/{taskId}/form-values/{field}/{column}
+  method: get
+  operationId: getRestFieldValuesUsingGET_1
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/task-forms/{taskId}/save-form
+  method: post
+  operationId: saveTaskFormUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
 - path: /api/enterprise/temporary/example-headers
   method: get
   operationId: getHeadersUsingGET
@@ -2188,6 +2839,22 @@ operations:
     token:
       max-ttl: 3600
     audit: none
+- path: /api/enterprise/idm/passwords
+  method: post
+  operationId: requestPasswordResetUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
 - path: /api/enterprise/users
   method: get
   operationId: getUsersUsingGET_2
@@ -2243,6 +2910,188 @@ operations:
 - path: /api/enterprise/users/{userId}/picture
   method: get
   operationId: getProfilePictureUsingGET_1
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/filters/processes
+  method: get
+  operationId: getUserProcessInstanceFiltersUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/filters/processes
+  method: post
+  operationId: createUserProcessInstanceFilterUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/filters/processes
+  method: put
+  operationId: orderUserProcessInstanceFiltersUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/filters/processes/{userFilterId}
+  method: get
+  operationId: getUserProcessInstanceFilterUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/filters/processes/{userFilterId}
+  method: put
+  operationId: updateUserProcessInstanceFilterUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/filters/processes/{userFilterId}
+  method: delete
+  operationId: deleteUserProcessInstanceFilterUsingDELETE
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/filters/tasks
+  method: get
+  operationId: getUserTaskFiltersUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/filters/tasks
+  method: post
+  operationId: createUserTaskFilterUsingPOST
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/filters/tasks
+  method: put
+  operationId: orderUserTaskFiltersUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/filters/tasks/{userFilterId}
+  method: get
+  operationId: getUserTaskFilterUsingGET
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /api/enterprise/filters/tasks/{userFilterId}
+  method: put
+  operationId: updateUserTaskFilterUsingPUT
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/filters/tasks/{userFilterId}
+  method: delete
+  operationId: deleteUserTaskFilterUsingDELETE
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /api/enterprise/users
+  method: get
+  operationId: getUsersUsingGET_2
   x-agentic-access:
     action-class: connected
     consequence: read
