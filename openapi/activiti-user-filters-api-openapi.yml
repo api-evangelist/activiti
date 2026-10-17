@@ -347,50 +347,6 @@ paths:
           description: Forbidden
 components:
   schemas:
-    UserFilterOrderRepresentation:
-      properties:
-        appId:
-          type: integer
-          format: int64
-        order:
-          type: array
-          items:
-            type: integer
-            format: int64
-    ResultListDataRepresentation:
-      properties:
-        data:
-          type: array
-          items:
-            $ref: '#/components/schemas/AbstractRepresentation'
-        size:
-          type: integer
-          format: int32
-        start:
-          type: integer
-          format: int32
-        total:
-          type: integer
-          format: int32
-    UserTaskFilterRepresentation:
-      properties:
-        appId:
-          type: integer
-          format: int64
-        filter:
-          $ref: '#/components/schemas/TaskFilterRepresentation'
-        icon:
-          type: string
-        id:
-          type: integer
-          format: int64
-        index:
-          type: integer
-          format: int32
-        name:
-          type: string
-        recent:
-          type: boolean
     UserProcessInstanceFilterRepresentation:
       properties:
         appId:
@@ -410,20 +366,31 @@ components:
           type: string
         recent:
           type: boolean
-    ProcessInstanceFilterRepresentation:
+    ResultListDataRepresentation:
       properties:
-        asc:
-          type: boolean
-        name:
-          type: string
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        sort:
-          type: string
-        state:
-          type: string
+        data:
+          type: array
+          items:
+            $ref: '#/components/schemas/AbstractRepresentation'
+        size:
+          type: integer
+          format: int32
+        start:
+          type: integer
+          format: int32
+        total:
+          type: integer
+          format: int32
+    UserFilterOrderRepresentation:
+      properties:
+        appId:
+          type: integer
+          format: int64
+        order:
+          type: array
+          items:
+            type: integer
+            format: int64
     TaskFilterRepresentation:
       properties:
         asc:
@@ -446,6 +413,39 @@ components:
           type: string
         state:
           type: string
+    ProcessInstanceFilterRepresentation:
+      properties:
+        asc:
+          type: boolean
+        name:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        sort:
+          type: string
+        state:
+          type: string
+    UserTaskFilterRepresentation:
+      properties:
+        appId:
+          type: integer
+          format: int64
+        filter:
+          $ref: '#/components/schemas/TaskFilterRepresentation'
+        icon:
+          type: string
+        id:
+          type: integer
+          format: int64
+        index:
+          type: integer
+          format: int32
+        name:
+          type: string
+        recent:
+          type: boolean
     AbstractRepresentation: {}
   securitySchemes:
     basicAuth:

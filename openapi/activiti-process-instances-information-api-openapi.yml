@@ -79,6 +79,18 @@ paths:
           description: Not Found
 components:
   schemas:
+    RestVariable:
+      properties:
+        name:
+          type: string
+        scope:
+          type: string
+        type:
+          type: string
+        value:
+          type: object
+        valueUrl:
+          type: string
     ResultListDataRepresentation:
       properties:
         data:
@@ -104,6 +116,22 @@ components:
           type: string
         values:
           type: object
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
     ProcessInstanceRepresentation:
       properties:
         businessKey:
@@ -145,34 +173,6 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/RestVariable'
-    RestVariable:
-      properties:
-        name:
-          type: string
-        scope:
-          type: string
-        type:
-          type: string
-        value:
-          type: object
-        valueUrl:
-          type: string
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
     AbstractRepresentation: {}
   securitySchemes:
     basicAuth:

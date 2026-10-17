@@ -180,47 +180,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    FormRepresentation:
-      properties:
-        description:
-          type: string
-        formDefinition:
-          $ref: '#/components/schemas/FormDefinitionRepresentation'
-        id:
-          type: integer
-          format: int64
-        lastUpdated:
-          type: string
-          format: date-time
-        lastUpdatedBy:
-          type: integer
-          format: int64
-        lastUpdatedByFullName:
-          type: string
-        name:
-          type: string
-        referenceId:
-          type: integer
-          format: int64
-        stencilSetId:
-          type: integer
-          format: int64
-        version:
-          type: integer
-          format: int32
-    ProcessScopeIdentifierRepresentation:
-      properties:
-        processActivityId:
-          type: string
-        processModelId:
-          type: integer
-          format: int64
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
     FormFieldRepresentation:
       properties:
         className:
@@ -303,54 +262,12 @@ components:
         row:
           type: integer
           format: int32
-    FormOutcomeRepresentation:
+    OptionRepresentation:
       properties:
         id:
           type: string
         name:
           type: string
-    ConditionRepresentation:
-      properties:
-        leftFormFieldId:
-          type: string
-        leftRestResponseId:
-          type: string
-        nextConditionOperator:
-          type: string
-        operator:
-          type: string
-        rightFormFieldId:
-          type: string
-        rightRestResponseId:
-          type: string
-        rightType:
-          type: string
-        rightValue:
-          type: object
-    FormSaveRepresentation:
-      properties:
-        comment:
-          type: string
-        formImageBase64:
-          type: string
-        formRepresentation:
-          $ref: '#/components/schemas/FormRepresentation'
-        newVersion:
-          type: boolean
-        processScopeIdentifiers:
-          type: array
-          items:
-            $ref: '#/components/schemas/ProcessScopeIdentifierRepresentation'
-        reusable:
-          type: boolean
-    FormTabRepresentation:
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
     FormJavascriptEventRepresentation:
       properties:
         event:
@@ -410,6 +327,40 @@ components:
           type: string
         taskName:
           type: string
+    FormSaveRepresentation:
+      properties:
+        comment:
+          type: string
+        formImageBase64:
+          type: string
+        formRepresentation:
+          $ref: '#/components/schemas/FormRepresentation'
+        newVersion:
+          type: boolean
+        processScopeIdentifiers:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProcessScopeIdentifierRepresentation'
+        reusable:
+          type: boolean
+    ConditionRepresentation:
+      properties:
+        leftFormFieldId:
+          type: string
+        leftRestResponseId:
+          type: string
+        nextConditionOperator:
+          type: string
+        operator:
+          type: string
+        rightFormFieldId:
+          type: string
+        rightRestResponseId:
+          type: string
+        rightType:
+          type: string
+        rightValue:
+          type: object
     ValidationErrorRepresentation:
       properties:
         defaultDescription:
@@ -426,6 +377,55 @@ components:
           type: string
         warning:
           type: boolean
+    ProcessScopeIdentifierRepresentation:
+      properties:
+        processActivityId:
+          type: string
+        processModelId:
+          type: integer
+          format: int64
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
+    FormRepresentation:
+      properties:
+        description:
+          type: string
+        formDefinition:
+          $ref: '#/components/schemas/FormDefinitionRepresentation'
+        id:
+          type: integer
+          format: int64
+        lastUpdated:
+          type: string
+          format: date-time
+        lastUpdatedBy:
+          type: integer
+          format: int64
+        lastUpdatedByFullName:
+          type: string
+        name:
+          type: string
+        referenceId:
+          type: integer
+          format: int64
+        stencilSetId:
+          type: integer
+          format: int64
+        version:
+          type: integer
+          format: int32
   securitySchemes:
     basicAuth:
       type: http

@@ -130,6 +130,12 @@ components:
         total:
           type: integer
           format: int32
+    ChecklistOrderRepresentation:
+      properties:
+        order:
+          type: array
+          items:
+            type: string
     TaskRepresentation:
       properties:
         adhocTaskCanBeReassigned:
@@ -196,12 +202,6 @@ components:
           type: string
         processInstanceStartUserId:
           type: string
-    ChecklistOrderRepresentation:
-      properties:
-        order:
-          type: array
-          items:
-            type: string
     LightUserRepresentation:
       properties:
         email:

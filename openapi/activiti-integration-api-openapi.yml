@@ -528,12 +528,22 @@ paths:
           description: Not Found
 components:
   schemas:
+    BoxUserAccountCredentialsRepresentation:
+      properties:
+        authenticationURL:
+          type: string
+        expireDate:
+          type: string
+          format: date-time
+        ownerEmail:
+          type: string
     UserAccountCredentialsRepresentation:
       properties:
         password:
           type: string
         username:
           type: string
+    AbstractRepresentation: {}
     ResultListDataRepresentation:
       properties:
         data:
@@ -549,16 +559,6 @@ components:
         total:
           type: integer
           format: int32
-    BoxUserAccountCredentialsRepresentation:
-      properties:
-        authenticationURL:
-          type: string
-        expireDate:
-          type: string
-          format: date-time
-        ownerEmail:
-          type: string
-    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http

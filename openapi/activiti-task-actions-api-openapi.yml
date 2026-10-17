@@ -251,6 +251,22 @@ paths:
 components:
   schemas:
     ObjectNode: {}
+    LightUserRepresentation:
+      properties:
+        email:
+          type: string
+        externalId:
+          type: string
+        firstName:
+          type: string
+        id:
+          type: integer
+          format: int64
+        lastName:
+          type: string
+        pictureId:
+          type: integer
+          format: int64
     TaskRepresentation:
       properties:
         adhocTaskCanBeReassigned:
@@ -317,22 +333,6 @@ components:
           type: string
         processInstanceStartUserId:
           type: string
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
   securitySchemes:
     basicAuth:
       type: http

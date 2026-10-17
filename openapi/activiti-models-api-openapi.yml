@@ -452,7 +452,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    ObjectNode: {}
     ResultListDataRepresentation:
       properties:
         data:
@@ -510,6 +509,7 @@ components:
         version:
           type: integer
           format: int32
+    ObjectNode: {}
     ValidationErrorRepresentation:
       properties:
         defaultDescription:

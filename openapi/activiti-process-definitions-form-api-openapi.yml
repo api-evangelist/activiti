@@ -86,18 +86,120 @@ paths:
           description: Not Found
 components:
   schemas:
+    LayoutRepresentation:
+      properties:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
     OptionRepresentation:
       properties:
         id:
           type: string
         name:
           type: string
+    FormJavascriptEventRepresentation:
+      properties:
+        event:
+          type: string
+        javascriptLogic:
+          type: string
+    FormDefinitionRepresentation:
+      properties:
+        className:
+          type: string
+        customFieldTemplates:
+          type: object
+          additionalProperties:
+            type: string
+        fields:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormFieldRepresentation'
+        gridsterForm:
+          type: boolean
+        id:
+          type: integer
+          format: int64
+        javascriptEvents:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
+        metadata:
+          type: object
+          additionalProperties:
+            type: string
+        name:
+          type: string
+        outcomeTarget:
+          type: string
+        outcomes:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormOutcomeRepresentation'
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        processDefinitionName:
+          type: string
+        selectedOutcome:
+          type: string
+        style:
+          type: string
+        tabs:
+          type: array
+          items:
+            $ref: '#/components/schemas/FormTabRepresentation'
+        taskDefinitionKey:
+          type: string
+        taskId:
+          type: string
+        taskName:
+          type: string
+    ConditionRepresentation:
+      properties:
+        leftFormFieldId:
+          type: string
+        leftRestResponseId:
+          type: string
+        nextConditionOperator:
+          type: string
+        operator:
+          type: string
+        rightFormFieldId:
+          type: string
+        rightRestResponseId:
+          type: string
+        rightType:
+          type: string
+        rightValue:
+          type: object
     FormValueRepresentation:
       properties:
         id:
           type: string
         name:
           type: string
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
     FormFieldRepresentation:
       properties:
         className:
@@ -169,108 +271,6 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
-          type: integer
-          format: int32
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    ConditionRepresentation:
-      properties:
-        leftFormFieldId:
-          type: string
-        leftRestResponseId:
-          type: string
-        nextConditionOperator:
-          type: string
-        operator:
-          type: string
-        rightFormFieldId:
-          type: string
-        rightRestResponseId:
-          type: string
-        rightType:
-          type: string
-        rightValue:
-          type: object
-    FormTabRepresentation:
-      properties:
-        id:
-          type: string
-        title:
-          type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
-    FormJavascriptEventRepresentation:
-      properties:
-        event:
-          type: string
-        javascriptLogic:
-          type: string
-    FormDefinitionRepresentation:
-      properties:
-        className:
-          type: string
-        customFieldTemplates:
-          type: object
-          additionalProperties:
-            type: string
-        fields:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormFieldRepresentation'
-        gridsterForm:
-          type: boolean
-        id:
-          type: integer
-          format: int64
-        javascriptEvents:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormJavascriptEventRepresentation'
-        metadata:
-          type: object
-          additionalProperties:
-            type: string
-        name:
-          type: string
-        outcomeTarget:
-          type: string
-        outcomes:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormOutcomeRepresentation'
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        processDefinitionName:
-          type: string
-        selectedOutcome:
-          type: string
-        style:
-          type: string
-        tabs:
-          type: array
-          items:
-            $ref: '#/components/schemas/FormTabRepresentation'
-        taskDefinitionKey:
-          type: string
-        taskId:
-          type: string
-        taskName:
-          type: string
   securitySchemes:
     basicAuth:
       type: http

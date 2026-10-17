@@ -81,7 +81,6 @@ paths:
           description: Not Found
 components:
   schemas:
-    ObjectNode: {}
     ResultListDataRepresentation:
       properties:
         data:
@@ -97,20 +96,7 @@ components:
         total:
           type: integer
           format: int32
-    ProcessInstanceFilterRepresentation:
-      properties:
-        asc:
-          type: boolean
-        name:
-          type: string
-        processDefinitionId:
-          type: string
-        processDefinitionKey:
-          type: string
-        sort:
-          type: string
-        state:
-          type: string
+    ObjectNode: {}
     ProcessInstanceFilterRequestRepresentation:
       properties:
         appDefinitionId:
@@ -127,6 +113,20 @@ components:
         size:
           type: integer
           format: int32
+    ProcessInstanceFilterRepresentation:
+      properties:
+        asc:
+          type: boolean
+        name:
+          type: string
+        processDefinitionId:
+          type: string
+        processDefinitionKey:
+          type: string
+        sort:
+          type: string
+        state:
+          type: string
     AbstractRepresentation: {}
   securitySchemes:
     basicAuth:

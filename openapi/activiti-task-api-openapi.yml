@@ -842,24 +842,71 @@ paths:
           description: Not Found
 components:
   schemas:
-    SaveFormRepresentation:
+    LayoutRepresentation:
       properties:
-        values:
-          type: object
-    FormTabRepresentation:
+        colspan:
+          type: integer
+          format: int32
+        column:
+          type: integer
+          format: int32
+        row:
+          type: integer
+          format: int32
+    OptionRepresentation:
       properties:
         id:
           type: string
-        title:
+        name:
           type: string
-        visibilityCondition:
-          $ref: '#/components/schemas/ConditionRepresentation'
     ChecklistOrderRepresentation:
       properties:
         order:
           type: array
           items:
             type: string
+    RelatedContentRepresentation:
+      properties:
+        contentAvailable:
+          type: boolean
+        created:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        link:
+          type: boolean
+        linkUrl:
+          type: string
+        mimeType:
+          type: string
+        name:
+          type: string
+        previewStatus:
+          type: string
+        simpleType:
+          type: string
+        source:
+          type: string
+        sourceId:
+          type: string
+        thumbnailStatus:
+          type: string
+    CommentRepresentation:
+      properties:
+        created:
+          type: string
+          format: date-time
+        createdBy:
+          $ref: '#/components/schemas/LightUserRepresentation'
+        id:
+          type: integer
+          format: int64
+        message:
+          type: string
     TaskUpdateRepresentation:
       properties:
         description:
@@ -875,18 +922,46 @@ components:
           type: string
         nameSet:
           type: boolean
-    CommentRepresentation:
+    LightUserRepresentation:
       properties:
-        created:
+        email:
           type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/LightUserRepresentation'
+        externalId:
+          type: string
+        firstName:
+          type: string
         id:
           type: integer
           format: int64
-        message:
+        lastName:
           type: string
+        pictureId:
+          type: integer
+          format: int64
+    TaskFilterRequestRepresentation:
+      properties:
+        appDefinitionId:
+          type: integer
+          format: int64
+        filter:
+          $ref: '#/components/schemas/TaskFilterRepresentation'
+        filterId:
+          type: integer
+          format: int64
+        page:
+          type: integer
+          format: int32
+        size:
+          type: integer
+          format: int32
+    FormTabRepresentation:
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+        visibilityCondition:
+          $ref: '#/components/schemas/ConditionRepresentation'
     FormFieldRepresentation:
       properties:
         className:
@@ -958,99 +1033,34 @@ components:
           type: object
         visibilityCondition:
           $ref: '#/components/schemas/ConditionRepresentation'
-    TaskFilterRequestRepresentation:
-      properties:
-        appDefinitionId:
-          type: integer
-          format: int64
-        filter:
-          $ref: '#/components/schemas/TaskFilterRepresentation'
-        filterId:
-          type: integer
-          format: int64
-        page:
-          type: integer
-          format: int32
-        size:
-          type: integer
-          format: int32
-    CompleteFormRepresentation:
-      properties:
-        outcome:
-          type: string
-        values:
-          type: object
-    LightUserRepresentation:
-      properties:
-        email:
-          type: string
-        externalId:
-          type: string
-        firstName:
-          type: string
-        id:
-          type: integer
-          format: int64
-        lastName:
-          type: string
-        pictureId:
-          type: integer
-          format: int64
-    ObjectNode: {}
-    OptionRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    RelatedContentRepresentation:
-      properties:
-        contentAvailable:
-          type: boolean
-        created:
-          type: string
-          format: date-time
-        createdBy:
-          $ref: '#/components/schemas/LightUserRepresentation'
-        id:
-          type: integer
-          format: int64
-        link:
-          type: boolean
-        linkUrl:
-          type: string
-        mimeType:
-          type: string
-        name:
-          type: string
-        previewStatus:
-          type: string
-        simpleType:
-          type: string
-        source:
-          type: string
-        sourceId:
-          type: string
-        thumbnailStatus:
-          type: string
-    FormValueRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
-    FormOutcomeRepresentation:
-      properties:
-        id:
-          type: string
-        name:
-          type: string
     FormJavascriptEventRepresentation:
       properties:
         event:
           type: string
         javascriptLogic:
           type: string
+    SaveFormRepresentation:
+      properties:
+        values:
+          type: object
+    ConditionRepresentation:
+      properties:
+        leftFormFieldId:
+          type: string
+        leftRestResponseId:
+          type: string
+        nextConditionOperator:
+          type: string
+        operator:
+          type: string
+        rightFormFieldId:
+          type: string
+        rightRestResponseId:
+          type: string
+        rightType:
+          type: string
+        rightValue:
+          type: object
     TaskFilterRepresentation:
       properties:
         asc:
@@ -1073,6 +1083,12 @@ components:
           type: string
         state:
           type: string
+    CompleteFormRepresentation:
+      properties:
+        outcome:
+          type: string
+        values:
+          type: object
     ResultListDataRepresentation:
       properties:
         data:
@@ -1086,17 +1102,6 @@ components:
           type: integer
           format: int32
         total:
-          type: integer
-          format: int32
-    LayoutRepresentation:
-      properties:
-        colspan:
-          type: integer
-          format: int32
-        column:
-          type: integer
-          format: int32
-        row:
           type: integer
           format: int32
     TaskRepresentation:
@@ -1165,24 +1170,14 @@ components:
           type: string
         processInstanceStartUserId:
           type: string
-    ConditionRepresentation:
+    ObjectNode: {}
+    FormValueRepresentation:
       properties:
-        leftFormFieldId:
+        id:
           type: string
-        leftRestResponseId:
+        name:
           type: string
-        nextConditionOperator:
-          type: string
-        operator:
-          type: string
-        rightFormFieldId:
-          type: string
-        rightRestResponseId:
-          type: string
-        rightType:
-          type: string
-        rightValue:
-          type: object
+    AbstractRepresentation: {}
     FormDefinitionRepresentation:
       properties:
         className:
@@ -1236,7 +1231,12 @@ components:
           type: string
         taskName:
           type: string
-    AbstractRepresentation: {}
+    FormOutcomeRepresentation:
+      properties:
+        id:
+          type: string
+        name:
+          type: string
   securitySchemes:
     basicAuth:
       type: http

@@ -169,6 +169,7 @@ components:
           format: int64
         message:
           type: string
+    AbstractRepresentation: {}
     ResultListDataRepresentation:
       properties:
         data:
@@ -200,7 +201,6 @@ components:
         pictureId:
           type: integer
           format: int64
-    AbstractRepresentation: {}
   securitySchemes:
     basicAuth:
       type: http
